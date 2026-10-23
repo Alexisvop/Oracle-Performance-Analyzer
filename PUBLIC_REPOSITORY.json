@@ -1,8 +1,10 @@
 {
-  "url": null,
+  "url": "https://github.com/Alexisvop/Oracle-Performance-Analyzer",
   "proposed_name": "Oracle-Performance-Analyzer",
-  "status": "Proposed owner name; URL and publication remain gated by independent review and separate authorization",
-  "publication_authorized": false,
+  "status": "Public repository published; initial publication authorization consumed; website deployment pending",
+  "publication_authorized": true,
   "portfolio_source_mode": "reviewed same-origin static assets",
-  "name_check": "Read-only GitHub repository lookup returned 404; this is not a reservation or guarantee of availability"
+  "name_check": "Public repository existence and PUBLIC visibility verified; the earlier 404 was a historical pre-publication availability check.",
+  "website_deployed": false,
+  "deployment_authorized": false
 }

@@ -1,4 +1,12 @@
-# Proposed independent public repository — NO PUBLICATION AUTHORIZATION
+# Historical independent public repository publication plan
+
+**Completed — do not repeat repository creation, Git initialization, the initial commit or the initial push.** The owner-authorized public release is available at [Oracle-Performance-Analyzer](https://github.com/Alexisvop/Oracle-Performance-Analyzer), on main, with independent root commit fa7237f071fcc0a6996b986835b2681e0ecc0b2e. The [initial GitHub Actions run](https://github.com/Alexisvop/Oracle-Performance-Analyzer/actions/runs/39892553663) completed successfully. Website deployment remains pending and is not authorized.
+
+The original pre-publication plan below is retained as historical context. Its proposed name, early 404 lookup, pending URL, authorization gates and unexecuted-command statements describe the preparation stage before publication. They are not the current publication status and confer no new authorization. The example commit message below was a proposal; the actual initial message was feat: initial public release of Oracle SQL Performance Analyzer.
+
+## Original preparation plan (historical)
+
+Original heading: Proposed independent public repository — NO PUBLICATION AUTHORIZATION
 
 Proposed name: Oracle-Performance-Analyzer. A read-only lookup of Alexisvop/Oracle-Performance-Analyzer returned 404 during local hardening; no name was reserved, and a 404 is not guaranteed availability. PUBLIC_REPOSITORY.json intentionally keeps url null until approved.
 

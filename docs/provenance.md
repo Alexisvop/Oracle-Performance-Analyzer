@@ -9,3 +9,7 @@ The [public provenance map](evidence/PROVENANCE.json) records original and publi
 Third-party dependencies, Oracle software/output labels and trademarks are not automatically relicensed by the owner's MIT grant. [Notices](../THIRD_PARTY_NOTICES.md), [license](../LICENSE), [security](security.md).
 
 The E04 comparison authorization field is a digest binding the complete compared artifacts, not a permission to gather statistics. Redacting Git metadata changes those bytes, so the public derivative explicitly rebinds only that offline field. Every other comparison value is retained exactly and the source/derivative hashes are recorded.
+
+## Initial export snapshot and later maintenance
+
+EXPORT_MANIFEST.json, its detached checksum, and VALIDATION_RESULTS.json are immutable records of the approved initial export and its pre-publication checks. Their hashes and pending-publication fields describe that snapshot, not the current working tree or current publication status. Verify that export against the [initial public commit](https://github.com/Alexisvop/Oracle-Performance-Analyzer/tree/fa7237f071fcc0a6996b986835b2681e0ecc0b2e). Later documentation changes are tracked by Git and do not regenerate historical checksums or experimental evidence. PUBLIC_REPOSITORY.json contains the current source-publication and deployment metadata.

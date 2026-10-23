@@ -57,6 +57,6 @@ export function publicAssets(rootPath: string, files: string[]): Map<string, str
     const text = readFileSync(absolute, 'utf8');
     assets.set(asset, file.endsWith('.md') ? markdown(file, text, allowed) : text);
   }
-  assets.set('source/index.html', frame('Reviewed public source', '<h1>OSPA · Reviewed public source</h1><p>Documentation, source and synthetic evidence from this local public edition. The future repository URL is pending.</p><p lang="es">Documentación, código y evidencia sintética de esta edición pública local. La URL del futuro repositorio está pendiente.</p><ul>' + files.map((file) => '<li><a href="/' + sourceAssetPath(file) + '">' + escapeHtml(file) + '</a></li>').join('') + '</ul>'));
+  assets.set('source/index.html', frame('Reviewed public source', '<h1>OSPA · Reviewed public source</h1><p>Documentation, source and synthetic evidence from this public edition. The portfolio runs locally; website deployment is pending. Public repository: <a href="https://github.com/Alexisvop/Oracle-Performance-Analyzer">Oracle-Performance-Analyzer</a>.</p><p lang="es">Documentación, código y evidencia sintética de esta edición pública. El portafolio se ejecuta localmente; el despliegue web está pendiente. Repositorio público: <a href="https://github.com/Alexisvop/Oracle-Performance-Analyzer">Oracle-Performance-Analyzer</a>.</p><ul>' + files.map((file) => '<li><a href="/' + sourceAssetPath(file) + '">' + escapeHtml(file) + '</a></li>').join('') + '</ul>'));
   return assets;
 }

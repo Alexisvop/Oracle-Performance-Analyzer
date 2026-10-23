@@ -2,7 +2,7 @@
 
 A reproducible database performance engineering laboratory with a bilingual React portfolio.
 
-**Local release candidate. No repository or website has been published.** This edition contains reviewed code, public technical documentation and a minimal evidence subset exported from a privately developed project. Private development history, personal context, credentials and host diagnostics are excluded. See [provenance](docs/provenance.md), [MIT license](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md).
+**Published public source edition:** [Oracle-Performance-Analyzer](https://github.com/Alexisvop/Oracle-Performance-Analyzer) is an independent, sanitized codebase licensed under MIT. It includes reviewed historical evidence and explicitly labeled public derivatives with verifiable SHA-256 provenance. Private development history, personal context, credentials and host diagnostics are excluded. **The portfolio runs locally; no website has been deployed.** See [provenance](docs/provenance.md), [MIT license](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md).
 
 > OSPA is an independent educational and engineering project. It is not an official Oracle product and is not affiliated with or certified by Oracle Corporation. It does not replace Oracle Real Application Testing, SQL Performance Analyzer or SQL Tuning Advisor.
 
@@ -43,7 +43,7 @@ npm --prefix portfolio run build
 npm --prefix portfolio run dev
 ~~~
 
-Open the loopback URL printed by Vite. English is the default; EN/ES switches the same document. Vite base is / for future root-hosted Cloudflare Pages. The site serves reviewed local evidence/documentation/source references; it does not link to the private repository. The future public repository URL is intentionally pending. [Frontend guide](portfolio/README.md).
+Open the loopback URL printed by Vite. English is the default; EN/ES switches the same document. Vite base is / for future root-hosted Cloudflare Pages. The site serves reviewed local evidence/documentation/source references; it does not link to the private repository. The [public repository](https://github.com/Alexisvop/Oracle-Performance-Analyzer) is available; Cloudflare Pages and GitHub Pages have not been deployed. [Frontend guide](portfolio/README.md).
 
 ## Results and interpretation
 
@@ -78,7 +78,7 @@ Percentages are computed from unrounded medians. Favorable and unfavorable obser
 
 ## Tests, security and licensing
 
-Historical Phase 5 evidence records 180 offline unit tests and 55 subtests; four live integration tests belong to an earlier, separately authorized lab audit. Those are historical counts, not proof of a fresh live execution. Current candidate outcomes are recorded in the release checklist. CI executes offline only; it downloads no Oracle database and holds no database credential.
+Historical Phase 5 evidence records 180 offline unit tests and 55 subtests; four live integration tests belong to an earlier, separately authorized lab audit. Those are historical counts, not proof of a fresh live execution. The [initial public GitHub Actions run](https://github.com/Alexisvop/Oracle-Performance-Analyzer/actions/runs/39892553663) passed. Pre-publication outcomes remain in the historical release checklist; immutable export manifests and validation records are explained in [provenance](docs/provenance.md#initial-export-snapshot-and-later-maintenance). CI executes offline only; it downloads no Oracle database and holds no database credential.
 
 Keep real credentials local in an owner-owned regular .env file with mode 0600, or supply environment variables. Only .env.example is public. Never run provisioning, reset, DDL, DML, index or DBMS_STATS operations without new, narrowly scoped authorization. Historical receipts cannot authorize repetition. Oracle integration tests are separately marked/gated.
 

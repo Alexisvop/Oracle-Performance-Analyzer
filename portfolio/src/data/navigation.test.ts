@@ -5,7 +5,7 @@ import { publicAssets, sourceAssetPath, escapeHtml } from '../../scripts/public-
 import { describe, it, expect } from 'vitest';
 import { sourceUrl, repository } from './metrics';
 describe('Public reference boundary', () => {
-  it('uses local reviewed references while the public repository URL is pending', () => {
+  it('keeps reviewed local references available alongside the published repository', () => {
     expect(repository).toBe('/source/index.html');
     expect(sourceUrl('docs/demo.md#flow-a')).toBe('/source/docs/demo.md.html#flow-a');
     expect(sourceUrl('docs/evidence/example.json')).toBe('/source/docs/evidence/example.json');
