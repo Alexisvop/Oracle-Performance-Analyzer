@@ -1,0 +1,24 @@
+{
+  "run_id": "8b6f8781e29e412a81ee4b9789dc5954",
+  "status": "PASS",
+  "summaries": {
+    "baseline": {
+      "unit": "ms",
+      "n": 10,
+      "failures": 0,
+      "warmups": 5,
+      "warmup_failures": 0,
+      "median": 0.4359655,
+      "mean": 0.4449749,
+      "min": 0.304214,
+      "max": 0.537083,
+      "iqr": 0.09603974999999998,
+      "p95": 0.53678645,
+      "stddev": 0.07266159096562334
+    }
+  },
+  "comparisons": [],
+  "scope": "One scenario only; no cross-index-state causal conclusion.",
+  "failed_samples_retained": true,
+  "percentile_method": "linear interpolation at (n-1)*p"
+}

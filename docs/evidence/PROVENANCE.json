@@ -1,0 +1,433 @@
+{
+  "edition": "public sanitized export",
+  "originals_retained_privately": true,
+  "files": [
+    {
+      "path": "docs/evidence/phase4/group-a/OSPA_CUSTOMERS_EMAIL.json",
+      "original_sha256": "01fee0a0c8f81c4bebf8c57c3883aadd2709c1efc09c69dda6eefb2b7c833b0f",
+      "public_sha256": "01fee0a0c8f81c4bebf8c57c3883aadd2709c1efc09c69dda6eefb2b7c833b0f",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/OSPA_ORDERS_CUSTOMER.json",
+      "original_sha256": "fafcae818a4bd44f2b9301a6dd0c906b6024ef9adcb2c850cc602a278e62d97b",
+      "public_sha256": "fafcae818a4bd44f2b9301a6dd0c906b6024ef9adcb2c850cc602a278e62d97b",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/OSPA_ORDERS_CUST_DATE.json",
+      "original_sha256": "13012fd78ade3cb017cec529c08ded0364751218551bc126424799c2e290b3d3",
+      "public_sha256": "13012fd78ade3cb017cec529c08ded0364751218551bc126424799c2e290b3d3",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/OSPA_ORDERS_DATE.json",
+      "original_sha256": "70e304c38c19bf7ebfcbb1c877b52b5797870e92c1c6ab7ad33bffade102220a",
+      "public_sha256": "70e304c38c19bf7ebfcbb1c877b52b5797870e92c1c6ab7ad33bffade102220a",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/OSPA_ORDERS_STATUS_DATE.json",
+      "original_sha256": "0303aa5fd547d95351535d69726ac74ced193a5ec7faa5b58bdd18a730e4193b",
+      "public_sha256": "0303aa5fd547d95351535d69726ac74ced193a5ec7faa5b58bdd18a730e4193b",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/28c29bc26e204818adc0fe50c0891528/run.json",
+      "original_sha256": "63f2e3ab8f5559a0c0519a5be09dccad2c4ed62937be72aad057192a8e96e341",
+      "public_sha256": "baf4c0d4d2c77d3184e381e9591bab2c77e4f82f187eb90cbe3cc404b14ec28b",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/28c29bc26e204818adc0fe50c0891528/summary.json",
+      "original_sha256": "1d10b2453d74a3ed0c6b29f787227bfeda2bea72a6b69aebb5d27ff3e6a299fb",
+      "public_sha256": "1d10b2453d74a3ed0c6b29f787227bfeda2bea72a6b69aebb5d27ff3e6a299fb",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/43fb7a0f56cb4c6195e4adf71f7d5f10/run.json",
+      "original_sha256": "638106c055c16ec92661f8b0252708a190cd63036e2e05cd9889a39aaf406d42",
+      "public_sha256": "8a1922f8d1f99c400ab9a603880bf491ccaa3dbc8a6c1f5e38746ccc0be91151",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/43fb7a0f56cb4c6195e4adf71f7d5f10/summary.json",
+      "original_sha256": "c398352626e9d8884bbcfbc4a7c840d1d7bd26d56565870a44f071202b52b506",
+      "public_sha256": "c398352626e9d8884bbcfbc4a7c840d1d7bd26d56565870a44f071202b52b506",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/514f51728fe54076b45f2c2d4f7a3ef2/run.json",
+      "original_sha256": "8fbc29ae71b6cc20061aa4e8f65b5ea4945709223c00be4d61d08304b6d03f33",
+      "public_sha256": "e4db277ecfe64c8d3483a4fc0ee5e47e59e6cfaee985a3b2af27aa5e47c9641d",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/514f51728fe54076b45f2c2d4f7a3ef2/summary.json",
+      "original_sha256": "7146279e92c4a6945155b0942d56c559b6a41ecd155395241c56802d570824c7",
+      "public_sha256": "7146279e92c4a6945155b0942d56c559b6a41ecd155395241c56802d570824c7",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/8b6f8781e29e412a81ee4b9789dc5954/run.json",
+      "original_sha256": "e4bdaba8c69ac2e60022c73d27c76b2d989e3e6c34ec0111e6f46c0c37dc147e",
+      "public_sha256": "df2f342675d381cf992afbe5e08c94f8965023b882d9ce5ca5b3cc7f4dca651b",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/8b6f8781e29e412a81ee4b9789dc5954/summary.json",
+      "original_sha256": "a1af584171ae7b95ce4b84934f52e3822348a1f5c7eef78fb69de34a9e152306",
+      "public_sha256": "a1af584171ae7b95ce4b84934f52e3822348a1f5c7eef78fb69de34a9e152306",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/8ea3e71c7d5d4434871a5636c2bdc948/run.json",
+      "original_sha256": "0add011759e605c9ee1a4d369648bc785e133f7b1237c57521d2dbe2f547863a",
+      "public_sha256": "9b9a4d79d6fdb5bb0336045220eaeb866682e420fb51555e5128365237d113a6",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/8ea3e71c7d5d4434871a5636c2bdc948/summary.json",
+      "original_sha256": "ac485c634fb62c5ec4af48db6e85bcd62c880007b9f2fdfecd4573609f982441",
+      "public_sha256": "ac485c634fb62c5ec4af48db6e85bcd62c880007b9f2fdfecd4573609f982441",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/9fa9fa3300024bed8a905c6b668c46c8/run.json",
+      "original_sha256": "48bd54eae03ba8197ebcf7dd1baa6b94e7721dc6fdd279d44700d2a2c6fd9cb0",
+      "public_sha256": "03445fae0292aa6dcfb5c885d895a755d8bcda8d56f219881ad8e1e0ad3bab0b",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/9fa9fa3300024bed8a905c6b668c46c8/summary.json",
+      "original_sha256": "0acbaba4af56e4165e94f58135a01fa3f984ee60ef6dc6a45dee46973b203e9b",
+      "public_sha256": "0acbaba4af56e4165e94f58135a01fa3f984ee60ef6dc6a45dee46973b203e9b",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/b1cb371a97e54ce0b6226a52c73c3e05/run.json",
+      "original_sha256": "2c7ee59b9d973c8921a7c8ce148513d9c82918d293aff679573c6d1692314599",
+      "public_sha256": "066abded0b9e09ce41f9b2b21a98aab47e36d816a54d52808ce99fc9973dffe8",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/b1cb371a97e54ce0b6226a52c73c3e05/summary.json",
+      "original_sha256": "21ed398a2beaa3ab2e6259d565ce43e044cddfa560cf032f24019fab2ef0d1a9",
+      "public_sha256": "21ed398a2beaa3ab2e6259d565ce43e044cddfa560cf032f24019fab2ef0d1a9",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/c616d2f6e9fe43e0aa29f2a1ae0e06cf/run.json",
+      "original_sha256": "80f554ddd6afd33955a11fe78bc136616bd27657a321c2a9801d2cefdbf6ca04",
+      "public_sha256": "55c2c71df626604f042c4cda64660e2963096e9f3981c6589989cc6942dd80f8",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/c616d2f6e9fe43e0aa29f2a1ae0e06cf/summary.json",
+      "original_sha256": "817cfef67bd97634363d384bbfb1d50ee24b28f7db8d1ac99a36870ac735eed5",
+      "public_sha256": "817cfef67bd97634363d384bbfb1d50ee24b28f7db8d1ac99a36870ac735eed5",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/cdfca9aef4644ce1aa00e24b28ad0010/run.json",
+      "original_sha256": "97b679c2e6c56fde18e621cdc757386084c69fa4feacd23e53e896c665768731",
+      "public_sha256": "905a3d91415162d5df9e38fc635391bd12cc87664c4ed9204495ab478b1223d1",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/cdfca9aef4644ce1aa00e24b28ad0010/summary.json",
+      "original_sha256": "93ccc98f8032cb79aea8e2444d02bfee970639601bb1e28f378e4b796e88d21d",
+      "public_sha256": "93ccc98f8032cb79aea8e2444d02bfee970639601bb1e28f378e4b796e88d21d",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/fc30f0efd7964149b4836b9ecc862efb/run.json",
+      "original_sha256": "a86979a61b0a93c7ab6ead3df285d3869f60ffaf800dec9ea66c58a58081b4e4",
+      "public_sha256": "8434f7447647923e2316bf12174ba5168b95e0b5194704546c88ba307daa5dd1",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/runs/fc30f0efd7964149b4836b9ecc862efb/summary.json",
+      "original_sha256": "a497328779663c04954644c0238f01d2ecda7daaf81fa3331d99e58a0f6ae3cb",
+      "public_sha256": "a497328779663c04954644c0238f01d2ecda7daaf81fa3331d99e58a0f6ae3cb",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-a/summary.json",
+      "original_sha256": "2cce60f505383bc357fd6d35d9f9a0b07b89337c59ee66e8e1d9f17fb07490f7",
+      "public_sha256": "2cce60f505383bc357fd6d35d9f9a0b07b89337c59ee66e8e1d9f17fb07490f7",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-create-stat-table/create-attempt.jsonl",
+      "original_sha256": "104466acb177ae94bc1e6029dbd0ffc128ff8c97fa8ff4e080d1d7218e9979a2",
+      "public_sha256": "104466acb177ae94bc1e6029dbd0ffc128ff8c97fa8ff4e080d1d7218e9979a2",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-create-stat-table/executed.sql",
+      "original_sha256": "3348af7a0a55c801787b4cbbee790290f5d37d5437c16e709858b24d2794fb49",
+      "public_sha256": "3348af7a0a55c801787b4cbbee790290f5d37d5437c16e709858b24d2794fb49",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-create-stat-table/manifest.json",
+      "original_sha256": "39875191e903c42c124acc850f8b48ce5593d718cb160db5f9d756167953ab1a",
+      "public_sha256": "722322b6872ce8372d2916f91c243bbc76d0d0b9869fd306f8bbb7b68e9268cc",
+      "status": "sanitized derivative",
+      "policy": "Remove unrelated private inventory coverage; retain exact integrity checking for all seven exported forensic fixtures"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-create-stat-table/observational-creation-receipt.json",
+      "original_sha256": "f099181d7270355dc6d01640d2e70fe06bd1498c26b7a431a7e20db0098eae18",
+      "public_sha256": "f099181d7270355dc6d01640d2e70fe06bd1498c26b7a431a7e20db0098eae18",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-create-stat-table/observed-structure.json",
+      "original_sha256": "7e29268ee84ab50df0e7c54350ab3be4b351d7ecd5af1ac315b5064f08c259be",
+      "public_sha256": "7e29268ee84ab50df0e7c54350ab3be4b351d7ecd5af1ac315b5064f08c259be",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-create-stat-table/plan.json",
+      "original_sha256": "2b3ec0711abb6e7f212c20a843de058450c8191b4b0855856db7c68c048adc9d",
+      "public_sha256": "2b3ec0711abb6e7f212c20a843de058450c8191b4b0855856db7c68c048adc9d",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-create-stat-table/preflight.json",
+      "original_sha256": "54bd82e3c74a50a9851f09da674738d6beb6fb61d9d362d37c142a7ba8928219",
+      "public_sha256": "0ca9640231e008ae52efc6189aa4056807045bfc639dc18c6e0a3741c438b4d4",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-create-stat-table/result.json",
+      "original_sha256": "a9a5753df02faca42bf661855818916d8439d992183780a25871bb998d3eedb6",
+      "public_sha256": "a9a5753df02faca42bf661855818916d8439d992183780a25871bb998d3eedb6",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-histogram-final/cohort-comparisons.json",
+      "original_sha256": "0c4d621d441deb97114bfe39df3a746cfd037933dde97252dd6a3573da44b428",
+      "public_sha256": "c7970e9855a7bef5d976b3f250720ddef38b487b990312e779f9c0b21e7a4505",
+      "status": "sanitized derivative",
+      "policy": "Rebind offline comparison integrity digest to sanitized public run bytes. Only authorization strings change; all comparison values are exact. This is not an Oracle operation authorization."
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-histogram-final/diff-after-recovery.json",
+      "original_sha256": "1a194120a1974311181dfe7076a903d2d96809b771443efc5b4e011802ead6c9",
+      "public_sha256": "1a194120a1974311181dfe7076a903d2d96809b771443efc5b4e011802ead6c9",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-histogram-final/field-comparison-after-recovery.json",
+      "original_sha256": "8dd73eb9d4f75e9e9a4c4328abb2705ead36ad9278e49ac2e827af595d04f9a4",
+      "public_sha256": "8dd73eb9d4f75e9e9a4c4328abb2705ead36ad9278e49ac2e827af595d04f9a4",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-histogram-final/observed-histogram.json",
+      "original_sha256": "0005385af907d55c36229ede4d4b727b93eea84ddc0e3fde323ce080d8dba2ea",
+      "public_sha256": "0005385af907d55c36229ede4d4b727b93eea84ddc0e3fde323ce080d8dba2ea",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-histogram-final/recovery-receipt.json",
+      "original_sha256": "7e1d94f10da4fc9dd45a7c198b94d76034f6de588157d59feb1858392c7d7f5e",
+      "public_sha256": "7e1d94f10da4fc9dd45a7c198b94d76034f6de588157d59feb1858392c7d7f5e",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-histogram-final/runs/232234a4a9ea4f56880afbb6749b585e/run.json",
+      "original_sha256": "aa37679150d48e09bd3633abb43b39f973523e9e6858d921ddfeba73d5738419",
+      "public_sha256": "e3af5f13b410032cc3495174b7360d36d974e3403e4e5958ce004488b53977c5",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-histogram-final/runs/232234a4a9ea4f56880afbb6749b585e/summary.json",
+      "original_sha256": "cecbb324024821486148e65b161551188b2fb874ffa1bf2e0b09c58b5c3e9839",
+      "public_sha256": "cecbb324024821486148e65b161551188b2fb874ffa1bf2e0b09c58b5c3e9839",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-histogram-final/runs/82b1df0bc6bb40738719801106790567/run.json",
+      "original_sha256": "e8e083fc9a4b8da1d17cf4213cf01e3b9ff0b3fd99dd9e6f49bf46c362028d42",
+      "public_sha256": "e33c1bae63b867f75c0a34f6d74e6d8aa048506c7d25b53bb86fe5836d483d1e",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-histogram-final/runs/82b1df0bc6bb40738719801106790567/summary.json",
+      "original_sha256": "d2ca4b289918ac5844a5032e083bb192978b747d7c8bcecd985b19f1ce48054f",
+      "public_sha256": "d2ca4b289918ac5844a5032e083bb192978b747d7c8bcecd985b19f1ce48054f",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-histogram/observed-histogram.json",
+      "original_sha256": "ae4657729d906fa2b7993992cd8301a555ce105138400b3309f8edbd443df951",
+      "public_sha256": "ae4657729d906fa2b7993992cd8301a555ce105138400b3309f8edbd443df951",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-histogram/runs/a626b8a37c2b4c6f868ec8cda92314ad/run.json",
+      "original_sha256": "47301ae2f764a48c45674952a0103f502c63bd79bf11f81b09389e86cb12e363",
+      "public_sha256": "244782bc09966433fc80a25b3226286de569378a56f43c9b811c363e5b16dd87",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-histogram/state-after-gather.json",
+      "original_sha256": "e8b8d98f8edd9475763194e76c5e27fd6213d43a60cd332a51ccd5593344bfa1",
+      "public_sha256": "e8b8d98f8edd9475763194e76c5e27fd6213d43a60cd332a51ccd5593344bfa1",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-histogram/state-after-recovery.json",
+      "original_sha256": "ae44ba9a7f0fee4b772acb956d0e893098cfb06a4c771cb92d7969130c732de3",
+      "public_sha256": "ae44ba9a7f0fee4b772acb956d0e893098cfb06a4c771cb92d7969130c732de3",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-histogram/state-before-gather.json",
+      "original_sha256": "96f23d302341abd66268c8567b2a2c8827145161d078d41da33f7176e017f625",
+      "public_sha256": "96f23d302341abd66268c8567b2a2c8827145161d078d41da33f7176e017f625",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/group-b-preflight/statistics-original-exact.json",
+      "original_sha256": "0c282b40d96ddb31513d28ddee3525a33ca013cf09b972261e61f55252c75a4e",
+      "public_sha256": "0c282b40d96ddb31513d28ddee3525a33ca013cf09b972261e61f55252c75a4e",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/runs/7efe329021d4435688bf2ca9f755cca7/run.json",
+      "original_sha256": "c247dbf1972268058625ee4c6ee7786932c8dddf0c1816f61d0dfca70e677b32",
+      "public_sha256": "79fd9ffe79659f35ce48b1948a08afec67b1488bdfd371d4339d472a6a6e9a07",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/runs/7efe329021d4435688bf2ca9f755cca7/summary.json",
+      "original_sha256": "61a09264b1af1c09a8ec4f88a96c938ec49eff5ad899663bd192ad6eaa545b00",
+      "public_sha256": "61a09264b1af1c09a8ec4f88a96c938ec49eff5ad899663bd192ad6eaa545b00",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/runs/9dffbb99f3fe48e08ec80e18a9aa536d/run.json",
+      "original_sha256": "92f0cb9cdc722ec80331bd0b6f128efb7ea31bab55b7509bfb29868ffc3db1db",
+      "public_sha256": "6a79513b15c0bb1b36fea88466c952c192509fe8ee34f351cac253252b33b4c6",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/runs/9dffbb99f3fe48e08ec80e18a9aa536d/summary.json",
+      "original_sha256": "9b5827cb754306d62a4dfe9972f2c06f40416c120a5849df814df1c7ff74eca9",
+      "public_sha256": "9b5827cb754306d62a4dfe9972f2c06f40416c120a5849df814df1c7ff74eca9",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/runs/a64fbcf36ff14a758698e301435ff310/run.json",
+      "original_sha256": "0172f9172603aec8443c12acee51e62ddd8a4d8dc1e7bb7f88327d776b747277",
+      "public_sha256": "cb9282f11c9a25b8cbb042ff92c5ca7250467b66124d404720825f8182b72120",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/runs/a64fbcf36ff14a758698e301435ff310/summary.json",
+      "original_sha256": "61c6eda015601eab84ccc8e7d375cda0bac008ba6dcb2e2a754d1bcd5a89fddc",
+      "public_sha256": "61c6eda015601eab84ccc8e7d375cda0bac008ba6dcb2e2a754d1bcd5a89fddc",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/runs/b158e3a5c72249f9bf8a362f8a75eeea/run.json",
+      "original_sha256": "3fddaa343a504c248ce184b7e92d8b3abe6cdc5e352f70b7f2d2089faf9004a1",
+      "public_sha256": "b99288e86ab2c8462256c7f8d94bfe59b309e18d6c0dae29be005e2c01a57d14",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/runs/b158e3a5c72249f9bf8a362f8a75eeea/summary.json",
+      "original_sha256": "66afaf529dabed43b3ade32683aebc9c77c3535d8e70196413750b49aa18520e",
+      "public_sha256": "66afaf529dabed43b3ade32683aebc9c77c3535d8e70196413750b49aa18520e",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase4/runs/c4cd44eae137426cbdfec81f66cab75a/run.json",
+      "original_sha256": "6123ee4007994e164d4573d4f4b753c96def1d641ba27a38ae4ce6dd1a06919d",
+      "public_sha256": "28f18fa68ce4cdd06f0610d71775152fbe421fa4ad0eaa6afc83c253a8d287e4",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase4/runs/c4cd44eae137426cbdfec81f66cab75a/summary.json",
+      "original_sha256": "1ec83cfe0c6cd06da66bb49300388d1865ece41ad98cd0f1227f3c2e0c1b572b",
+      "public_sha256": "1ec83cfe0c6cd06da66bb49300388d1865ece41ad98cd0f1227f3c2e0c1b572b",
+      "status": "original bytes",
+      "policy": "Byte-identical reviewed synthetic record"
+    },
+    {
+      "path": "docs/evidence/phase5/stage-a/summary.json",
+      "original_sha256": "8e37ca7f1f4f070dc9cf26ee98bfe78ab284eb0c0430fcc3456bae79d32959f2",
+      "public_sha256": "c04c8a443963cfa198aa071f1a26b325174dba639aa5b67aee0250cee40f0c5c",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    },
+    {
+      "path": "docs/evidence/phase5/stage-d/summary.json",
+      "original_sha256": "9c4bc7ee7ea60f32e8436e4c3bfde18a26abb1b2c82e2ef1c3a9862af2e04ad8",
+      "public_sha256": "71b0d499e7a77444fe1c99480bd9f9c4df9578cc803d0b10d3a02ef91aaba236",
+      "status": "sanitized derivative",
+      "policy": "metadata-only removal; retained scalars, sample counts, timestamps and observations unchanged"
+    }
+  ]
+}

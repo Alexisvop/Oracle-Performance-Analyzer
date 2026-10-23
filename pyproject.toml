@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oracle-sql-performance-analyzer"
+version = "0.1.0"
+description = "Oracle SQL Performance Analyzer: guarded laboratory and reproducible query benchmarks"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md", "third_party_licenses/*.txt"]
+authors = [{name = "Alexis Abraham Perez Olvera"}]
+requires-python = ">=3.12"
+dependencies = ["oracledb==26.0.1", "matplotlib==3.10.8"]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1"]
+
+[project.scripts]
+oracle-spa = "oracle_spa.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--strict-markers -m 'not oracle'"
+markers = ["oracle: explicit integration tests requiring a live Oracle database"]
+

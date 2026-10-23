@@ -1,0 +1,45 @@
+{
+  "run_id": "a64fbcf36ff14a758698e301435ff310",
+  "status": "PASS",
+  "summaries": {
+    "baseline": {
+      "unit": "ms",
+      "n": 10,
+      "failures": 0,
+      "warmups": 5,
+      "warmup_failures": 0,
+      "median": 13.9024275,
+      "mean": 15.3199477,
+      "min": 12.053462,
+      "max": 26.92459,
+      "iqr": 2.3166100000000007,
+      "p95": 22.66462179999999,
+      "stddev": 4.365129838909594
+    },
+    "rare": {
+      "unit": "ms",
+      "n": 10,
+      "failures": 0,
+      "warmups": 5,
+      "warmup_failures": 0,
+      "median": 2.268922,
+      "mean": 2.2954884,
+      "min": 2.108746,
+      "max": 2.530389,
+      "iqr": 0.1788177499999999,
+      "p95": 2.52357285,
+      "stddev": 0.1486721747277098
+    }
+  },
+  "comparisons": [
+    {
+      "baseline": "baseline",
+      "alternative": "rare",
+      "status": "NOT COMPARABLE",
+      "reason": "Requires equivalent results, stable controls, no failures and at least five valid samples per variant."
+    }
+  ],
+  "scope": "One scenario only; no cross-index-state causal conclusion.",
+  "failed_samples_retained": true,
+  "percentile_method": "linear interpolation at (n-1)*p"
+}

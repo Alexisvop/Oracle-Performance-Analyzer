@@ -1,0 +1,528 @@
+{
+  "after_gather_effective_sha256": "4ee61105de04af08713a8dc3eceecc96f28e5e5ba749499e5386bcadf8f59e63",
+  "after_gather_statistics_sha256": "0526f5d61e574cf721e01d75fd1d688673515edfd1f257fde64b7a75b053349e",
+  "derived_metadata_exceptions": [
+    {
+      "after_value": "YES",
+      "before_value": "NO",
+      "column_index": 22,
+      "column_name": "STALE_STATS",
+      "experiment_id": "E04",
+      "index_last_analyzed": {
+        "datetime": "2026-10-18T18:17:24"
+      },
+      "index_name": "ORDERS_PK",
+      "path": "/effective/statistics/indexes/rows/0/22",
+      "reason": "Derived USER_IND_STATISTICS.STALE_STATS flag transitioned NO->YES after GATHER_TABLE_STATS(..., cascade=>FALSE) advanced ORDERS.LAST_ANALYZED while preserving ORDERS_PK.LAST_ANALYZED and all numeric index statistics.",
+      "table_name": "ORDERS"
+    }
+  ],
+  "estimated_plans_with_histogram": {
+    "baseline_PAID": {
+      "binds": {
+        "status": "PAID"
+      },
+      "display": [
+        "Plan hash value: 36248429",
+        " ",
+        "-----------------------------------------------------------------------------",
+        "| Id  | Operation          | Name   | Rows  | Bytes | Cost (%CPU)| Time     |",
+        "-----------------------------------------------------------------------------",
+        "|   0 | SELECT STATEMENT   |        |  2500 | 37500 |    16   (7)| 00:00:01 |",
+        "|   1 |  SORT ORDER BY     |        |  2500 | 37500 |    16   (7)| 00:00:01 |",
+        "|*  2 |   TABLE ACCESS FULL| ORDERS |  2500 | 37500 |    15   (0)| 00:00:01 |",
+        "-----------------------------------------------------------------------------",
+        " ",
+        "Query Block Name / Object Alias (identified by operation id):",
+        "-------------------------------------------------------------",
+        " ",
+        "   1 - SEL$1",
+        "   2 - SEL$1 / \"ORDERS\"@\"SEL$1\"",
+        " ",
+        "Predicate Information (identified by operation id):",
+        "---------------------------------------------------",
+        " ",
+        "   2 - filter(\"STATUS\"=:STATUS)"
+      ],
+      "operators": [
+        {
+          "access_predicates": null,
+          "estimated_rows": 2500,
+          "filter_predicates": null,
+          "id": 0,
+          "object": null,
+          "operation": "SELECT STATEMENT",
+          "optimizer_cost": 16,
+          "options": null,
+          "owner": null,
+          "parent_id": null
+        },
+        {
+          "access_predicates": null,
+          "estimated_rows": 2500,
+          "filter_predicates": null,
+          "id": 1,
+          "object": null,
+          "operation": "SORT",
+          "optimizer_cost": 16,
+          "options": "ORDER BY",
+          "owner": null,
+          "parent_id": 0
+        },
+        {
+          "access_predicates": null,
+          "estimated_rows": 2500,
+          "filter_predicates": "\"STATUS\"=:STATUS",
+          "id": 2,
+          "object": "ORDERS",
+          "operation": "TABLE ACCESS",
+          "optimizer_cost": 15,
+          "options": "FULL",
+          "owner": "ORACLE_SPA",
+          "parent_id": 1
+        }
+      ],
+      "orders_access_predicates": null,
+      "orders_access_type": "TABLE ACCESS FULL",
+      "orders_estimated_rows": 2500,
+      "orders_filter_predicates": "\"STATUS\"=:STATUS",
+      "orders_object": "ORDERS",
+      "orders_operation": "TABLE ACCESS",
+      "orders_optimizer_cost": 15,
+      "orders_options": "FULL",
+      "orders_owner": "ORACLE_SPA",
+      "plan_hash": 36248429,
+      "query_id": "Q06",
+      "root_estimated_rows": 2500,
+      "root_operation": "SELECT STATEMENT",
+      "root_optimizer_cost": 16,
+      "root_options": null,
+      "sql_sha256": "6a9933f5e0c818d99d4bc03b01b9d19bd34e2d79637b49c0f73bd8fd784d04a6",
+      "statement_id": "OSPA_0dd919d862824274a7b303d61",
+      "status": "PASS",
+      "type": "ESTIMATED_PLAN",
+      "variant": "baseline",
+      "warnings": []
+    },
+    "rare_CANCELLED": {
+      "binds": {
+        "status": "CANCELLED"
+      },
+      "display": [
+        "Plan hash value: 36248429",
+        " ",
+        "-----------------------------------------------------------------------------",
+        "| Id  | Operation          | Name   | Rows  | Bytes | Cost (%CPU)| Time     |",
+        "-----------------------------------------------------------------------------",
+        "|   0 | SELECT STATEMENT   |        |  2500 | 37500 |    16   (7)| 00:00:01 |",
+        "|   1 |  SORT ORDER BY     |        |  2500 | 37500 |    16   (7)| 00:00:01 |",
+        "|*  2 |   TABLE ACCESS FULL| ORDERS |  2500 | 37500 |    15   (0)| 00:00:01 |",
+        "-----------------------------------------------------------------------------",
+        " ",
+        "Query Block Name / Object Alias (identified by operation id):",
+        "-------------------------------------------------------------",
+        " ",
+        "   1 - SEL$1",
+        "   2 - SEL$1 / \"ORDERS\"@\"SEL$1\"",
+        " ",
+        "Predicate Information (identified by operation id):",
+        "---------------------------------------------------",
+        " ",
+        "   2 - filter(\"STATUS\"=:STATUS)"
+      ],
+      "operators": [
+        {
+          "access_predicates": null,
+          "estimated_rows": 2500,
+          "filter_predicates": null,
+          "id": 0,
+          "object": null,
+          "operation": "SELECT STATEMENT",
+          "optimizer_cost": 16,
+          "options": null,
+          "owner": null,
+          "parent_id": null
+        },
+        {
+          "access_predicates": null,
+          "estimated_rows": 2500,
+          "filter_predicates": null,
+          "id": 1,
+          "object": null,
+          "operation": "SORT",
+          "optimizer_cost": 16,
+          "options": "ORDER BY",
+          "owner": null,
+          "parent_id": 0
+        },
+        {
+          "access_predicates": null,
+          "estimated_rows": 2500,
+          "filter_predicates": "\"STATUS\"=:STATUS",
+          "id": 2,
+          "object": "ORDERS",
+          "operation": "TABLE ACCESS",
+          "optimizer_cost": 15,
+          "options": "FULL",
+          "owner": "ORACLE_SPA",
+          "parent_id": 1
+        }
+      ],
+      "orders_access_predicates": null,
+      "orders_access_type": "TABLE ACCESS FULL",
+      "orders_estimated_rows": 2500,
+      "orders_filter_predicates": "\"STATUS\"=:STATUS",
+      "orders_object": "ORDERS",
+      "orders_operation": "TABLE ACCESS",
+      "orders_optimizer_cost": 15,
+      "orders_options": "FULL",
+      "orders_owner": "ORACLE_SPA",
+      "plan_hash": 36248429,
+      "query_id": "Q06",
+      "root_estimated_rows": 2500,
+      "root_operation": "SELECT STATEMENT",
+      "root_optimizer_cost": 16,
+      "root_options": null,
+      "sql_sha256": "6a9933f5e0c818d99d4bc03b01b9d19bd34e2d79637b49c0f73bd8fd784d04a6",
+      "statement_id": "OSPA_eb7c9daa98614f9fab7ccaa37",
+      "status": "PASS",
+      "type": "ESTIMATED_PLAN",
+      "variant": "rare",
+      "warnings": []
+    }
+  },
+  "evaluation": {
+    "column_name": "STATUS",
+    "density_observed": 5e-05,
+    "endpoints_count_observed": 4,
+    "endpoints_observed": [
+      [
+        "STATUS",
+        541,
+        349208446762019000000000000000000000
+      ],
+      [
+        "STATUS",
+        1601,
+        406405534078507000000000000000000000
+      ],
+      [
+        "STATUS",
+        7477,
+        416707910007868000000000000000000000
+      ],
+      [
+        "STATUS",
+        10000,
+        432426781261559000000000000000000000
+      ]
+    ],
+    "histogram_type_observed": "FREQUENCY",
+    "is_expected_frequency": true,
+    "note": "Expected FREQUENCY with 4 buckets; if UNEXPECTED, stop before measuring Scenario B.",
+    "num_buckets_observed": 4,
+    "num_distinct_observed": 4,
+    "status": "PASS"
+  },
+  "post_gather_guard": {
+    "after_statistics_sha256": "0526f5d61e574cf721e01d75fd1d688673515edfd1f257fde64b7a75b053349e",
+    "all_statistics_differences_preserved": [
+      "/effective/statistics/columns/rows/3/5/oracle_number",
+      "/effective/statistics/columns/rows/3/7/oracle_number",
+      "/effective/statistics/columns/rows/3/8/datetime",
+      "/effective/statistics/columns/rows/3/14",
+      "/effective/statistics/histograms/rows",
+      "/effective/statistics/indexes/rows/0/22",
+      "/effective/statistics/table/rows/0/21/datetime"
+    ],
+    "before_statistics_sha256": "6f27e295160307428e1deff18e1dfacdb9cd86c244a9c92f1b3a7e4551d1280d",
+    "derived_metadata_exceptions": [
+      {
+        "after_value": "YES",
+        "before_value": "NO",
+        "column_index": 22,
+        "column_name": "STALE_STATS",
+        "experiment_id": "E04",
+        "index_last_analyzed": {
+          "datetime": "2026-10-18T18:17:24"
+        },
+        "index_name": "ORDERS_PK",
+        "path": "/effective/statistics/indexes/rows/0/22",
+        "reason": "Derived USER_IND_STATISTICS.STALE_STATS flag transitioned NO->YES after GATHER_TABLE_STATS(..., cascade=>FALSE) advanced ORDERS.LAST_ANALYZED while preserving ORDERS_PK.LAST_ANALYZED and all numeric index statistics.",
+        "table_name": "ORDERS"
+      }
+    ],
+    "disallowed_table_differences": [],
+    "histogram_evaluation": {
+      "column_name": "STATUS",
+      "density_observed": 5e-05,
+      "endpoints_count_observed": 4,
+      "endpoints_observed": [
+        [
+          "ORDERS",
+          "STATUS",
+          {
+            "oracle_number": "541"
+          },
+          {
+            "oracle_number": "349208446762019000000000000000000000"
+          },
+          "CANCELLED",
+          {
+            "raw_hex": "43414E43454C4C4544"
+          },
+          {
+            "oracle_number": "0"
+          },
+          "SHARED"
+        ],
+        [
+          "ORDERS",
+          "STATUS",
+          {
+            "oracle_number": "1601"
+          },
+          {
+            "oracle_number": "406405534078507000000000000000000000"
+          },
+          "NEW",
+          {
+            "raw_hex": "4E4557"
+          },
+          {
+            "oracle_number": "0"
+          },
+          "SHARED"
+        ],
+        [
+          "ORDERS",
+          "STATUS",
+          {
+            "oracle_number": "7477"
+          },
+          {
+            "oracle_number": "416707910007868000000000000000000000"
+          },
+          "PAID",
+          {
+            "raw_hex": "50414944"
+          },
+          {
+            "oracle_number": "0"
+          },
+          "SHARED"
+        ],
+        [
+          "ORDERS",
+          "STATUS",
+          {
+            "oracle_number": "10000"
+          },
+          {
+            "oracle_number": "432426781261559000000000000000000000"
+          },
+          "SHIPPED",
+          {
+            "raw_hex": "53484950504544"
+          },
+          {
+            "oracle_number": "0"
+          },
+          "SHARED"
+        ]
+      ],
+      "histogram_type_observed": "FREQUENCY",
+      "is_expected_frequency": true,
+      "note": "Expected FREQUENCY with 4 buckets; if UNEXPECTED, stop before measuring Scenario B.",
+      "num_buckets_observed": 4,
+      "num_distinct_observed": 4,
+      "status": "PASS"
+    },
+    "index_stale_stats_check": {
+      "allowed": true,
+      "differences": [
+        "/effective/statistics/indexes/rows/0/22"
+      ],
+      "exception_applied": true,
+      "exception_record": {
+        "after_value": "YES",
+        "before_value": "NO",
+        "column_index": 22,
+        "column_name": "STALE_STATS",
+        "experiment_id": "E04",
+        "index_last_analyzed": {
+          "datetime": "2026-10-18T18:17:24"
+        },
+        "index_name": "ORDERS_PK",
+        "path": "/effective/statistics/indexes/rows/0/22",
+        "reason": "Derived USER_IND_STATISTICS.STALE_STATS flag transitioned NO->YES after GATHER_TABLE_STATS(..., cascade=>FALSE) advanced ORDERS.LAST_ANALYZED while preserving ORDERS_PK.LAST_ANALYZED and all numeric index statistics.",
+        "table_name": "ORDERS"
+      },
+      "reason": null
+    },
+    "non_target_column_differences": [],
+    "non_target_histogram_differences": [],
+    "other_invariant_differences": {
+      "dataset": [],
+      "explicit_preferences": [],
+      "metadata": [],
+      "preferences": [],
+      "version": []
+    },
+    "ready_for_scenario_b": true,
+    "status": "PASS"
+  },
+  "snapshot_after_gather": {
+    "columns": [
+      [
+        "CUSTOMER_ID",
+        1299,
+        0.000769822940723634,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C21460",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_DATE",
+        9997,
+        0.000100030009002701,
+        0,
+        1,
+        "NONE",
+        "787D0A10040A16",
+        "787E0A0F182B3C",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ID",
+        10000,
+        0.0001,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C302",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "STATUS",
+        4,
+        5e-05,
+        0,
+        4,
+        "FREQUENCY",
+        "43414E43454C4C4544",
+        "53484950504544",
+        "2026-10-20 03:07:11"
+      ],
+      [
+        "TOTAL_AMOUNT",
+        9654,
+        0.000103584006629376,
+        0,
+        1,
+        "NONE",
+        "C13564",
+        "C3022A5E10",
+        "2026-10-18 18:17:24"
+      ]
+    ],
+    "histogram": [
+      [
+        "CUSTOMER_ID",
+        0,
+        1
+      ],
+      [
+        "CUSTOMER_ID",
+        1,
+        1995
+      ],
+      [
+        "ORDER_DATE",
+        0,
+        2460965.13149306
+      ],
+      [
+        "ORDER_DATE",
+        1,
+        2461329.98818287
+      ],
+      [
+        "ORDER_ID",
+        0,
+        1
+      ],
+      [
+        "ORDER_ID",
+        1,
+        10000
+      ],
+      [
+        "STATUS",
+        541,
+        349208446762019000000000000000000000
+      ],
+      [
+        "STATUS",
+        1601,
+        406405534078507000000000000000000000
+      ],
+      [
+        "STATUS",
+        7477,
+        416707910007868000000000000000000000
+      ],
+      [
+        "STATUS",
+        10000,
+        432426781261559000000000000000000000
+      ],
+      [
+        "TOTAL_AMOUNT",
+        0,
+        52.99
+      ],
+      [
+        "TOTAL_AMOUNT",
+        1,
+        14193.15
+      ]
+    ],
+    "indexes": [
+      [
+        "ORDERS_PK",
+        10000,
+        18,
+        10000,
+        44,
+        1,
+        10000,
+        "2026-10-18 18:17:24"
+      ]
+    ],
+    "table": [
+      [
+        "ORDERS",
+        10000,
+        50,
+        27,
+        10000,
+        "2026-10-20 03:07:11"
+      ]
+    ]
+  },
+  "statistics_field_differences_from_original": [
+    "/effective/statistics/columns/rows/3/5/oracle_number",
+    "/effective/statistics/columns/rows/3/7/oracle_number",
+    "/effective/statistics/columns/rows/3/8/datetime",
+    "/effective/statistics/columns/rows/3/14",
+    "/effective/statistics/histograms/rows",
+    "/effective/statistics/indexes/rows/0/22",
+    "/effective/statistics/table/rows/0/21/datetime"
+  ],
+  "timestamp_utc": "2026-10-20T03:07:14.867286+00:00"
+}

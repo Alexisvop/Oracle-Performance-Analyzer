@@ -1,0 +1,2838 @@
+{
+  "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+  "timestamp_utc": "2026-10-19T04:06:58.579349+00:00",
+  "experiment_id": "E03",
+  "experiment": "sargability",
+  "scenario": "date-index",
+  "query_id": "Q07",
+  "equivalent": true,
+  "warmups": 5,
+  "repeats": 10,
+  "order_seed": 20261016,
+  "context": {
+    "profile": "small",
+    "seed": 20261016,
+    "manifest": {
+      "checksums": {
+        "CUSTOMERS": "395df2f0f86379a9a90b179ed1e02975f831e6afe67e66357a7b7dcd05f3151e",
+        "ORDERS": "ab73c989724b22af845c93be53e0a960c0ef5b2a64c76ea4044d98d2c4714dbc",
+        "ORDER_ITEMS": "9703d865ffe3860ac0421bafdf29d162b0b30172687b0a8973a6c5cda1f4c78d",
+        "PRODUCTS": "d65521ee5958c21a630e5f41131d77cc32e2a776dd1478dce707959cfa0f8bf0"
+      },
+      "config_sha256": "f3a65446503a62349f9c3c15f9145bc05f48d9e1cb9c0b7adf439596ad21f7eb",
+      "counts": {
+        "customers": 2000,
+        "order_items": 30000,
+        "orders": 10000,
+        "products": 500
+      },
+      "profile": "small",
+      "reference_date": "2026-10-16",
+      "seed": 20261016,
+      "version": 1
+    },
+    "statistics": [
+      [
+        "CUSTOMERS",
+        2000,
+        "2026-10-18 18:17:24",
+        "NO"
+      ],
+      [
+        "ORDERS",
+        10000,
+        "2026-10-18 18:17:24",
+        "NO"
+      ],
+      [
+        "ORDER_ITEMS",
+        30000,
+        "2026-10-18 18:17:24",
+        "NO"
+      ],
+      [
+        "OSPA_DATASET",
+        1,
+        "2026-10-18 17:47:08",
+        "YES"
+      ],
+      [
+        "PRODUCTS",
+        500,
+        "2026-10-18 18:17:24",
+        "NO"
+      ]
+    ],
+    "column_statistics": [
+      [
+        "CUSTOMERS",
+        "CREATED_AT",
+        362,
+        "NONE",
+        1
+      ],
+      [
+        "CUSTOMERS",
+        "CUSTOMER_ID",
+        2000,
+        "NONE",
+        1
+      ],
+      [
+        "CUSTOMERS",
+        "EMAIL",
+        2000,
+        "NONE",
+        1
+      ],
+      [
+        "CUSTOMERS",
+        "FULL_NAME",
+        2000,
+        "NONE",
+        1
+      ],
+      [
+        "CUSTOMERS",
+        "REGION",
+        5,
+        "NONE",
+        1
+      ],
+      [
+        "ORDERS",
+        "CUSTOMER_ID",
+        1299,
+        "NONE",
+        1
+      ],
+      [
+        "ORDERS",
+        "ORDER_DATE",
+        9997,
+        "NONE",
+        1
+      ],
+      [
+        "ORDERS",
+        "ORDER_ID",
+        10000,
+        "NONE",
+        1
+      ],
+      [
+        "ORDERS",
+        "STATUS",
+        4,
+        "NONE",
+        1
+      ],
+      [
+        "ORDERS",
+        "TOTAL_AMOUNT",
+        9654,
+        "NONE",
+        1
+      ],
+      [
+        "ORDER_ITEMS",
+        "ORDER_ID",
+        10000,
+        "NONE",
+        1
+      ],
+      [
+        "ORDER_ITEMS",
+        "ORDER_ITEM_ID",
+        30000,
+        "NONE",
+        1
+      ],
+      [
+        "ORDER_ITEMS",
+        "PRODUCT_ID",
+        500,
+        "NONE",
+        1
+      ],
+      [
+        "ORDER_ITEMS",
+        "QUANTITY",
+        5,
+        "NONE",
+        1
+      ],
+      [
+        "ORDER_ITEMS",
+        "UNIT_PRICE",
+        500,
+        "NONE",
+        1
+      ],
+      [
+        "OSPA_DATASET",
+        "DATASET_ID",
+        1,
+        "NONE",
+        1
+      ],
+      [
+        "OSPA_DATASET",
+        "LOADED_AT",
+        1,
+        "NONE",
+        1
+      ],
+      [
+        "OSPA_DATASET",
+        "MANIFEST",
+        1,
+        "NONE",
+        1
+      ],
+      [
+        "OSPA_DATASET",
+        "PROFILE",
+        1,
+        "NONE",
+        1
+      ],
+      [
+        "OSPA_DATASET",
+        "SEED",
+        1,
+        "NONE",
+        1
+      ],
+      [
+        "PRODUCTS",
+        "CATEGORY",
+        5,
+        "NONE",
+        1
+      ],
+      [
+        "PRODUCTS",
+        "IS_ACTIVE",
+        2,
+        "NONE",
+        1
+      ],
+      [
+        "PRODUCTS",
+        "PRODUCT_ID",
+        500,
+        "NONE",
+        1
+      ],
+      [
+        "PRODUCTS",
+        "PRODUCT_NAME",
+        500,
+        "NONE",
+        1
+      ],
+      [
+        "PRODUCTS",
+        "UNIT_PRICE",
+        500,
+        "NONE",
+        1
+      ]
+    ],
+    "indexes": [
+      [
+        "CUSTOMERS_PK",
+        "CUSTOMERS",
+        "UNIQUE"
+      ],
+      [
+        "ORDERS_PK",
+        "ORDERS",
+        "UNIQUE"
+      ],
+      [
+        "ORDER_ITEMS_PK",
+        "ORDER_ITEMS",
+        "UNIQUE"
+      ],
+      [
+        "OSPA_DATASET_PK",
+        "OSPA_DATASET",
+        "UNIQUE"
+      ],
+      [
+        "OSPA_ORDERS_DATE",
+        "ORDERS",
+        "NONUNIQUE"
+      ],
+      [
+        "PRODUCTS_PK",
+        "PRODUCTS",
+        "UNIQUE"
+      ]
+    ],
+    "bind_observations": {
+      "customer_order_count": 58,
+      "day_order_count": 113,
+      "status_counts": {
+        "PAID": 5876,
+        "SHIPPED": 2523,
+        "NEW": 1060,
+        "CANCELLED": 541
+      },
+      "status_proportions": {
+        "PAID": 0.5876,
+        "SHIPPED": 0.2523,
+        "NEW": 0.106,
+        "CANCELLED": 0.0541
+      },
+      "selection": "First synthetic email, most frequent customer, last 90 days before fixed reference, busiest day, most/least frequent observed status; ties deterministic."
+    },
+    "selected": {
+      "email": "customer00000001@example.invalid",
+      "customer_id": 155,
+      "start_date": "2026-07-18T00:00:00",
+      "end_date": "2026-10-16T00:00:00",
+      "status": "PAID",
+      "rare_status": "CANCELLED",
+      "day": "2026-09-05T00:00:00",
+      "next_day": "2026-09-06T00:00:00"
+    },
+    "oracle_version": "23.26.3.0.0",
+    "identity": [
+      "ORACLE_SPA",
+      "FREEPDB1",
+      "ORACLE_SPA"
+    ],
+    "baseline": "authorized experimental index scenario",
+    "authorized_indexes": [
+      "OSPA_ORDERS_DATE"
+    ]
+  },
+  "environment": {
+    "source_sha256": {
+      "src/oracle_spa/__init__.py": "1301cd1bcdee09ae1712a8167ee231f91110080f5a2f4c579efcd7d70bc7d21e",
+      "src/oracle_spa/analysis.py": "d6fed92d2f66c5d29e9ac92d896bf903ebfac707cf1dc2a90aa08bb58090c8b5",
+      "src/oracle_spa/benchmark.py": "89a927066048f4075a3450b3b5b22cb4cdb1e2e90a0650a5e7ee68861b1e2a52",
+      "src/oracle_spa/cli.py": "4c775bf48fe6a6259c34a6017d1d60e9454abc2d7649923d699372302e32c59a",
+      "src/oracle_spa/config.py": "268ced7b5e4274fe774081a71a75509c47b9fb218e78418f669612c057910843",
+      "src/oracle_spa/data_generator.py": "f5c6ca90346dc885ed59520325e49f9e27c386b17b17e1fafa307d64277c435b",
+      "src/oracle_spa/db.py": "06c2f43f863ebf5f80c5ed3edf47fd3d385b39a7ed05acbc15c6e3a4f960a69e",
+      "src/oracle_spa/execution.py": "7c2218a31631142e0af0713c1355a11556a1da2d0ec2d7e8cf8831b21a0b157b",
+      "src/oracle_spa/experiments.py": "e556826722c0f69433e7593c09ade811e51b7b38bb0bf8875ce3c52ef029c41c",
+      "src/oracle_spa/indexes.py": "a77b63b83b229ec5d5ffec84dd1b2db85f4518af3599478248c6a9b983bc15fb",
+      "src/oracle_spa/loader.py": "399c4a4409b3c310b9eefd42a741e1d6043598a46cf116f9e842cacd7533e228",
+      "src/oracle_spa/plans.py": "05d2e885e9c5736dcc7f639447438a6feec169220e664ecf178824a5eee9a1e6",
+      "src/oracle_spa/queries.py": "d7c214cc1f28c6abd3e2b0794746907af7d0394054f1c79147a7816421946e03",
+      "src/oracle_spa/report.py": "76a509a30dc1ef17b515656c4393275645bcd1dc7afb5b2646f074a668b476da",
+      "src/oracle_spa/schema.py": "b9641d1a0458415fa99ebdf3739f3d7f0c80ea7476106a288f4bc848c29e39bf",
+      "src/oracle_spa/statistics_experiment.py": "66a05ae0505855cbac6b04e6bffaa288267496e8da80066a3ba063d34b414c10",
+      "src/oracle_spa/stats.py": "1ea43c85a1f5f277efc54682f1edbfe8e4c17adb7f59adb4f3d96bb4d16dc7cd",
+      "src/oracle_spa/validation.py": "af583908902c46a3e2d4d4b41a2e2477812841608a9be723d34a6c93235a3563",
+      "config/datasets.json": "b281d9edbe1873587a7b62b283ea5ad27af8bc389f375d0d3b113d5666d178d9",
+      "sql/queries/Q01-baseline.sql": "e21d5f2040df43212dcaebf722b3c83fe3f2ba8f4e66d60ecfb239ab1831e77e",
+      "sql/queries/Q02-baseline.sql": "4c873f37f0cd830356b3a92a9534aca804305e3f8360b1d3be30ea7abbfa71ef",
+      "sql/queries/Q03-baseline.sql": "04988fd30abb54352cf86cf720581363c07d1d88f69d2d8179b4b9c4f0a8cc14",
+      "sql/queries/Q04-baseline.sql": "b6383f4f26b0965d3a0f2d62f56dfe2afc04b52fb9d3337b6f44fdc4e4e65967",
+      "sql/queries/Q05-baseline.sql": "0311a1979ba8b32f062adee40ca33e291b8349526195d450f65953c2c9cee75d",
+      "sql/queries/Q06-baseline.sql": "c5467aff466e73a0592af3ce6b8e46f0ac6368d802837b6248238d411bc7fa79",
+      "sql/queries/Q06-rare.sql": "c5467aff466e73a0592af3ce6b8e46f0ac6368d802837b6248238d411bc7fa79",
+      "sql/queries/Q07-baseline.sql": "5be1207db73838592217df7c41757cc2b873a194a542e5cab0ab733cd91f6e5f",
+      "sql/queries/Q07-range.sql": "2dfd15045b7d608137e7c236c845388c31d325e6136043e988a553503aa259d0",
+      "sql/queries/Q08-baseline.sql": "92ed142d94fb4f8c02ceb83d278bbf3d1803c03eb4192e83454c99ad7d2922ca"
+    },
+    "python_version": "3.14.8",
+    "driver_version": "26.0.1",
+    "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+    "clock_resolution_seconds": 1e-09
+  },
+  "metric": "client query-only execute + full fetch (including Python row collection)",
+  "environment_notes": [
+    "Warm-cache tendency, cache state not controlled.",
+    "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+    "No server CPU or actual operator counters inferred from client elapsed time."
+  ],
+  "status": "PASS",
+  "cases": {
+    "baseline": {
+      "validation": {
+        "query_id": "Q07",
+        "variant": "baseline",
+        "sql_version": 1,
+        "sql": "SELECT order_id, order_date, total_amount FROM orders WHERE TRUNC(order_date)=:day ORDER BY order_id",
+        "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+        "binds": {
+          "day": "2026-09-05T00:00:00"
+        },
+        "timestamp_utc": "2026-10-19T04:06:58.948055+00:00",
+        "context": {
+          "profile": "small",
+          "seed": 20261016,
+          "manifest": {
+            "checksums": {
+              "CUSTOMERS": "395df2f0f86379a9a90b179ed1e02975f831e6afe67e66357a7b7dcd05f3151e",
+              "ORDERS": "ab73c989724b22af845c93be53e0a960c0ef5b2a64c76ea4044d98d2c4714dbc",
+              "ORDER_ITEMS": "9703d865ffe3860ac0421bafdf29d162b0b30172687b0a8973a6c5cda1f4c78d",
+              "PRODUCTS": "d65521ee5958c21a630e5f41131d77cc32e2a776dd1478dce707959cfa0f8bf0"
+            },
+            "config_sha256": "f3a65446503a62349f9c3c15f9145bc05f48d9e1cb9c0b7adf439596ad21f7eb",
+            "counts": {
+              "customers": 2000,
+              "order_items": 30000,
+              "orders": 10000,
+              "products": 500
+            },
+            "profile": "small",
+            "reference_date": "2026-10-16",
+            "seed": 20261016,
+            "version": 1
+          },
+          "statistics": [
+            [
+              "CUSTOMERS",
+              2000,
+              "2026-10-18 18:17:24",
+              "NO"
+            ],
+            [
+              "ORDERS",
+              10000,
+              "2026-10-18 18:17:24",
+              "NO"
+            ],
+            [
+              "ORDER_ITEMS",
+              30000,
+              "2026-10-18 18:17:24",
+              "NO"
+            ],
+            [
+              "OSPA_DATASET",
+              1,
+              "2026-10-18 17:47:08",
+              "YES"
+            ],
+            [
+              "PRODUCTS",
+              500,
+              "2026-10-18 18:17:24",
+              "NO"
+            ]
+          ],
+          "column_statistics": [
+            [
+              "CUSTOMERS",
+              "CREATED_AT",
+              362,
+              "NONE",
+              1
+            ],
+            [
+              "CUSTOMERS",
+              "CUSTOMER_ID",
+              2000,
+              "NONE",
+              1
+            ],
+            [
+              "CUSTOMERS",
+              "EMAIL",
+              2000,
+              "NONE",
+              1
+            ],
+            [
+              "CUSTOMERS",
+              "FULL_NAME",
+              2000,
+              "NONE",
+              1
+            ],
+            [
+              "CUSTOMERS",
+              "REGION",
+              5,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "CUSTOMER_ID",
+              1299,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "ORDER_DATE",
+              9997,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "ORDER_ID",
+              10000,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "STATUS",
+              4,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "TOTAL_AMOUNT",
+              9654,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "ORDER_ID",
+              10000,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "ORDER_ITEM_ID",
+              30000,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "PRODUCT_ID",
+              500,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "QUANTITY",
+              5,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "UNIT_PRICE",
+              500,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "DATASET_ID",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "LOADED_AT",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "MANIFEST",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "PROFILE",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "SEED",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "CATEGORY",
+              5,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "IS_ACTIVE",
+              2,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "PRODUCT_ID",
+              500,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "PRODUCT_NAME",
+              500,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "UNIT_PRICE",
+              500,
+              "NONE",
+              1
+            ]
+          ],
+          "indexes": [
+            [
+              "CUSTOMERS_PK",
+              "CUSTOMERS",
+              "UNIQUE"
+            ],
+            [
+              "ORDERS_PK",
+              "ORDERS",
+              "UNIQUE"
+            ],
+            [
+              "ORDER_ITEMS_PK",
+              "ORDER_ITEMS",
+              "UNIQUE"
+            ],
+            [
+              "OSPA_DATASET_PK",
+              "OSPA_DATASET",
+              "UNIQUE"
+            ],
+            [
+              "OSPA_ORDERS_DATE",
+              "ORDERS",
+              "NONUNIQUE"
+            ],
+            [
+              "PRODUCTS_PK",
+              "PRODUCTS",
+              "UNIQUE"
+            ]
+          ],
+          "bind_observations": {
+            "customer_order_count": 58,
+            "day_order_count": 113,
+            "status_counts": {
+              "PAID": 5876,
+              "SHIPPED": 2523,
+              "NEW": 1060,
+              "CANCELLED": 541
+            },
+            "status_proportions": {
+              "PAID": 0.5876,
+              "SHIPPED": 0.2523,
+              "NEW": 0.106,
+              "CANCELLED": 0.0541
+            },
+            "selection": "First synthetic email, most frequent customer, last 90 days before fixed reference, busiest day, most/least frequent observed status; ties deterministic."
+          },
+          "selected": {
+            "email": "customer00000001@example.invalid",
+            "customer_id": 155,
+            "start_date": "2026-07-18T00:00:00",
+            "end_date": "2026-10-16T00:00:00",
+            "status": "PAID",
+            "rare_status": "CANCELLED",
+            "day": "2026-09-05T00:00:00",
+            "next_day": "2026-09-06T00:00:00"
+          },
+          "oracle_version": "23.26.3.0.0",
+          "identity": [
+            "ORACLE_SPA",
+            "FREEPDB1",
+            "ORACLE_SPA"
+          ],
+          "baseline": "authorized experimental index scenario",
+          "authorized_indexes": [
+            "OSPA_ORDERS_DATE"
+          ]
+        },
+        "result": {
+          "rows": 113,
+          "result_sha256": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+          "comparison": "ordered full rows"
+        },
+        "status": "PASS"
+      },
+      "plan": {
+        "timestamp_utc": "2026-10-19T04:06:58.996897+00:00",
+        "query_id": "Q07",
+        "variant": "baseline",
+        "sql": "SELECT order_id, order_date, total_amount FROM orders WHERE TRUNC(order_date)=:day ORDER BY order_id",
+        "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+        "binds": {
+          "day": "2026-09-05T00:00:00"
+        },
+        "context": {
+          "profile": "small",
+          "seed": 20261016,
+          "manifest": {
+            "checksums": {
+              "CUSTOMERS": "395df2f0f86379a9a90b179ed1e02975f831e6afe67e66357a7b7dcd05f3151e",
+              "ORDERS": "ab73c989724b22af845c93be53e0a960c0ef5b2a64c76ea4044d98d2c4714dbc",
+              "ORDER_ITEMS": "9703d865ffe3860ac0421bafdf29d162b0b30172687b0a8973a6c5cda1f4c78d",
+              "PRODUCTS": "d65521ee5958c21a630e5f41131d77cc32e2a776dd1478dce707959cfa0f8bf0"
+            },
+            "config_sha256": "f3a65446503a62349f9c3c15f9145bc05f48d9e1cb9c0b7adf439596ad21f7eb",
+            "counts": {
+              "customers": 2000,
+              "order_items": 30000,
+              "orders": 10000,
+              "products": 500
+            },
+            "profile": "small",
+            "reference_date": "2026-10-16",
+            "seed": 20261016,
+            "version": 1
+          },
+          "statistics": [
+            [
+              "CUSTOMERS",
+              2000,
+              "2026-10-18 18:17:24",
+              "NO"
+            ],
+            [
+              "ORDERS",
+              10000,
+              "2026-10-18 18:17:24",
+              "NO"
+            ],
+            [
+              "ORDER_ITEMS",
+              30000,
+              "2026-10-18 18:17:24",
+              "NO"
+            ],
+            [
+              "OSPA_DATASET",
+              1,
+              "2026-10-18 17:47:08",
+              "YES"
+            ],
+            [
+              "PRODUCTS",
+              500,
+              "2026-10-18 18:17:24",
+              "NO"
+            ]
+          ],
+          "column_statistics": [
+            [
+              "CUSTOMERS",
+              "CREATED_AT",
+              362,
+              "NONE",
+              1
+            ],
+            [
+              "CUSTOMERS",
+              "CUSTOMER_ID",
+              2000,
+              "NONE",
+              1
+            ],
+            [
+              "CUSTOMERS",
+              "EMAIL",
+              2000,
+              "NONE",
+              1
+            ],
+            [
+              "CUSTOMERS",
+              "FULL_NAME",
+              2000,
+              "NONE",
+              1
+            ],
+            [
+              "CUSTOMERS",
+              "REGION",
+              5,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "CUSTOMER_ID",
+              1299,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "ORDER_DATE",
+              9997,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "ORDER_ID",
+              10000,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "STATUS",
+              4,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "TOTAL_AMOUNT",
+              9654,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "ORDER_ID",
+              10000,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "ORDER_ITEM_ID",
+              30000,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "PRODUCT_ID",
+              500,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "QUANTITY",
+              5,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "UNIT_PRICE",
+              500,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "DATASET_ID",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "LOADED_AT",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "MANIFEST",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "PROFILE",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "SEED",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "CATEGORY",
+              5,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "IS_ACTIVE",
+              2,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "PRODUCT_ID",
+              500,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "PRODUCT_NAME",
+              500,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "UNIT_PRICE",
+              500,
+              "NONE",
+              1
+            ]
+          ],
+          "indexes": [
+            [
+              "CUSTOMERS_PK",
+              "CUSTOMERS",
+              "UNIQUE"
+            ],
+            [
+              "ORDERS_PK",
+              "ORDERS",
+              "UNIQUE"
+            ],
+            [
+              "ORDER_ITEMS_PK",
+              "ORDER_ITEMS",
+              "UNIQUE"
+            ],
+            [
+              "OSPA_DATASET_PK",
+              "OSPA_DATASET",
+              "UNIQUE"
+            ],
+            [
+              "OSPA_ORDERS_DATE",
+              "ORDERS",
+              "NONUNIQUE"
+            ],
+            [
+              "PRODUCTS_PK",
+              "PRODUCTS",
+              "UNIQUE"
+            ]
+          ],
+          "bind_observations": {
+            "customer_order_count": 58,
+            "day_order_count": 113,
+            "status_counts": {
+              "PAID": 5876,
+              "SHIPPED": 2523,
+              "NEW": 1060,
+              "CANCELLED": 541
+            },
+            "status_proportions": {
+              "PAID": 0.5876,
+              "SHIPPED": 0.2523,
+              "NEW": 0.106,
+              "CANCELLED": 0.0541
+            },
+            "selection": "First synthetic email, most frequent customer, last 90 days before fixed reference, busiest day, most/least frequent observed status; ties deterministic."
+          },
+          "selected": {
+            "email": "customer00000001@example.invalid",
+            "customer_id": 155,
+            "start_date": "2026-07-18T00:00:00",
+            "end_date": "2026-10-16T00:00:00",
+            "status": "PAID",
+            "rare_status": "CANCELLED",
+            "day": "2026-09-05T00:00:00",
+            "next_day": "2026-09-06T00:00:00"
+          },
+          "oracle_version": "23.26.3.0.0",
+          "identity": [
+            "ORACLE_SPA",
+            "FREEPDB1",
+            "ORACLE_SPA"
+          ],
+          "baseline": "authorized experimental index scenario",
+          "authorized_indexes": [
+            "OSPA_ORDERS_DATE"
+          ]
+        },
+        "type": "ESTIMATED_PLAN",
+        "cursor_plan": {
+          "type": "NOT AVAILABLE",
+          "status": "NOT VERIFIED",
+          "access": {
+            "V$SQL": "ORA-00942",
+            "V$SQL_PLAN": "ORA-00942",
+            "V$SESSION": "ORA-00942",
+            "V$SQL_PLAN_STATISTICS_ALL": "ORA-00942"
+          },
+          "reason": "Required fixed views inaccessible; no grants applied.",
+          "operator_metrics": "NOT AVAILABLE"
+        },
+        "statement_id": "OSPA_40e6243e56d34fa58efdc5657",
+        "plan_hash": 36248429,
+        "display": [
+          "Plan hash value: 36248429",
+          " ",
+          "-----------------------------------------------------------------------------",
+          "| Id  | Operation          | Name   | Rows  | Bytes | Cost (%CPU)| Time     |",
+          "-----------------------------------------------------------------------------",
+          "|   0 | SELECT STATEMENT   |        |   100 |  1700 |    16   (7)| 00:00:01 |",
+          "|   1 |  SORT ORDER BY     |        |   100 |  1700 |    16   (7)| 00:00:01 |",
+          "|*  2 |   TABLE ACCESS FULL| ORDERS |   100 |  1700 |    15   (0)| 00:00:01 |",
+          "-----------------------------------------------------------------------------",
+          " ",
+          "Query Block Name / Object Alias (identified by operation id):",
+          "-------------------------------------------------------------",
+          " ",
+          "   1 - SEL$1",
+          "   2 - SEL$1 / \"ORDERS\"@\"SEL$1\"",
+          " ",
+          "Predicate Information (identified by operation id):",
+          "---------------------------------------------------",
+          " ",
+          "   2 - filter(TRUNC(INTERNAL_FUNCTION(\"ORDER_DATE\"))=:DAY)",
+          " ",
+          "SQL Analysis Report (identified by operation id/Query Block Name/Object Alias):",
+          "-------------------------------------------------------------------------------",
+          " ",
+          "   2 -  SEL$1 / \"ORDERS\"@\"SEL$1\"",
+          "           -  The following columns have predicates which preclude their ",
+          "              use as keys in index range scan. Consider rewriting the ",
+          "              predicates.",
+          "                \"ORDER_DATE\""
+        ],
+        "warnings": [],
+        "operators": [
+          {
+            "id": 0,
+            "parent_id": null,
+            "operation": "SELECT STATEMENT",
+            "options": null,
+            "owner": null,
+            "object": null,
+            "estimated_rows": 100,
+            "optimizer_cost": 16,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 1,
+            "parent_id": 0,
+            "operation": "SORT",
+            "options": "ORDER BY",
+            "owner": null,
+            "object": null,
+            "estimated_rows": 100,
+            "optimizer_cost": 16,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 2,
+            "parent_id": 1,
+            "operation": "TABLE ACCESS",
+            "options": "FULL",
+            "owner": "ORACLE_SPA",
+            "object": "ORDERS",
+            "estimated_rows": 100,
+            "optimizer_cost": 15,
+            "access_predicates": null,
+            "filter_predicates": "TRUNC(INTERNAL_FUNCTION(\"ORDER_DATE\"))=:DAY"
+          }
+        ],
+        "status": "PASS",
+        "limitations": [
+          "Compilation estimate, not executed cursor statistics. Bind values recorded but EXPLAIN PLAN does not prove bind peeking.",
+          "Cost is not milliseconds; A-Rows/Starts/Buffers/Reads not observed.",
+          "PLAN_TABLE rows are session-private temporary DML, rolled back; no objects created."
+        ]
+      }
+    },
+    "range": {
+      "validation": {
+        "query_id": "Q07",
+        "variant": "range",
+        "sql_version": 1,
+        "sql": "SELECT order_id, order_date, total_amount FROM orders WHERE order_date>=:day AND order_date<:next_day ORDER BY order_id",
+        "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+        "binds": {
+          "day": "2026-09-05T00:00:00",
+          "next_day": "2026-09-06T00:00:00"
+        },
+        "timestamp_utc": "2026-10-19T04:06:59.312423+00:00",
+        "context": {
+          "profile": "small",
+          "seed": 20261016,
+          "manifest": {
+            "checksums": {
+              "CUSTOMERS": "395df2f0f86379a9a90b179ed1e02975f831e6afe67e66357a7b7dcd05f3151e",
+              "ORDERS": "ab73c989724b22af845c93be53e0a960c0ef5b2a64c76ea4044d98d2c4714dbc",
+              "ORDER_ITEMS": "9703d865ffe3860ac0421bafdf29d162b0b30172687b0a8973a6c5cda1f4c78d",
+              "PRODUCTS": "d65521ee5958c21a630e5f41131d77cc32e2a776dd1478dce707959cfa0f8bf0"
+            },
+            "config_sha256": "f3a65446503a62349f9c3c15f9145bc05f48d9e1cb9c0b7adf439596ad21f7eb",
+            "counts": {
+              "customers": 2000,
+              "order_items": 30000,
+              "orders": 10000,
+              "products": 500
+            },
+            "profile": "small",
+            "reference_date": "2026-10-16",
+            "seed": 20261016,
+            "version": 1
+          },
+          "statistics": [
+            [
+              "CUSTOMERS",
+              2000,
+              "2026-10-18 18:17:24",
+              "NO"
+            ],
+            [
+              "ORDERS",
+              10000,
+              "2026-10-18 18:17:24",
+              "NO"
+            ],
+            [
+              "ORDER_ITEMS",
+              30000,
+              "2026-10-18 18:17:24",
+              "NO"
+            ],
+            [
+              "OSPA_DATASET",
+              1,
+              "2026-10-18 17:47:08",
+              "YES"
+            ],
+            [
+              "PRODUCTS",
+              500,
+              "2026-10-18 18:17:24",
+              "NO"
+            ]
+          ],
+          "column_statistics": [
+            [
+              "CUSTOMERS",
+              "CREATED_AT",
+              362,
+              "NONE",
+              1
+            ],
+            [
+              "CUSTOMERS",
+              "CUSTOMER_ID",
+              2000,
+              "NONE",
+              1
+            ],
+            [
+              "CUSTOMERS",
+              "EMAIL",
+              2000,
+              "NONE",
+              1
+            ],
+            [
+              "CUSTOMERS",
+              "FULL_NAME",
+              2000,
+              "NONE",
+              1
+            ],
+            [
+              "CUSTOMERS",
+              "REGION",
+              5,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "CUSTOMER_ID",
+              1299,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "ORDER_DATE",
+              9997,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "ORDER_ID",
+              10000,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "STATUS",
+              4,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "TOTAL_AMOUNT",
+              9654,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "ORDER_ID",
+              10000,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "ORDER_ITEM_ID",
+              30000,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "PRODUCT_ID",
+              500,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "QUANTITY",
+              5,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "UNIT_PRICE",
+              500,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "DATASET_ID",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "LOADED_AT",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "MANIFEST",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "PROFILE",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "SEED",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "CATEGORY",
+              5,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "IS_ACTIVE",
+              2,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "PRODUCT_ID",
+              500,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "PRODUCT_NAME",
+              500,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "UNIT_PRICE",
+              500,
+              "NONE",
+              1
+            ]
+          ],
+          "indexes": [
+            [
+              "CUSTOMERS_PK",
+              "CUSTOMERS",
+              "UNIQUE"
+            ],
+            [
+              "ORDERS_PK",
+              "ORDERS",
+              "UNIQUE"
+            ],
+            [
+              "ORDER_ITEMS_PK",
+              "ORDER_ITEMS",
+              "UNIQUE"
+            ],
+            [
+              "OSPA_DATASET_PK",
+              "OSPA_DATASET",
+              "UNIQUE"
+            ],
+            [
+              "OSPA_ORDERS_DATE",
+              "ORDERS",
+              "NONUNIQUE"
+            ],
+            [
+              "PRODUCTS_PK",
+              "PRODUCTS",
+              "UNIQUE"
+            ]
+          ],
+          "bind_observations": {
+            "customer_order_count": 58,
+            "day_order_count": 113,
+            "status_counts": {
+              "PAID": 5876,
+              "SHIPPED": 2523,
+              "NEW": 1060,
+              "CANCELLED": 541
+            },
+            "status_proportions": {
+              "PAID": 0.5876,
+              "SHIPPED": 0.2523,
+              "NEW": 0.106,
+              "CANCELLED": 0.0541
+            },
+            "selection": "First synthetic email, most frequent customer, last 90 days before fixed reference, busiest day, most/least frequent observed status; ties deterministic."
+          },
+          "selected": {
+            "email": "customer00000001@example.invalid",
+            "customer_id": 155,
+            "start_date": "2026-07-18T00:00:00",
+            "end_date": "2026-10-16T00:00:00",
+            "status": "PAID",
+            "rare_status": "CANCELLED",
+            "day": "2026-09-05T00:00:00",
+            "next_day": "2026-09-06T00:00:00"
+          },
+          "oracle_version": "23.26.3.0.0",
+          "identity": [
+            "ORACLE_SPA",
+            "FREEPDB1",
+            "ORACLE_SPA"
+          ],
+          "baseline": "authorized experimental index scenario",
+          "authorized_indexes": [
+            "OSPA_ORDERS_DATE"
+          ]
+        },
+        "result": {
+          "rows": 113,
+          "result_sha256": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+          "comparison": "ordered full rows"
+        },
+        "status": "PASS"
+      },
+      "plan": {
+        "timestamp_utc": "2026-10-19T04:06:59.349650+00:00",
+        "query_id": "Q07",
+        "variant": "range",
+        "sql": "SELECT order_id, order_date, total_amount FROM orders WHERE order_date>=:day AND order_date<:next_day ORDER BY order_id",
+        "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+        "binds": {
+          "day": "2026-09-05T00:00:00",
+          "next_day": "2026-09-06T00:00:00"
+        },
+        "context": {
+          "profile": "small",
+          "seed": 20261016,
+          "manifest": {
+            "checksums": {
+              "CUSTOMERS": "395df2f0f86379a9a90b179ed1e02975f831e6afe67e66357a7b7dcd05f3151e",
+              "ORDERS": "ab73c989724b22af845c93be53e0a960c0ef5b2a64c76ea4044d98d2c4714dbc",
+              "ORDER_ITEMS": "9703d865ffe3860ac0421bafdf29d162b0b30172687b0a8973a6c5cda1f4c78d",
+              "PRODUCTS": "d65521ee5958c21a630e5f41131d77cc32e2a776dd1478dce707959cfa0f8bf0"
+            },
+            "config_sha256": "f3a65446503a62349f9c3c15f9145bc05f48d9e1cb9c0b7adf439596ad21f7eb",
+            "counts": {
+              "customers": 2000,
+              "order_items": 30000,
+              "orders": 10000,
+              "products": 500
+            },
+            "profile": "small",
+            "reference_date": "2026-10-16",
+            "seed": 20261016,
+            "version": 1
+          },
+          "statistics": [
+            [
+              "CUSTOMERS",
+              2000,
+              "2026-10-18 18:17:24",
+              "NO"
+            ],
+            [
+              "ORDERS",
+              10000,
+              "2026-10-18 18:17:24",
+              "NO"
+            ],
+            [
+              "ORDER_ITEMS",
+              30000,
+              "2026-10-18 18:17:24",
+              "NO"
+            ],
+            [
+              "OSPA_DATASET",
+              1,
+              "2026-10-18 17:47:08",
+              "YES"
+            ],
+            [
+              "PRODUCTS",
+              500,
+              "2026-10-18 18:17:24",
+              "NO"
+            ]
+          ],
+          "column_statistics": [
+            [
+              "CUSTOMERS",
+              "CREATED_AT",
+              362,
+              "NONE",
+              1
+            ],
+            [
+              "CUSTOMERS",
+              "CUSTOMER_ID",
+              2000,
+              "NONE",
+              1
+            ],
+            [
+              "CUSTOMERS",
+              "EMAIL",
+              2000,
+              "NONE",
+              1
+            ],
+            [
+              "CUSTOMERS",
+              "FULL_NAME",
+              2000,
+              "NONE",
+              1
+            ],
+            [
+              "CUSTOMERS",
+              "REGION",
+              5,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "CUSTOMER_ID",
+              1299,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "ORDER_DATE",
+              9997,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "ORDER_ID",
+              10000,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "STATUS",
+              4,
+              "NONE",
+              1
+            ],
+            [
+              "ORDERS",
+              "TOTAL_AMOUNT",
+              9654,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "ORDER_ID",
+              10000,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "ORDER_ITEM_ID",
+              30000,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "PRODUCT_ID",
+              500,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "QUANTITY",
+              5,
+              "NONE",
+              1
+            ],
+            [
+              "ORDER_ITEMS",
+              "UNIT_PRICE",
+              500,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "DATASET_ID",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "LOADED_AT",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "MANIFEST",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "PROFILE",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "OSPA_DATASET",
+              "SEED",
+              1,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "CATEGORY",
+              5,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "IS_ACTIVE",
+              2,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "PRODUCT_ID",
+              500,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "PRODUCT_NAME",
+              500,
+              "NONE",
+              1
+            ],
+            [
+              "PRODUCTS",
+              "UNIT_PRICE",
+              500,
+              "NONE",
+              1
+            ]
+          ],
+          "indexes": [
+            [
+              "CUSTOMERS_PK",
+              "CUSTOMERS",
+              "UNIQUE"
+            ],
+            [
+              "ORDERS_PK",
+              "ORDERS",
+              "UNIQUE"
+            ],
+            [
+              "ORDER_ITEMS_PK",
+              "ORDER_ITEMS",
+              "UNIQUE"
+            ],
+            [
+              "OSPA_DATASET_PK",
+              "OSPA_DATASET",
+              "UNIQUE"
+            ],
+            [
+              "OSPA_ORDERS_DATE",
+              "ORDERS",
+              "NONUNIQUE"
+            ],
+            [
+              "PRODUCTS_PK",
+              "PRODUCTS",
+              "UNIQUE"
+            ]
+          ],
+          "bind_observations": {
+            "customer_order_count": 58,
+            "day_order_count": 113,
+            "status_counts": {
+              "PAID": 5876,
+              "SHIPPED": 2523,
+              "NEW": 1060,
+              "CANCELLED": 541
+            },
+            "status_proportions": {
+              "PAID": 0.5876,
+              "SHIPPED": 0.2523,
+              "NEW": 0.106,
+              "CANCELLED": 0.0541
+            },
+            "selection": "First synthetic email, most frequent customer, last 90 days before fixed reference, busiest day, most/least frequent observed status; ties deterministic."
+          },
+          "selected": {
+            "email": "customer00000001@example.invalid",
+            "customer_id": 155,
+            "start_date": "2026-07-18T00:00:00",
+            "end_date": "2026-10-16T00:00:00",
+            "status": "PAID",
+            "rare_status": "CANCELLED",
+            "day": "2026-09-05T00:00:00",
+            "next_day": "2026-09-06T00:00:00"
+          },
+          "oracle_version": "23.26.3.0.0",
+          "identity": [
+            "ORACLE_SPA",
+            "FREEPDB1",
+            "ORACLE_SPA"
+          ],
+          "baseline": "authorized experimental index scenario",
+          "authorized_indexes": [
+            "OSPA_ORDERS_DATE"
+          ]
+        },
+        "type": "ESTIMATED_PLAN",
+        "cursor_plan": {
+          "type": "NOT AVAILABLE",
+          "status": "NOT VERIFIED",
+          "access": {
+            "V$SQL": "ORA-00942",
+            "V$SQL_PLAN": "ORA-00942",
+            "V$SESSION": "ORA-00942",
+            "V$SQL_PLAN_STATISTICS_ALL": "ORA-00942"
+          },
+          "reason": "Required fixed views inaccessible; no grants applied.",
+          "operator_metrics": "NOT AVAILABLE"
+        },
+        "statement_id": "OSPA_8b1e3d67ca1944e98e1525c6c",
+        "plan_hash": 488376564,
+        "display": [
+          "Plan hash value: 488376564",
+          " ",
+          "----------------------------------------------------------------------------------------------------------",
+          "| Id  | Operation                             | Name             | Rows  | Bytes | Cost (%CPU)| Time     |",
+          "----------------------------------------------------------------------------------------------------------",
+          "|   0 | SELECT STATEMENT                      |                  |    25 |   425 |    15   (7)| 00:00:01 |",
+          "|   1 |  SORT ORDER BY                        |                  |    25 |   425 |    15   (7)| 00:00:01 |",
+          "|*  2 |   FILTER                              |                  |       |       |            |          |",
+          "|   3 |    TABLE ACCESS BY INDEX ROWID BATCHED| ORDERS           |    25 |   425 |    14   (0)| 00:00:01 |",
+          "|*  4 |     INDEX RANGE SCAN                  | OSPA_ORDERS_DATE |    45 |       |     2   (0)| 00:00:01 |",
+          "----------------------------------------------------------------------------------------------------------",
+          " ",
+          "Query Block Name / Object Alias (identified by operation id):",
+          "-------------------------------------------------------------",
+          " ",
+          "   1 - SEL$1",
+          "   3 - SEL$1 / \"ORDERS\"@\"SEL$1\"",
+          "   4 - SEL$1 / \"ORDERS\"@\"SEL$1\"",
+          " ",
+          "Predicate Information (identified by operation id):",
+          "---------------------------------------------------",
+          " ",
+          "   2 - filter(:NEXT_DAY>:DAY)",
+          "   4 - access(\"ORDER_DATE\">=:DAY AND \"ORDER_DATE\"<:NEXT_DAY)"
+        ],
+        "warnings": [],
+        "operators": [
+          {
+            "id": 0,
+            "parent_id": null,
+            "operation": "SELECT STATEMENT",
+            "options": null,
+            "owner": null,
+            "object": null,
+            "estimated_rows": 25,
+            "optimizer_cost": 15,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 1,
+            "parent_id": 0,
+            "operation": "SORT",
+            "options": "ORDER BY",
+            "owner": null,
+            "object": null,
+            "estimated_rows": 25,
+            "optimizer_cost": 15,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 2,
+            "parent_id": 1,
+            "operation": "FILTER",
+            "options": null,
+            "owner": null,
+            "object": null,
+            "estimated_rows": null,
+            "optimizer_cost": null,
+            "access_predicates": null,
+            "filter_predicates": ":NEXT_DAY>:DAY"
+          },
+          {
+            "id": 3,
+            "parent_id": 2,
+            "operation": "TABLE ACCESS",
+            "options": "BY INDEX ROWID BATCHED",
+            "owner": "ORACLE_SPA",
+            "object": "ORDERS",
+            "estimated_rows": 25,
+            "optimizer_cost": 14,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 4,
+            "parent_id": 3,
+            "operation": "INDEX",
+            "options": "RANGE SCAN",
+            "owner": "ORACLE_SPA",
+            "object": "OSPA_ORDERS_DATE",
+            "estimated_rows": 45,
+            "optimizer_cost": 2,
+            "access_predicates": "\"ORDER_DATE\">=:DAY AND \"ORDER_DATE\"<:NEXT_DAY",
+            "filter_predicates": null
+          }
+        ],
+        "status": "PASS",
+        "limitations": [
+          "Compilation estimate, not executed cursor statistics. Bind values recorded but EXPLAIN PLAN does not prove bind peeking.",
+          "Cost is not milliseconds; A-Rows/Starts/Buffers/Reads not observed.",
+          "PLAN_TABLE rows are session-private temporary DML, rolled back; no objects created."
+        ]
+      }
+    }
+  },
+  "samples": [
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-1",
+      "timestamp_utc": "2026-10-19T04:07:03.285436+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "range",
+      "scenario": "date-index",
+      "sequence": 1,
+      "repetition": 1,
+      "warmup": true,
+      "elapsed_ms": 1.465437,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 488376564,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-2",
+      "timestamp_utc": "2026-10-19T04:07:03.411596+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "baseline",
+      "scenario": "date-index",
+      "sequence": 2,
+      "repetition": 1,
+      "warmup": true,
+      "elapsed_ms": 3.49756,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 36248429,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-3",
+      "timestamp_utc": "2026-10-19T04:07:03.556411+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "baseline",
+      "scenario": "date-index",
+      "sequence": 3,
+      "repetition": 2,
+      "warmup": true,
+      "elapsed_ms": 3.068452,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 36248429,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-4",
+      "timestamp_utc": "2026-10-19T04:07:03.689510+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "range",
+      "scenario": "date-index",
+      "sequence": 4,
+      "repetition": 2,
+      "warmup": true,
+      "elapsed_ms": 1.943465,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 488376564,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-5",
+      "timestamp_utc": "2026-10-19T04:07:03.816700+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "baseline",
+      "scenario": "date-index",
+      "sequence": 5,
+      "repetition": 3,
+      "warmup": true,
+      "elapsed_ms": 2.857952,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 36248429,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-6",
+      "timestamp_utc": "2026-10-19T04:07:03.934780+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "range",
+      "scenario": "date-index",
+      "sequence": 6,
+      "repetition": 3,
+      "warmup": true,
+      "elapsed_ms": 1.732687,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 488376564,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-7",
+      "timestamp_utc": "2026-10-19T04:07:04.049189+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "baseline",
+      "scenario": "date-index",
+      "sequence": 7,
+      "repetition": 4,
+      "warmup": true,
+      "elapsed_ms": 3.170437,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 36248429,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-8",
+      "timestamp_utc": "2026-10-19T04:07:04.166866+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "range",
+      "scenario": "date-index",
+      "sequence": 8,
+      "repetition": 4,
+      "warmup": true,
+      "elapsed_ms": 1.645243,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 488376564,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-9",
+      "timestamp_utc": "2026-10-19T04:07:04.282444+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "range",
+      "scenario": "date-index",
+      "sequence": 9,
+      "repetition": 5,
+      "warmup": true,
+      "elapsed_ms": 1.611255,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 488376564,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-10",
+      "timestamp_utc": "2026-10-19T04:07:04.397738+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "baseline",
+      "scenario": "date-index",
+      "sequence": 10,
+      "repetition": 5,
+      "warmup": true,
+      "elapsed_ms": 3.075028,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 36248429,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-11",
+      "timestamp_utc": "2026-10-19T04:07:04.515107+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "range",
+      "scenario": "date-index",
+      "sequence": 11,
+      "repetition": 1,
+      "warmup": false,
+      "elapsed_ms": 1.57948,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 488376564,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-12",
+      "timestamp_utc": "2026-10-19T04:07:04.633110+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "baseline",
+      "scenario": "date-index",
+      "sequence": 12,
+      "repetition": 1,
+      "warmup": false,
+      "elapsed_ms": 3.172247,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 36248429,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-13",
+      "timestamp_utc": "2026-10-19T04:07:04.750776+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "range",
+      "scenario": "date-index",
+      "sequence": 13,
+      "repetition": 2,
+      "warmup": false,
+      "elapsed_ms": 1.803914,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 488376564,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-14",
+      "timestamp_utc": "2026-10-19T04:07:04.866956+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "baseline",
+      "scenario": "date-index",
+      "sequence": 14,
+      "repetition": 2,
+      "warmup": false,
+      "elapsed_ms": 3.031564,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 36248429,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-15",
+      "timestamp_utc": "2026-10-19T04:07:04.984667+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "baseline",
+      "scenario": "date-index",
+      "sequence": 15,
+      "repetition": 3,
+      "warmup": false,
+      "elapsed_ms": 3.044417,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 36248429,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-16",
+      "timestamp_utc": "2026-10-19T04:07:05.101887+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "range",
+      "scenario": "date-index",
+      "sequence": 16,
+      "repetition": 3,
+      "warmup": false,
+      "elapsed_ms": 1.752144,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 488376564,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-17",
+      "timestamp_utc": "2026-10-19T04:07:05.226858+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "range",
+      "scenario": "date-index",
+      "sequence": 17,
+      "repetition": 4,
+      "warmup": false,
+      "elapsed_ms": 1.797692,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 488376564,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-18",
+      "timestamp_utc": "2026-10-19T04:07:05.352664+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "baseline",
+      "scenario": "date-index",
+      "sequence": 18,
+      "repetition": 4,
+      "warmup": false,
+      "elapsed_ms": 3.062724,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 36248429,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-19",
+      "timestamp_utc": "2026-10-19T04:07:05.473718+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "range",
+      "scenario": "date-index",
+      "sequence": 19,
+      "repetition": 5,
+      "warmup": false,
+      "elapsed_ms": 1.929173,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 488376564,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-20",
+      "timestamp_utc": "2026-10-19T04:07:05.631796+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "baseline",
+      "scenario": "date-index",
+      "sequence": 20,
+      "repetition": 5,
+      "warmup": false,
+      "elapsed_ms": 3.007138,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 36248429,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-21",
+      "timestamp_utc": "2026-10-19T04:07:05.749853+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "range",
+      "scenario": "date-index",
+      "sequence": 21,
+      "repetition": 6,
+      "warmup": false,
+      "elapsed_ms": 1.808577,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 488376564,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-22",
+      "timestamp_utc": "2026-10-19T04:07:05.867089+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "baseline",
+      "scenario": "date-index",
+      "sequence": 22,
+      "repetition": 6,
+      "warmup": false,
+      "elapsed_ms": 2.797288,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 36248429,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-23",
+      "timestamp_utc": "2026-10-19T04:07:05.984823+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "range",
+      "scenario": "date-index",
+      "sequence": 23,
+      "repetition": 7,
+      "warmup": false,
+      "elapsed_ms": 1.807439,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 488376564,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-24",
+      "timestamp_utc": "2026-10-19T04:07:06.112408+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "baseline",
+      "scenario": "date-index",
+      "sequence": 24,
+      "repetition": 7,
+      "warmup": false,
+      "elapsed_ms": 4.268222,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 36248429,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-25",
+      "timestamp_utc": "2026-10-19T04:07:06.243872+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "baseline",
+      "scenario": "date-index",
+      "sequence": 25,
+      "repetition": 8,
+      "warmup": false,
+      "elapsed_ms": 3.667764,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 36248429,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-26",
+      "timestamp_utc": "2026-10-19T04:07:06.367413+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "range",
+      "scenario": "date-index",
+      "sequence": 26,
+      "repetition": 8,
+      "warmup": false,
+      "elapsed_ms": 1.4457,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 488376564,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-27",
+      "timestamp_utc": "2026-10-19T04:07:06.482962+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "baseline",
+      "scenario": "date-index",
+      "sequence": 27,
+      "repetition": 9,
+      "warmup": false,
+      "elapsed_ms": 3.1196,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 36248429,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-28",
+      "timestamp_utc": "2026-10-19T04:07:06.601533+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "range",
+      "scenario": "date-index",
+      "sequence": 28,
+      "repetition": 9,
+      "warmup": false,
+      "elapsed_ms": 1.32199,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 488376564,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-29",
+      "timestamp_utc": "2026-10-19T04:07:06.719371+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "baseline",
+      "scenario": "date-index",
+      "sequence": 29,
+      "repetition": 10,
+      "warmup": false,
+      "elapsed_ms": 4.336119,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 36248429,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "84fb8579efa7a1b9ee39e0597bb97d3a5699a591a09cc4d466ac662fa235f1bd",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    },
+    {
+      "oracle_image_digest": "sha256:c4d9b15a1b2240ce90730c23ce298fcdd34f6793792c1b3849181a080009c322",
+      "python_version": "3.14.8",
+      "driver_version": "26.0.1",
+      "run_id": "514f51728fe54076b45f2c2d4f7a3ef2",
+      "sample_id": "514f51728fe54076b45f2c2d4f7a3ef2-30",
+      "timestamp_utc": "2026-10-19T04:07:06.843827+00:00",
+      "oracle_version": "23.26.3.0.0",
+      "dataset_profile": "small",
+      "seed": 20261016,
+      "experiment_id": "E03",
+      "query_id": "Q07",
+      "variant": "range",
+      "scenario": "date-index",
+      "sequence": 30,
+      "repetition": 10,
+      "warmup": false,
+      "elapsed_ms": 1.790895,
+      "returned_rows": 113,
+      "result_checksum": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "plan_hash_or_id": 488376564,
+      "plan_capture_type": "ESTIMATED_PLAN",
+      "sql_sha256": "30a49c2db9620b80429ae42942b5238096b5d2cd22b7948199a7d4b07b2514a9",
+      "sql_error": null,
+      "status": "PASS",
+      "environment_notes": [
+        "Warm-cache tendency, cache state not controlled.",
+        "One index state per run; DDL states are separate blocks, not per-repetition alternation.",
+        "No server CPU or actual operator counters inferred from client elapsed time."
+      ]
+    }
+  ],
+  "session": {
+    "nls": [
+      [
+        "NLS_CALENDAR",
+        "GREGORIAN"
+      ],
+      [
+        "NLS_COMP",
+        "BINARY"
+      ],
+      [
+        "NLS_CURRENCY",
+        "$"
+      ],
+      [
+        "NLS_DATE_FORMAT",
+        "DD-MON-RR"
+      ],
+      [
+        "NLS_DATE_LANGUAGE",
+        "AMERICAN"
+      ],
+      [
+        "NLS_DUAL_CURRENCY",
+        "$"
+      ],
+      [
+        "NLS_ISO_CURRENCY",
+        "AMERICA"
+      ],
+      [
+        "NLS_LANGUAGE",
+        "AMERICAN"
+      ],
+      [
+        "NLS_LENGTH_SEMANTICS",
+        "BYTE"
+      ],
+      [
+        "NLS_NCHAR_CONV_EXCP",
+        "FALSE"
+      ],
+      [
+        "NLS_NUMERIC_CHARACTERS",
+        ".,"
+      ],
+      [
+        "NLS_SORT",
+        "BINARY"
+      ],
+      [
+        "NLS_TERRITORY",
+        "AMERICA"
+      ],
+      [
+        "NLS_TIMESTAMP_FORMAT",
+        "DD-MON-RR HH.MI.SSXFF AM"
+      ],
+      [
+        "NLS_TIMESTAMP_TZ_FORMAT",
+        "DD-MON-RR HH.MI.SSXFF AM TZR"
+      ],
+      [
+        "NLS_TIME_FORMAT",
+        "HH.MI.SSXFF AM"
+      ],
+      [
+        "NLS_TIME_TZ_FORMAT",
+        "HH.MI.SSXFF AM TZR"
+      ]
+    ],
+    "timezones": [
+      "-06:00",
+      "+00:00"
+    ],
+    "transaction_mode": "SET TRANSACTION READ ONLY explicitly executed",
+    "arraysize": 500,
+    "prefetchrows": 2,
+    "call_timeout_ms": 30000,
+    "optimizer_session_parameters": "NOT AVAILABLE without additional privileges; no parameters changed"
+  },
+  "controls_unchanged": true
+}

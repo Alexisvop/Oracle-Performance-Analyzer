@@ -1,0 +1,17 @@
+{
+  "confirmation": "ORACLE_SPA/FREEPDB1/import-recovery/89d190c96d78a50ef515a34d553e0671eac29e2958be7375138723bef15f2026",
+  "contents_sha256": "50c589979881092e7b9adebf11dde2c9394324146f24e48899864764c0ad67ae",
+  "observed_sha256": "4ee61105de04af08713a8dc3eceecc96f28e5e5ba749499e5386bcadf8f59e63",
+  "operation": "import-recovery",
+  "original_sha256": "6a905d2249e93f0afea00cd0deeb65f9906a1af8953184e60706446f7d822eb7",
+  "sql": "BEGIN DBMS_STATS.IMPORT_TABLE_STATS(\n ownname=>'ORACLE_SPA', tabname=>'ORDERS', partname=>NULL,\n stattab=>'OSPA_ORDERS_STATS_BAK', statid=>'B_ORIGINAL_V1',\n cascade=>TRUE, statown=>'ORACLE_SPA', no_invalidate=>FALSE,\n force=>FALSE, stat_category=>'OBJECT_STATS'); END;",
+  "status": "PASS",
+  "structure_sha256": "49141e035f5dd7debbf47ef7db7b3ed5835790897e3259b3113f955380f6a97b",
+  "verification": {
+    "after_sha256": "6a905d2249e93f0afea00cd0deeb65f9906a1af8953184e60706446f7d822eb7",
+    "before_sha256": "6a905d2249e93f0afea00cd0deeb65f9906a1af8953184e60706446f7d822eb7",
+    "differences": [],
+    "history_changed": true,
+    "status": "PASS"
+  }
+}

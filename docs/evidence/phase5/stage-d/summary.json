@@ -1,0 +1,28 @@
+{
+  "stage": "Phase 5 — Stage D: Professional Portfolio, Reproducible Demonstration and Final Acceptance",
+  "recorded_at_utc": "2026-10-21T03:55:00+00:00",
+  "status": "PASS",
+  "live_oracle_verification": {
+    "stage_d_live_execution": "PENDING (container stopped)",
+    "last_verified_live_readonly_audit": "PASS (18/18 checks and 4/4 live integration tests in Phase 5 Stage A, docs/evidence/phase5/stage-a/summary.json)"
+  },
+  "offline_demonstration_flow_a": {
+    "executed": true,
+    "pip_check_exit_code": 0,
+    "compileall_exit_code": 0,
+    "git_diff_check_exit_code": 0,
+    "unit_tests_passed": 180,
+    "unit_subtests_passed": 55,
+    "unit_tests_failed": 0,
+    "unit_tests_exit_code": 0,
+    "report_all_exit_code": 0,
+    "report_all_second_run_diff_exit_code": 0,
+    "manifest_input_files_verified": 40,
+    "manifest_output_files_verified": 12,
+    "recalculated_matches_historical": true
+  },
+  "constraints_respected": {
+    "no_ddl_dml_grant_or_dbms_stats_executed": true,
+    "no_group_c_implemented": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "columns": [
+    "REPORT",
+    "MAXDIFFPCT"
+  ],
+  "rows": [
+    [
+      "###############################################################################\n\nSTATISTICS DIFFERENCE REPORT FOR:\n.................................\n\nTABLE         : ORDERS\nOWNER         : ORACLE_SPA\nSOURCE A      : User statistics table OSPA_ORDERS_STATS_BAK\n              : Statid     : B_ORIGINAL_V1\n              : Owner      : ORACLE_SPA\nSOURCE B      : Current Statistics in dictionary\nPCTTHRESHOLD  : 0\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n\nNO DIFFERENCE IN TABLE / (SUB)PARTITION STATISTICS\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n\nNO DIFFERENCE IN COLUMN STATISTICS\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n\nNO DIFFERENCE IN INDEX / (SUB)PARTITION STATISTICS\n###############################################################################\n\n",
+      {
+        "oracle_number": "0"
+      }
+    ]
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "default_seed": 20261016,
+  "reference_date": "2026-10-16",
+  "batch_size": 500,
+  "profiles": {
+    "tiny": {"customers": 200, "products": 50, "orders": 1000, "order_items": 3000},
+    "small": {"customers": 2000, "products": 500, "orders": 10000, "order_items": 30000},
+    "medium": {"customers": 10000, "products": 2000, "orders": 50000, "order_items": 150000},
+    "large": {"customers": 20000, "products": 5000, "orders": 100000, "order_items": 300000}
+  }
+}

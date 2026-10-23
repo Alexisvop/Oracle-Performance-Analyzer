@@ -1,0 +1,993 @@
+{
+  "effective": {
+    "dataset": {
+      "checksums": {
+        "CUSTOMERS": "395df2f0f86379a9a90b179ed1e02975f831e6afe67e66357a7b7dcd05f3151e",
+        "ORDERS": "ab73c989724b22af845c93be53e0a960c0ef5b2a64c76ea4044d98d2c4714dbc",
+        "ORDER_ITEMS": "9703d865ffe3860ac0421bafdf29d162b0b30172687b0a8973a6c5cda1f4c78d",
+        "PRODUCTS": "d65521ee5958c21a630e5f41131d77cc32e2a776dd1478dce707959cfa0f8bf0"
+      },
+      "counts": {
+        "CUSTOMERS": 2000,
+        "ORDERS": 10000,
+        "ORDER_ITEMS": 30000,
+        "PRODUCTS": 500
+      },
+      "distributions": {
+        "category": {
+          "BOOKS": 254,
+          "HOME": 101,
+          "SPORT": 75,
+          "TECH": 50,
+          "TOYS": 20
+        },
+        "orders_hot_customers": 8305,
+        "region": {
+          "CENTRAL": 415,
+          "EAST": 387,
+          "NORTH": 411,
+          "SOUTH": 379,
+          "WEST": 408
+        },
+        "status": {
+          "CANCELLED": 541,
+          "NEW": 1060,
+          "PAID": 5876,
+          "SHIPPED": 2523
+        }
+      },
+      "profile": "small",
+      "seed": 20261016,
+      "status": "PASS"
+    },
+    "metadata": {
+      "columns": [
+        "DATASET_ID",
+        "PROFILE",
+        "SEED",
+        "MANIFEST",
+        "LOADED_AT"
+      ],
+      "rows": [
+        [
+          {
+            "oracle_number": "1"
+          },
+          "small",
+          {
+            "oracle_number": "20261016"
+          },
+          "{\"checksums\": {\"CUSTOMERS\": \"395df2f0f86379a9a90b179ed1e02975f831e6afe67e66357a7b7dcd05f3151e\", \"ORDERS\": \"ab73c989724b22af845c93be53e0a960c0ef5b2a64c76ea4044d98d2c4714dbc\", \"ORDER_ITEMS\": \"9703d865ffe3860ac0421bafdf29d162b0b30172687b0a8973a6c5cda1f4c78d\", \"PRODUCTS\": \"d65521ee5958c21a630e5f41131d77cc32e2a776dd1478dce707959cfa0f8bf0\"}, \"config_sha256\": \"f3a65446503a62349f9c3c15f9145bc05f48d9e1cb9c0b7adf439596ad21f7eb\", \"counts\": {\"customers\": 2000, \"order_items\": 30000, \"orders\": 10000, \"products\": 500}, \"profile\": \"small\", \"reference_date\": \"2026-10-16\", \"seed\": 20261016, \"version\": 1}",
+          {
+            "datetime": "2026-10-18T18:16:47"
+          }
+        ]
+      ]
+    },
+    "preferences": {
+      "CASCADE": {
+        "columns": [
+          "DBMS_STATS.GET_PREFS(:PREF,'ORACLE_SPA','ORDERS')"
+        ],
+        "rows": [
+          [
+            "DBMS_STATS.AUTO_CASCADE"
+          ]
+        ]
+      },
+      "DEGREE": {
+        "columns": [
+          "DBMS_STATS.GET_PREFS(:PREF,'ORACLE_SPA','ORDERS')"
+        ],
+        "rows": [
+          [
+            "NULL"
+          ]
+        ]
+      },
+      "ESTIMATE_PERCENT": {
+        "columns": [
+          "DBMS_STATS.GET_PREFS(:PREF,'ORACLE_SPA','ORDERS')"
+        ],
+        "rows": [
+          [
+            "DBMS_STATS.AUTO_SAMPLE_SIZE"
+          ]
+        ]
+      },
+      "GRANULARITY": {
+        "columns": [
+          "DBMS_STATS.GET_PREFS(:PREF,'ORACLE_SPA','ORDERS')"
+        ],
+        "rows": [
+          [
+            "AUTO"
+          ]
+        ]
+      },
+      "INCREMENTAL": {
+        "columns": [
+          "DBMS_STATS.GET_PREFS(:PREF,'ORACLE_SPA','ORDERS')"
+        ],
+        "rows": [
+          [
+            "FALSE"
+          ]
+        ]
+      },
+      "METHOD_OPT": {
+        "columns": [
+          "DBMS_STATS.GET_PREFS(:PREF,'ORACLE_SPA','ORDERS')"
+        ],
+        "rows": [
+          [
+            "FOR ALL COLUMNS SIZE AUTO"
+          ]
+        ]
+      },
+      "NO_INVALIDATE": {
+        "columns": [
+          "DBMS_STATS.GET_PREFS(:PREF,'ORACLE_SPA','ORDERS')"
+        ],
+        "rows": [
+          [
+            "DBMS_STATS.AUTO_INVALIDATE"
+          ]
+        ]
+      },
+      "PREFERENCE_OVERRIDES_PARAMETER": {
+        "columns": [
+          "DBMS_STATS.GET_PREFS(:PREF,'ORACLE_SPA','ORDERS')"
+        ],
+        "rows": [
+          [
+            "FALSE"
+          ]
+        ]
+      },
+      "PUBLISH": {
+        "columns": [
+          "DBMS_STATS.GET_PREFS(:PREF,'ORACLE_SPA','ORDERS')"
+        ],
+        "rows": [
+          [
+            "TRUE"
+          ]
+        ]
+      }
+    },
+    "statistics": {
+      "columns": {
+        "columns": [
+          "TABLE_NAME",
+          "COLUMN_NAME",
+          "NUM_DISTINCT",
+          "LOW_VALUE",
+          "HIGH_VALUE",
+          "DENSITY",
+          "NUM_NULLS",
+          "NUM_BUCKETS",
+          "LAST_ANALYZED",
+          "SAMPLE_SIZE",
+          "GLOBAL_STATS",
+          "USER_STATS",
+          "NOTES",
+          "AVG_COL_LEN",
+          "HISTOGRAM",
+          "SCOPE"
+        ],
+        "rows": [
+          [
+            "ORDERS",
+            "CUSTOMER_ID",
+            {
+              "oracle_number": "1299"
+            },
+            {
+              "raw_hex": "C102"
+            },
+            {
+              "raw_hex": "C21460"
+            },
+            {
+              "oracle_number": "0.000769822940723634"
+            },
+            {
+              "oracle_number": "0"
+            },
+            {
+              "oracle_number": "1"
+            },
+            {
+              "datetime": "2026-10-18T18:17:24"
+            },
+            {
+              "oracle_number": "10000"
+            },
+            "YES",
+            "NO",
+            null,
+            {
+              "oracle_number": "4"
+            },
+            "NONE",
+            "SHARED"
+          ],
+          [
+            "ORDERS",
+            "ORDER_DATE",
+            {
+              "oracle_number": "9997"
+            },
+            {
+              "raw_hex": "787D0A10040A16"
+            },
+            {
+              "raw_hex": "787E0A0F182B3C"
+            },
+            {
+              "oracle_number": "0.000100030009002701"
+            },
+            {
+              "oracle_number": "0"
+            },
+            {
+              "oracle_number": "1"
+            },
+            {
+              "datetime": "2026-10-18T18:17:24"
+            },
+            {
+              "oracle_number": "10000"
+            },
+            "YES",
+            "NO",
+            null,
+            {
+              "oracle_number": "8"
+            },
+            "NONE",
+            "SHARED"
+          ],
+          [
+            "ORDERS",
+            "ORDER_ID",
+            {
+              "oracle_number": "10000"
+            },
+            {
+              "raw_hex": "C102"
+            },
+            {
+              "raw_hex": "C302"
+            },
+            {
+              "oracle_number": "0.0001"
+            },
+            {
+              "oracle_number": "0"
+            },
+            {
+              "oracle_number": "1"
+            },
+            {
+              "datetime": "2026-10-18T18:17:24"
+            },
+            {
+              "oracle_number": "10000"
+            },
+            "YES",
+            "NO",
+            null,
+            {
+              "oracle_number": "4"
+            },
+            "NONE",
+            "SHARED"
+          ],
+          [
+            "ORDERS",
+            "STATUS",
+            {
+              "oracle_number": "4"
+            },
+            {
+              "raw_hex": "43414E43454C4C4544"
+            },
+            {
+              "raw_hex": "53484950504544"
+            },
+            {
+              "oracle_number": "0.00005"
+            },
+            {
+              "oracle_number": "0"
+            },
+            {
+              "oracle_number": "4"
+            },
+            {
+              "datetime": "2026-10-20T02:16:12"
+            },
+            {
+              "oracle_number": "10000"
+            },
+            "YES",
+            "NO",
+            null,
+            {
+              "oracle_number": "6"
+            },
+            "FREQUENCY",
+            "SHARED"
+          ],
+          [
+            "ORDERS",
+            "TOTAL_AMOUNT",
+            {
+              "oracle_number": "9654"
+            },
+            {
+              "raw_hex": "C13564"
+            },
+            {
+              "raw_hex": "C3022A5E10"
+            },
+            {
+              "oracle_number": "0.000103584006629376"
+            },
+            {
+              "oracle_number": "0"
+            },
+            {
+              "oracle_number": "1"
+            },
+            {
+              "datetime": "2026-10-18T18:17:24"
+            },
+            {
+              "oracle_number": "10000"
+            },
+            "YES",
+            "NO",
+            null,
+            {
+              "oracle_number": "5"
+            },
+            "NONE",
+            "SHARED"
+          ]
+        ]
+      },
+      "explicit_preferences": {
+        "columns": [
+          "TABLE_NAME",
+          "PREFERENCE_NAME",
+          "PREFERENCE_VALUE"
+        ],
+        "rows": []
+      },
+      "histograms": {
+        "columns": [
+          "TABLE_NAME",
+          "COLUMN_NAME",
+          "ENDPOINT_NUMBER",
+          "ENDPOINT_VALUE",
+          "ENDPOINT_ACTUAL_VALUE",
+          "ENDPOINT_ACTUAL_VALUE_RAW",
+          "ENDPOINT_REPEAT_COUNT",
+          "SCOPE"
+        ],
+        "rows": [
+          [
+            "ORDERS",
+            "CUSTOMER_ID",
+            {
+              "oracle_number": "0"
+            },
+            {
+              "oracle_number": "1"
+            },
+            null,
+            null,
+            {
+              "oracle_number": "0"
+            },
+            "SHARED"
+          ],
+          [
+            "ORDERS",
+            "CUSTOMER_ID",
+            {
+              "oracle_number": "1"
+            },
+            {
+              "oracle_number": "1995"
+            },
+            null,
+            null,
+            {
+              "oracle_number": "0"
+            },
+            "SHARED"
+          ],
+          [
+            "ORDERS",
+            "ORDER_DATE",
+            {
+              "oracle_number": "0"
+            },
+            {
+              "oracle_number": "2460965.13149306"
+            },
+            null,
+            null,
+            {
+              "oracle_number": "0"
+            },
+            "SHARED"
+          ],
+          [
+            "ORDERS",
+            "ORDER_DATE",
+            {
+              "oracle_number": "1"
+            },
+            {
+              "oracle_number": "2461329.98818287"
+            },
+            null,
+            null,
+            {
+              "oracle_number": "0"
+            },
+            "SHARED"
+          ],
+          [
+            "ORDERS",
+            "ORDER_ID",
+            {
+              "oracle_number": "0"
+            },
+            {
+              "oracle_number": "1"
+            },
+            null,
+            null,
+            {
+              "oracle_number": "0"
+            },
+            "SHARED"
+          ],
+          [
+            "ORDERS",
+            "ORDER_ID",
+            {
+              "oracle_number": "1"
+            },
+            {
+              "oracle_number": "10000"
+            },
+            null,
+            null,
+            {
+              "oracle_number": "0"
+            },
+            "SHARED"
+          ],
+          [
+            "ORDERS",
+            "STATUS",
+            {
+              "oracle_number": "541"
+            },
+            {
+              "oracle_number": "349208446762019000000000000000000000"
+            },
+            "CANCELLED",
+            {
+              "raw_hex": "43414E43454C4C4544"
+            },
+            {
+              "oracle_number": "0"
+            },
+            "SHARED"
+          ],
+          [
+            "ORDERS",
+            "STATUS",
+            {
+              "oracle_number": "1601"
+            },
+            {
+              "oracle_number": "406405534078507000000000000000000000"
+            },
+            "NEW",
+            {
+              "raw_hex": "4E4557"
+            },
+            {
+              "oracle_number": "0"
+            },
+            "SHARED"
+          ],
+          [
+            "ORDERS",
+            "STATUS",
+            {
+              "oracle_number": "7477"
+            },
+            {
+              "oracle_number": "416707910007868000000000000000000000"
+            },
+            "PAID",
+            {
+              "raw_hex": "50414944"
+            },
+            {
+              "oracle_number": "0"
+            },
+            "SHARED"
+          ],
+          [
+            "ORDERS",
+            "STATUS",
+            {
+              "oracle_number": "10000"
+            },
+            {
+              "oracle_number": "432426781261559000000000000000000000"
+            },
+            "SHIPPED",
+            {
+              "raw_hex": "53484950504544"
+            },
+            {
+              "oracle_number": "0"
+            },
+            "SHARED"
+          ],
+          [
+            "ORDERS",
+            "TOTAL_AMOUNT",
+            {
+              "oracle_number": "0"
+            },
+            {
+              "oracle_number": "52.99"
+            },
+            null,
+            null,
+            {
+              "oracle_number": "0"
+            },
+            "SHARED"
+          ],
+          [
+            "ORDERS",
+            "TOTAL_AMOUNT",
+            {
+              "oracle_number": "1"
+            },
+            {
+              "oracle_number": "14193.15"
+            },
+            null,
+            null,
+            {
+              "oracle_number": "0"
+            },
+            "SHARED"
+          ]
+        ]
+      },
+      "indexes": {
+        "columns": [
+          "INDEX_NAME",
+          "TABLE_OWNER",
+          "TABLE_NAME",
+          "PARTITION_NAME",
+          "PARTITION_POSITION",
+          "SUBPARTITION_NAME",
+          "SUBPARTITION_POSITION",
+          "OBJECT_TYPE",
+          "BLEVEL",
+          "LEAF_BLOCKS",
+          "DISTINCT_KEYS",
+          "AVG_LEAF_BLOCKS_PER_KEY",
+          "AVG_DATA_BLOCKS_PER_KEY",
+          "CLUSTERING_FACTOR",
+          "NUM_ROWS",
+          "AVG_CACHED_BLOCKS",
+          "AVG_CACHE_HIT_RATIO",
+          "SAMPLE_SIZE",
+          "LAST_ANALYZED",
+          "GLOBAL_STATS",
+          "USER_STATS",
+          "STATTYPE_LOCKED",
+          "STALE_STATS",
+          "SCOPE"
+        ],
+        "rows": [
+          [
+            "ORDERS_PK",
+            "ORACLE_SPA",
+            "ORDERS",
+            null,
+            null,
+            null,
+            null,
+            "INDEX",
+            {
+              "oracle_number": "1"
+            },
+            {
+              "oracle_number": "18"
+            },
+            {
+              "oracle_number": "10000"
+            },
+            {
+              "oracle_number": "1"
+            },
+            {
+              "oracle_number": "1"
+            },
+            {
+              "oracle_number": "44"
+            },
+            {
+              "oracle_number": "10000"
+            },
+            null,
+            null,
+            {
+              "oracle_number": "10000"
+            },
+            {
+              "datetime": "2026-10-18T18:17:24"
+            },
+            "YES",
+            "NO",
+            null,
+            "YES",
+            "SHARED"
+          ]
+        ]
+      },
+      "table": {
+        "columns": [
+          "TABLE_NAME",
+          "PARTITION_NAME",
+          "PARTITION_POSITION",
+          "SUBPARTITION_NAME",
+          "SUBPARTITION_POSITION",
+          "OBJECT_TYPE",
+          "NUM_ROWS",
+          "BLOCKS",
+          "EMPTY_BLOCKS",
+          "AVG_SPACE",
+          "CHAIN_CNT",
+          "AVG_ROW_LEN",
+          "AVG_SPACE_FREELIST_BLOCKS",
+          "NUM_FREELIST_BLOCKS",
+          "AVG_CACHED_BLOCKS",
+          "AVG_CACHE_HIT_RATIO",
+          "IM_IMCU_COUNT",
+          "IM_BLOCK_COUNT",
+          "IM_STAT_UPDATE_TIME",
+          "SCAN_RATE",
+          "SAMPLE_SIZE",
+          "LAST_ANALYZED",
+          "GLOBAL_STATS",
+          "USER_STATS",
+          "STATTYPE_LOCKED",
+          "STALE_STATS",
+          "NOTES",
+          "SCOPE"
+        ],
+        "rows": [
+          [
+            "ORDERS",
+            null,
+            null,
+            null,
+            null,
+            "TABLE",
+            {
+              "oracle_number": "10000"
+            },
+            {
+              "oracle_number": "50"
+            },
+            {
+              "oracle_number": "0"
+            },
+            {
+              "oracle_number": "0"
+            },
+            {
+              "oracle_number": "0"
+            },
+            {
+              "oracle_number": "27"
+            },
+            {
+              "oracle_number": "0"
+            },
+            {
+              "oracle_number": "0"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "oracle_number": "10000"
+            },
+            {
+              "datetime": "2026-10-20T02:16:12"
+            },
+            "YES",
+            "NO",
+            null,
+            "NO",
+            null,
+            "SHARED"
+          ]
+        ]
+      }
+    },
+    "version": "23.26.3.0.0"
+  },
+  "history": {
+    "columns": [
+      "TABLE_NAME",
+      "PARTITION_NAME",
+      "SUBPARTITION_NAME",
+      "STATS_UPDATE_TIME",
+      "NUM_ROWS",
+      "BLOCKS",
+      "CHAIN_CNT",
+      "AVG_ROW_LEN",
+      "AVG_CACHED_BLOCKS",
+      "AVG_CACHE_HIT_RATIO",
+      "IM_IMCU_COUNT",
+      "IM_BLOCK_COUNT",
+      "SCAN_RATE",
+      "SAMPLE_SIZE"
+    ],
+    "rows": [
+      [
+        "ORDERS",
+        null,
+        null,
+        {
+          "datetime": "2026-10-18T03:21:59.432066"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "ORDERS",
+        null,
+        null,
+        {
+          "datetime": "2026-10-18T03:35:45.093527"
+        },
+        {
+          "oracle_number": "1000"
+        },
+        {
+          "oracle_number": "5"
+        },
+        {
+          "oracle_number": "0"
+        },
+        {
+          "oracle_number": "26"
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+          "oracle_number": "0"
+        },
+        {
+          "oracle_number": "1000"
+        }
+      ],
+      [
+        "ORDERS",
+        null,
+        null,
+        {
+          "datetime": "2026-10-18T03:36:46.799338"
+        },
+        {
+          "oracle_number": "10000"
+        },
+        {
+          "oracle_number": "50"
+        },
+        {
+          "oracle_number": "0"
+        },
+        {
+          "oracle_number": "27"
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+          "oracle_number": "0"
+        },
+        {
+          "oracle_number": "10000"
+        }
+      ],
+      [
+        "ORDERS",
+        null,
+        null,
+        {
+          "datetime": "2026-10-18T17:47:20.949453"
+        },
+        {
+          "oracle_number": "10000"
+        },
+        {
+          "oracle_number": "50"
+        },
+        {
+          "oracle_number": "0"
+        },
+        {
+          "oracle_number": "27"
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+          "oracle_number": "0"
+        },
+        {
+          "oracle_number": "10000"
+        }
+      ],
+      [
+        "ORDERS",
+        null,
+        null,
+        {
+          "datetime": "2026-10-18T18:16:58.196501"
+        },
+        {
+          "oracle_number": "10000"
+        },
+        {
+          "oracle_number": "50"
+        },
+        {
+          "oracle_number": "0"
+        },
+        {
+          "oracle_number": "27"
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+          "oracle_number": "0"
+        },
+        {
+          "oracle_number": "10000"
+        }
+      ],
+      [
+        "ORDERS",
+        null,
+        null,
+        {
+          "datetime": "2026-10-18T18:17:24.246090"
+        },
+        {
+          "oracle_number": "10000"
+        },
+        {
+          "oracle_number": "50"
+        },
+        {
+          "oracle_number": "0"
+        },
+        {
+          "oracle_number": "27"
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+          "oracle_number": "0"
+        },
+        {
+          "oracle_number": "10000"
+        }
+      ],
+      [
+        "ORDERS",
+        null,
+        null,
+        {
+          "datetime": "2026-10-20T01:24:19.887535"
+        },
+        {
+          "oracle_number": "10000"
+        },
+        {
+          "oracle_number": "50"
+        },
+        {
+          "oracle_number": "0"
+        },
+        {
+          "oracle_number": "27"
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+          "oracle_number": "0"
+        },
+        {
+          "oracle_number": "10000"
+        }
+      ],
+      [
+        "ORDERS",
+        null,
+        null,
+        {
+          "datetime": "2026-10-20T02:16:12.643649"
+        },
+        {
+          "oracle_number": "10000"
+        },
+        {
+          "oracle_number": "50"
+        },
+        {
+          "oracle_number": "0"
+        },
+        {
+          "oracle_number": "27"
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+          "oracle_number": "0"
+        },
+        {
+          "oracle_number": "10000"
+        }
+      ]
+    ]
+  }
+}

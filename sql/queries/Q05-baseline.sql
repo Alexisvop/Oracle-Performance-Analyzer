@@ -1,0 +1,1 @@
+SELECT p.category, SUM(i.quantity), SUM(i.quantity*i.unit_price) FROM products p JOIN order_items i ON i.product_id=p.product_id JOIN orders o ON o.order_id=i.order_id WHERE o.order_date>=:start_date AND o.order_date<:end_date GROUP BY p.category ORDER BY p.category;

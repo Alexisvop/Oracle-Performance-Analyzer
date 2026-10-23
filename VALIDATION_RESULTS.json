@@ -1,0 +1,594 @@
+{
+  "status": "PASS — hardened local candidate; independent review/publication gated",
+  "copyright_notice": "Copyright (c) 2026 Alexis Abraham Perez Olvera",
+  "license": "MIT; entitled original material only",
+  "versions": {
+    "python": "3.14.8",
+    "node": "26.12.0",
+    "npm": "12.2.1"
+  },
+  "verification_context": "Fresh public-only copy,new Python venv,new npm ci --ignore-scripts; full local audit commands/logs retained privately; absolute staging paths redacted below",
+  "commands": [
+    {
+      "label": "python-version",
+      "command": [
+        "python",
+        "--version"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.01
+    },
+    {
+      "label": "node-version",
+      "command": [
+        "node",
+        "--version"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.02
+    },
+    {
+      "label": "npm-version",
+      "command": [
+        "npm",
+        "--version"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.17
+    },
+    {
+      "label": "python-fresh-venv",
+      "command": [
+        "python",
+        "-m",
+        "venv",
+        ".venv"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 3.32
+    },
+    {
+      "label": "npm-clean-install",
+      "command": [
+        "npm",
+        "ci",
+        "--ignore-scripts"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 6.26
+    },
+    {
+      "label": "python-locked-install",
+      "command": [
+        "./.venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--only-binary=:all:",
+        "--no-cache-dir",
+        "-r",
+        "requirements.lock"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 14.59
+    },
+    {
+      "label": "python-public-package",
+      "command": [
+        "./.venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-build-isolation",
+        "--no-deps",
+        "-e",
+        "."
+      ],
+      "exit_code": 0,
+      "duration_seconds": 1.24
+    },
+    {
+      "label": "frontend-data",
+      "command": [
+        "npm",
+        "run",
+        "data:check"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.26
+    },
+    {
+      "label": "python-pip-check",
+      "command": [
+        "./.venv/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.36
+    },
+    {
+      "label": "python-compile",
+      "command": [
+        "./.venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.19
+    },
+    {
+      "label": "frontend-typecheck",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 3.07
+    },
+    {
+      "label": "frontend-lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 2.63
+    },
+    {
+      "label": "frontend-unit",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 3.7
+    },
+    {
+      "label": "python-unit",
+      "command": [
+        "./.venv/bin/python",
+        "<local-public-staging>/_private_audit/hardening/offline_guard.py",
+        "unit"
+      ],
+      "exit_code": 1,
+      "duration_seconds": 9.01
+    },
+    {
+      "label": "frontend-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 4.01
+    },
+    {
+      "label": "frontend-native-config-build",
+      "command": [
+        "./node_modules/.bin/vite",
+        "build",
+        "--configLoader",
+        "native"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.66
+    },
+    {
+      "label": "frontend-browser",
+      "command": [
+        "npm",
+        "run",
+        "test:browser"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 64.32
+    },
+    {
+      "label": "python-compile-corrected",
+      "command": [
+        "./.venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.08
+    },
+    {
+      "label": "python-unit-corrected",
+      "command": [
+        "./.venv/bin/python",
+        "<local-public-staging>/_private_audit/hardening/offline_guard.py",
+        "unit"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 7.3
+    },
+    {
+      "label": "python-cli-help",
+      "command": [
+        "./.venv/bin/python",
+        "<local-public-staging>/_private_audit/hardening/offline_guard.py",
+        "cli",
+        "--help"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.1
+    },
+    {
+      "label": "python-cli-catalog",
+      "command": [
+        "./.venv/bin/python",
+        "<local-public-staging>/_private_audit/hardening/offline_guard.py",
+        "cli",
+        "list-queries"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.1
+    },
+    {
+      "label": "python-report-a",
+      "command": [
+        "./.venv/bin/python",
+        "<local-public-staging>/_private_audit/hardening/offline_guard.py",
+        "cli",
+        "report-all",
+        "--output",
+        "results/hardening-a"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 2.71
+    },
+    {
+      "label": "python-report-b",
+      "command": [
+        "./.venv/bin/python",
+        "<local-public-staging>/_private_audit/hardening/offline_guard.py",
+        "cli",
+        "report-all",
+        "--output",
+        "results/hardening-b"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 2.72
+    },
+    {
+      "label": "python-report-verify",
+      "command": [
+        "./.venv/bin/python",
+        "scripts/verify_public_reports.py",
+        "results/hardening-a",
+        "results/hardening-b"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.07
+    },
+    {
+      "label": "markdown-links",
+      "command": [
+        "./.venv/bin/python",
+        "scripts/check_documentation_links.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.13
+    },
+    {
+      "label": "production-root-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 4.66
+    },
+    {
+      "label": "production-numbers",
+      "command": [
+        "python",
+        "-B",
+        "_private_audit/release_tools.py",
+        "numbers"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.5
+    },
+    {
+      "label": "production-secondary",
+      "command": [
+        "python",
+        "-B",
+        "_private_audit/release_tools.py",
+        "secondary"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.61
+    },
+    {
+      "label": "production-links",
+      "command": [
+        "python",
+        "-B",
+        "_private_audit/release_tools.py",
+        "links"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.12
+    },
+    {
+      "label": "production-artifacts",
+      "command": [
+        "./.venv/bin/python",
+        "-B",
+        "_private_audit/validate_artifacts.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.19
+    },
+    {
+      "label": "preseal-snapshot",
+      "command": [
+        "python",
+        "-B",
+        "_private_audit/release_tools.py",
+        "snapshot"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.11
+    },
+    {
+      "label": "gitleaks-preseal-source",
+      "command": [
+        "<local-public-staging>/_private_audit/tools/gitleaks",
+        "dir",
+        "<local-public-staging>/_private_audit/candidate-scan",
+        "--no-banner",
+        "--no-color",
+        "--redact",
+        "--ignore-gitleaks-allow",
+        "--report-format",
+        "json",
+        "--report-path",
+        "<local-public-staging>/_private_audit/hardening/gitleaks-preseal-source.json"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.83
+    },
+    {
+      "label": "gitleaks-preseal-static",
+      "command": [
+        "<local-public-staging>/_private_audit/tools/gitleaks",
+        "dir",
+        "<local-public-staging>/portfolio/dist",
+        "--no-banner",
+        "--no-color",
+        "--redact",
+        "--ignore-gitleaks-allow",
+        "--report-format",
+        "json",
+        "--report-path",
+        "<local-public-staging>/_private_audit/hardening/gitleaks-preseal-static.json"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.82
+    },
+    {
+      "label": "sealed-snapshot",
+      "command": [
+        "python",
+        "-B",
+        "_private_audit/release_tools.py",
+        "snapshot"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.09
+    },
+    {
+      "label": "sealed-secondary",
+      "command": [
+        "python",
+        "-B",
+        "_private_audit/release_tools.py",
+        "secondary"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.61
+    },
+    {
+      "label": "sealed-links",
+      "command": [
+        "python",
+        "-B",
+        "_private_audit/release_tools.py",
+        "links"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.11
+    },
+    {
+      "label": "gitleaks-sealed-source",
+      "command": [
+        "<local-public-staging>/_private_audit/tools/gitleaks",
+        "dir",
+        "<local-public-staging>/_private_audit/candidate-scan",
+        "--no-banner",
+        "--no-color",
+        "--redact",
+        "--ignore-gitleaks-allow",
+        "--report-format",
+        "json",
+        "--report-path",
+        "<local-public-staging>/_private_audit/hardening/gitleaks-sealed-source.json"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.85
+    },
+    {
+      "label": "gitleaks-sealed-static",
+      "command": [
+        "<local-public-staging>/_private_audit/tools/gitleaks",
+        "dir",
+        "<local-public-staging>/portfolio/dist",
+        "--no-banner",
+        "--no-color",
+        "--redact",
+        "--ignore-gitleaks-allow",
+        "--report-format",
+        "json",
+        "--report-path",
+        "<local-public-staging>/_private_audit/hardening/gitleaks-sealed-static.json"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.89
+    }
+  ],
+  "counts": {
+    "public_files": 188,
+    "excluded_tracked_paths": 394,
+    "source_counterparts": 159,
+    "source_byte_identical": 101,
+    "source_adapted": 58,
+    "new_public_files": 29,
+    "evidence_records": 61,
+    "derived_evidence_files": 23,
+    "python_tests": 198,
+    "python_subtests": 55,
+    "frontend_unit_tests": 12,
+    "browser_scenarios": 18,
+    "automated_axe_analyses": 36,
+    "static_assets": 139,
+    "reproducible_report_outputs": 12,
+    "report_inputs": 40,
+    "numeric_scalars_preserved": 11996
+  },
+  "clean_python_guard": {
+    "original_private_access_attempts": 0,
+    "nonclean_public_input_attempts": 0,
+    "network_connection_attempts": 0,
+    "oracle_connection_attempts": 0,
+    "imported_from_clean_copy": true,
+    "exit_code": 0
+  },
+  "reports": {
+    "manifest_sha256": "347f115a2e76e31a2a70e5a96fb5fcd0455944bab9e8051395930509c0781b43",
+    "summary_sha256": "3c2e7b9d8305a740ecbb5cf92e5df10ab8fbdf412fcc4935f72a2d9bd8e77860",
+    "outputs": {
+      "charts/group_a_index_comparisons.png": {
+        "bytes": 312937,
+        "sha256": "dbe9a2fd55f3eb41376d42ee24951065b95def01a1c98e2fb5197b7d93e62354"
+      },
+      "charts/group_a_index_comparisons.svg": {
+        "bytes": 31535,
+        "sha256": "dd7c0955873efcd0f9ab39527ded9151141fddc72744caed15decb3402afebee"
+      },
+      "charts/group_a_storage_vs_latency.png": {
+        "bytes": 162128,
+        "sha256": "85b18e24099d1c10db269b22a9cee2c24c9dd06e0c7e038a811675cb33fcd64c"
+      },
+      "charts/group_a_storage_vs_latency.svg": {
+        "bytes": 20766,
+        "sha256": "8606f6cd5909476ce4bda3f07d251048ea773c48fc3a3c848805a4837e13374a"
+      },
+      "charts/group_b_e04_status_and_cohorts.png": {
+        "bytes": 252091,
+        "sha256": "d76d3321bc215e8814c9345d08e9327c4213bbcc3ade696c1a7242e017da2d92"
+      },
+      "charts/group_b_e04_status_and_cohorts.svg": {
+        "bytes": 34649,
+        "sha256": "6e3352f691b9abd1f26efea82f8e6d7b276135891be28410e1c59c6d1f8bb961"
+      },
+      "charts/stage_a_baselines.png": {
+        "bytes": 189421,
+        "sha256": "cf8b5ef6b1e58754a1f80a62fbfc855cf4611087fe8d63eda45bea032a1ee14e"
+      },
+      "charts/stage_a_baselines.svg": {
+        "bytes": 24800,
+        "sha256": "5af127ae60d59618b72553930c00ddcec4d57d049270b32a625bef2ed20fd849"
+      },
+      "comparisons.csv": {
+        "bytes": 4880,
+        "sha256": "ca7fd29f0828fe423cc876392efeb51c6c3398cb7aadd8be1e3c79507e781a5a"
+      },
+      "measurements.csv": {
+        "bytes": 9602,
+        "sha256": "5c656d236ed0ae1d13da625967c03d965843da6e814042177424926e051bd1f5"
+      },
+      "report.md": {
+        "bytes": 8921,
+        "sha256": "84ff99c440889b1525d8c7bad58957ceef9fb81a9bc96baad178064184f4cb24"
+      },
+      "summary.json": {
+        "bytes": 71673,
+        "sha256": "3c2e7b9d8305a740ecbb5cf92e5df10ab8fbdf412fcc4935f72a2d9bd8e77860"
+      }
+    },
+    "two_fresh_bundles_and_previous_historical_outputs_byte_identical": true
+  },
+  "static_assets": {
+    "canonical_sorted_path_sha256_map_digest": "a8aaecff193c233710c051d18e406592f51f8000c8edf3c2fc6b1282aadefbd0",
+    "default_and_native_clean_builds_compatible": true,
+    "clean_and_root_builds_byte_identical": true,
+    "asset_paths_root_based": true
+  },
+  "security_checkpoint": [
+    {
+      "scope": "source",
+      "files": 188,
+      "findings": 0,
+      "exit_code": 0,
+      "suppression_config_added": false
+    },
+    {
+      "scope": "static",
+      "files": 139,
+      "findings": 0,
+      "exit_code": 0,
+      "suppression_config_added": false
+    }
+  ],
+  "secondary_scan": {
+    "unresolved_matches": 0,
+    "mock_fixture_matches": 1,
+    "necessary_upstream_attribution_email_occurrences": 34
+  },
+  "low_findings": {
+    "mutable_action_tags": "RESOLVED:verified official full SHAs",
+    "future_vite_loader_warning": "RESOLVED:explicit imports;default/native builds passed"
+  },
+  "earlier_failures_preserved": {
+    "historical_isolated_exit_2": "private launcher sys.path;new isolated corrected run verified",
+    "hardening_first_suite_exit_1": "three obsolete tag/generated-link assertions;195 passed,3 failed,55 subtests;updated strict checks then198/55 passed",
+    "second_restart": "new baseline/backup files were zero-length after power loss;existing185-file candidate intact;durable recovered baseline preserved"
+  },
+  "link_policy": "No live generated hyperlinks remain; exact13 optional report filenames recognized by strict auditor; unsafe/missing/unapproved paths fail",
+  "original_repository": "553 tracked files,407 evidence files and Git state preserved;read-only metadata confirms private",
+  "future_repository": {
+    "proposed_name": "Oracle-Performance-Analyzer",
+    "url": null,
+    "read_only_lookup": 404,
+    "availability_guaranteed": false
+  },
+  "not_verified": [
+    "independent security/technical review",
+    "hosted GitHub Actions",
+    "Cloudflare build/deployment",
+    "new live Oracle setup",
+    "manual screen-reader testing",
+    "Firefox/Safari",
+    "fresh Python CVE database review"
+  ],
+  "seal_policy": "Post-seal scans/archive verification recorded separately in confidential dossier;manifest excludes itself/checksum to avoid recursive hashing",
+  "publication_authorized": false
+}

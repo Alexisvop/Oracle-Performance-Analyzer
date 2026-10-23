@@ -1,0 +1,90 @@
+{
+  "status": "OBSERVED CREATED; NOT ACCEPTED BY MODULE; EXTERNAL REVIEW REQUIRED",
+  "source": "Read-only inventory before/after the sole journaled attempt; not a successful module return.",
+  "table_object_id": {
+    "oracle_number": "73214"
+  },
+  "observed_structural_sha256": "c6958115da4e80e2462d0a85e2733766c7ed05ae1b7d6a490bc374beca9627a3",
+  "new_objects": {
+    "columns": [
+      "OBJECT_NAME",
+      "OBJECT_TYPE",
+      "STATUS",
+      "OBJECT_ID",
+      "CREATED"
+    ],
+    "rows": [
+      [
+        "OSPA_ORDERS_STATS_BAK",
+        "INDEX",
+        "VALID",
+        {
+          "oracle_number": "73219"
+        },
+        {
+          "datetime": "2026-10-19T23:33:01"
+        }
+      ],
+      [
+        "SYS_IL0000073214C00030$$",
+        "INDEX",
+        "VALID",
+        {
+          "oracle_number": "73216"
+        },
+        {
+          "datetime": "2026-10-19T23:33:01"
+        }
+      ],
+      [
+        "SYS_IL0000073214C00031$$",
+        "INDEX",
+        "VALID",
+        {
+          "oracle_number": "73218"
+        },
+        {
+          "datetime": "2026-10-19T23:33:01"
+        }
+      ],
+      [
+        "SYS_LOB0000073214C00030$$",
+        "LOB",
+        "VALID",
+        {
+          "oracle_number": "73215"
+        },
+        {
+          "datetime": "2026-10-19T23:33:01"
+        }
+      ],
+      [
+        "SYS_LOB0000073214C00031$$",
+        "LOB",
+        "VALID",
+        {
+          "oracle_number": "73217"
+        },
+        {
+          "datetime": "2026-10-19T23:33:01"
+        }
+      ],
+      [
+        "OSPA_ORDERS_STATS_BAK",
+        "TABLE",
+        "VALID",
+        {
+          "oracle_number": "73214"
+        },
+        {
+          "datetime": "2026-10-19T23:33:01"
+        }
+      ]
+    ]
+  },
+  "backup_rows": 0,
+  "column_count": 31,
+  "module_acceptance": "FAIL; no successful module creation receipt; no structure approval",
+  "authorization_consumed": true,
+  "retry_allowed": false
+}

@@ -1,0 +1,48 @@
+{
+  "run_id": "b158e3a5c72249f9bf8a362f8a75eeea",
+  "status": "PASS",
+  "summaries": {
+    "baseline": {
+      "unit": "ms",
+      "n": 10,
+      "failures": 0,
+      "warmups": 5,
+      "warmup_failures": 0,
+      "median": 3.1723334999999997,
+      "mean": 3.3413905,
+      "min": 2.844571,
+      "max": 4.215666,
+      "iqr": 0.4085597500000002,
+      "p95": 4.21471515,
+      "stddev": 0.49532025762850307
+    },
+    "range": {
+      "unit": "ms",
+      "n": 10,
+      "failures": 0,
+      "warmups": 5,
+      "warmup_failures": 0,
+      "median": 1.4802495,
+      "mean": 1.5304999,
+      "min": 1.198445,
+      "max": 1.893451,
+      "iqr": 0.2663114999999998,
+      "p95": 1.87330765,
+      "stddev": 0.23716247439370433
+    }
+  },
+  "comparisons": [
+    {
+      "baseline": "baseline",
+      "alternative": "range",
+      "status": "DESCRIPTIVE ONLY",
+      "alternative_minus_baseline_ms": -1.6920839999999997,
+      "change_percent": -53.33878042771985,
+      "baseline_over_alternative": 2.1431072937366302,
+      "limitation": "Client latency variation is not proof of a causal improvement."
+    }
+  ],
+  "scope": "One scenario only; no cross-index-state causal conclusion.",
+  "failed_samples_retained": true,
+  "percentile_method": "linear interpolation at (n-1)*p"
+}

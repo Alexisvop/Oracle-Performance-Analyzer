@@ -1,0 +1,16 @@
+{
+  "started_at_utc": "2026-10-19T23:32:40.907898+00:00",
+  "status": "STOP",
+  "module_invocations": 1,
+  "ddl_attempts": 1,
+  "incidents": [
+    {
+      "error": "Statistics operation stopped; possible partial effects. No retry or cleanup performed.",
+      "code": "NOT AVAILABLE",
+      "action": "Stop; preserve all state; no retries or cleanup."
+    }
+  ],
+  "error": "Statistics operation stopped; possible partial effects. No retry or cleanup performed.",
+  "code": "NOT AVAILABLE",
+  "finished_at_utc": "2026-10-19T23:33:02.411300+00:00"
+}

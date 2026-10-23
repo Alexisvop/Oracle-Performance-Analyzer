@@ -1,0 +1,949 @@
+{
+  "backup_table": {
+    "columns": [
+      "OWNER",
+      "TABLE_NAME",
+      "TABLESPACE_NAME",
+      "TEMPORARY",
+      "PARTITIONED",
+      "IOT_TYPE",
+      "NESTED"
+    ],
+    "rows": [
+      [
+        "ORACLE_SPA",
+        "OSPA_ORDERS_STATS_BAK",
+        "USERS",
+        "N",
+        "NO",
+        null,
+        "NO"
+      ]
+    ]
+  },
+  "columns": {
+    "columns": [
+      "COLUMN_NAME",
+      "COLUMN_ID",
+      "DATA_TYPE",
+      "DATA_TYPE_OWNER",
+      "DATA_LENGTH",
+      "DATA_PRECISION",
+      "DATA_SCALE",
+      "NULLABLE",
+      "CHAR_USED",
+      "CHAR_LENGTH",
+      "HIDDEN_COLUMN",
+      "VIRTUAL_COLUMN",
+      "DATA_DEFAULT"
+    ],
+    "rows": [
+      [
+        "STATID",
+        {
+          "oracle_number": "1"
+        },
+        "VARCHAR2",
+        null,
+        {
+          "oracle_number": "128"
+        },
+        null,
+        null,
+        "Y",
+        "B",
+        {
+          "oracle_number": "128"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "TYPE",
+        {
+          "oracle_number": "2"
+        },
+        "CHAR",
+        null,
+        {
+          "oracle_number": "1"
+        },
+        null,
+        null,
+        "Y",
+        "B",
+        {
+          "oracle_number": "1"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "VERSION",
+        {
+          "oracle_number": "3"
+        },
+        "NUMBER",
+        null,
+        {
+          "oracle_number": "22"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "FLAGS",
+        {
+          "oracle_number": "4"
+        },
+        "NUMBER",
+        null,
+        {
+          "oracle_number": "22"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "C1",
+        {
+          "oracle_number": "5"
+        },
+        "VARCHAR2",
+        null,
+        {
+          "oracle_number": "128"
+        },
+        null,
+        null,
+        "Y",
+        "B",
+        {
+          "oracle_number": "128"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "C2",
+        {
+          "oracle_number": "6"
+        },
+        "VARCHAR2",
+        null,
+        {
+          "oracle_number": "128"
+        },
+        null,
+        null,
+        "Y",
+        "B",
+        {
+          "oracle_number": "128"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "C3",
+        {
+          "oracle_number": "7"
+        },
+        "VARCHAR2",
+        null,
+        {
+          "oracle_number": "128"
+        },
+        null,
+        null,
+        "Y",
+        "B",
+        {
+          "oracle_number": "128"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "C4",
+        {
+          "oracle_number": "8"
+        },
+        "VARCHAR2",
+        null,
+        {
+          "oracle_number": "128"
+        },
+        null,
+        null,
+        "Y",
+        "B",
+        {
+          "oracle_number": "128"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "C5",
+        {
+          "oracle_number": "9"
+        },
+        "VARCHAR2",
+        null,
+        {
+          "oracle_number": "128"
+        },
+        null,
+        null,
+        "Y",
+        "B",
+        {
+          "oracle_number": "128"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "C6",
+        {
+          "oracle_number": "10"
+        },
+        "VARCHAR2",
+        null,
+        {
+          "oracle_number": "128"
+        },
+        null,
+        null,
+        "Y",
+        "B",
+        {
+          "oracle_number": "128"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "N1",
+        {
+          "oracle_number": "11"
+        },
+        "NUMBER",
+        null,
+        {
+          "oracle_number": "22"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "N2",
+        {
+          "oracle_number": "12"
+        },
+        "NUMBER",
+        null,
+        {
+          "oracle_number": "22"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "N3",
+        {
+          "oracle_number": "13"
+        },
+        "NUMBER",
+        null,
+        {
+          "oracle_number": "22"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "N4",
+        {
+          "oracle_number": "14"
+        },
+        "NUMBER",
+        null,
+        {
+          "oracle_number": "22"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "N5",
+        {
+          "oracle_number": "15"
+        },
+        "NUMBER",
+        null,
+        {
+          "oracle_number": "22"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "N6",
+        {
+          "oracle_number": "16"
+        },
+        "NUMBER",
+        null,
+        {
+          "oracle_number": "22"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "N7",
+        {
+          "oracle_number": "17"
+        },
+        "NUMBER",
+        null,
+        {
+          "oracle_number": "22"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "N8",
+        {
+          "oracle_number": "18"
+        },
+        "NUMBER",
+        null,
+        {
+          "oracle_number": "22"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "N9",
+        {
+          "oracle_number": "19"
+        },
+        "NUMBER",
+        null,
+        {
+          "oracle_number": "22"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "N10",
+        {
+          "oracle_number": "20"
+        },
+        "NUMBER",
+        null,
+        {
+          "oracle_number": "22"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "N11",
+        {
+          "oracle_number": "21"
+        },
+        "NUMBER",
+        null,
+        {
+          "oracle_number": "22"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "N12",
+        {
+          "oracle_number": "22"
+        },
+        "NUMBER",
+        null,
+        {
+          "oracle_number": "22"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "N13",
+        {
+          "oracle_number": "23"
+        },
+        "NUMBER",
+        null,
+        {
+          "oracle_number": "22"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "D1",
+        {
+          "oracle_number": "24"
+        },
+        "DATE",
+        null,
+        {
+          "oracle_number": "7"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "T1",
+        {
+          "oracle_number": "25"
+        },
+        "TIMESTAMP(6) WITH TIME ZONE",
+        null,
+        {
+          "oracle_number": "13"
+        },
+        null,
+        {
+          "oracle_number": "6"
+        },
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "R1",
+        {
+          "oracle_number": "26"
+        },
+        "RAW",
+        null,
+        {
+          "oracle_number": "1000"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "R2",
+        {
+          "oracle_number": "27"
+        },
+        "RAW",
+        null,
+        {
+          "oracle_number": "1000"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "R3",
+        {
+          "oracle_number": "28"
+        },
+        "RAW",
+        null,
+        {
+          "oracle_number": "1000"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "CH1",
+        {
+          "oracle_number": "29"
+        },
+        "VARCHAR2",
+        null,
+        {
+          "oracle_number": "1000"
+        },
+        null,
+        null,
+        "Y",
+        "B",
+        {
+          "oracle_number": "1000"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "CL1",
+        {
+          "oracle_number": "30"
+        },
+        "CLOB",
+        null,
+        {
+          "oracle_number": "4000"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ],
+      [
+        "BL1",
+        {
+          "oracle_number": "31"
+        },
+        "BLOB",
+        null,
+        {
+          "oracle_number": "4000"
+        },
+        null,
+        null,
+        "Y",
+        null,
+        {
+          "oracle_number": "0"
+        },
+        "NO",
+        "NO",
+        null
+      ]
+    ]
+  },
+  "constraints": {
+    "columns": [
+      "CONSTRAINT_NAME",
+      "CONSTRAINT_TYPE",
+      "STATUS",
+      "VALIDATED",
+      "SEARCH_CONDITION_VC"
+    ],
+    "rows": []
+  },
+  "comments": {
+    "columns": [
+      "COMMENTS"
+    ],
+    "rows": [
+      [
+        null
+      ]
+    ]
+  },
+  "lob_links": {
+    "columns": [
+      "TABLE_NAME",
+      "COLUMN_NAME",
+      "SEGMENT_NAME",
+      "INDEX_NAME",
+      "TABLESPACE_NAME",
+      "SECUREFILE",
+      "IN_ROW",
+      "PARTITIONED"
+    ],
+    "rows": [
+      [
+        "OSPA_ORDERS_STATS_BAK",
+        "BL1",
+        "SYS_LOB0000073214C00031$$",
+        "SYS_IL0000073214C00031$$",
+        "USERS",
+        "YES",
+        "YES",
+        "NO"
+      ],
+      [
+        "OSPA_ORDERS_STATS_BAK",
+        "CL1",
+        "SYS_LOB0000073214C00030$$",
+        "SYS_IL0000073214C00030$$",
+        "USERS",
+        "YES",
+        "YES",
+        "NO"
+      ]
+    ]
+  },
+  "backup_index": {
+    "columns": [
+      "INDEX_NAME",
+      "TABLE_OWNER",
+      "TABLE_NAME",
+      "TABLESPACE_NAME",
+      "UNIQUENESS",
+      "INDEX_TYPE",
+      "STATUS",
+      "VISIBILITY",
+      "PARTITIONED"
+    ],
+    "rows": [
+      [
+        "OSPA_ORDERS_STATS_BAK",
+        "ORACLE_SPA",
+        "OSPA_ORDERS_STATS_BAK",
+        "USERS",
+        "NONUNIQUE",
+        "NORMAL",
+        "VALID",
+        "VISIBLE",
+        "NO"
+      ],
+      [
+        "SYS_IL0000073214C00030$$",
+        "ORACLE_SPA",
+        "OSPA_ORDERS_STATS_BAK",
+        "USERS",
+        "UNIQUE",
+        "LOB",
+        "VALID",
+        "VISIBLE",
+        "NO"
+      ],
+      [
+        "SYS_IL0000073214C00031$$",
+        "ORACLE_SPA",
+        "OSPA_ORDERS_STATS_BAK",
+        "USERS",
+        "UNIQUE",
+        "LOB",
+        "VALID",
+        "VISIBLE",
+        "NO"
+      ]
+    ]
+  },
+  "backup_index_columns": {
+    "columns": [
+      "INDEX_NAME",
+      "COLUMN_NAME",
+      "COLUMN_POSITION",
+      "DESCEND"
+    ],
+    "rows": [
+      [
+        "OSPA_ORDERS_STATS_BAK",
+        "STATID",
+        {
+          "oracle_number": "1"
+        },
+        "ASC"
+      ],
+      [
+        "OSPA_ORDERS_STATS_BAK",
+        "TYPE",
+        {
+          "oracle_number": "2"
+        },
+        "ASC"
+      ],
+      [
+        "OSPA_ORDERS_STATS_BAK",
+        "C5",
+        {
+          "oracle_number": "3"
+        },
+        "ASC"
+      ],
+      [
+        "OSPA_ORDERS_STATS_BAK",
+        "C1",
+        {
+          "oracle_number": "4"
+        },
+        "ASC"
+      ],
+      [
+        "OSPA_ORDERS_STATS_BAK",
+        "C2",
+        {
+          "oracle_number": "5"
+        },
+        "ASC"
+      ],
+      [
+        "OSPA_ORDERS_STATS_BAK",
+        "C3",
+        {
+          "oracle_number": "6"
+        },
+        "ASC"
+      ],
+      [
+        "OSPA_ORDERS_STATS_BAK",
+        "C4",
+        {
+          "oracle_number": "7"
+        },
+        "ASC"
+      ],
+      [
+        "OSPA_ORDERS_STATS_BAK",
+        "VERSION",
+        {
+          "oracle_number": "8"
+        },
+        "ASC"
+      ]
+    ]
+  },
+  "new_objects": {
+    "columns": [
+      "OBJECT_NAME",
+      "OBJECT_TYPE",
+      "STATUS",
+      "OBJECT_ID",
+      "CREATED"
+    ],
+    "rows": [
+      [
+        "OSPA_ORDERS_STATS_BAK",
+        "INDEX",
+        "VALID",
+        {
+          "oracle_number": "73219"
+        },
+        {
+          "datetime": "2026-10-19T23:33:01"
+        }
+      ],
+      [
+        "SYS_IL0000073214C00030$$",
+        "INDEX",
+        "VALID",
+        {
+          "oracle_number": "73216"
+        },
+        {
+          "datetime": "2026-10-19T23:33:01"
+        }
+      ],
+      [
+        "SYS_IL0000073214C00031$$",
+        "INDEX",
+        "VALID",
+        {
+          "oracle_number": "73218"
+        },
+        {
+          "datetime": "2026-10-19T23:33:01"
+        }
+      ],
+      [
+        "SYS_LOB0000073214C00030$$",
+        "LOB",
+        "VALID",
+        {
+          "oracle_number": "73215"
+        },
+        {
+          "datetime": "2026-10-19T23:33:01"
+        }
+      ],
+      [
+        "SYS_LOB0000073214C00031$$",
+        "LOB",
+        "VALID",
+        {
+          "oracle_number": "73217"
+        },
+        {
+          "datetime": "2026-10-19T23:33:01"
+        }
+      ],
+      [
+        "OSPA_ORDERS_STATS_BAK",
+        "TABLE",
+        "VALID",
+        {
+          "oracle_number": "73214"
+        },
+        {
+          "datetime": "2026-10-19T23:33:01"
+        }
+      ]
+    ]
+  }
+}

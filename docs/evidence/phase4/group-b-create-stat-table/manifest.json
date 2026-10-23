@@ -1,0 +1,13 @@
+{
+  "sha256": {
+    "docs/evidence/phase4/group-b-create-stat-table/create-attempt.jsonl": "104466acb177ae94bc1e6029dbd0ffc128ff8c97fa8ff4e080d1d7218e9979a2",
+    "docs/evidence/phase4/group-b-create-stat-table/plan.json": "2b3ec0711abb6e7f212c20a843de058450c8191b4b0855856db7c68c048adc9d",
+    "docs/evidence/phase4/group-b-create-stat-table/preflight.json": "0ca9640231e008ae52efc6189aa4056807045bfc639dc18c6e0a3741c438b4d4",
+    "docs/evidence/phase4/group-b-create-stat-table/result.json": "a9a5753df02faca42bf661855818916d8439d992183780a25871bb998d3eedb6",
+    "docs/evidence/phase4/group-b-create-stat-table/observed-structure.json": "7e29268ee84ab50df0e7c54350ab3be4b351d7ecd5af1ac315b5064f08c259be",
+    "docs/evidence/phase4/group-b-create-stat-table/observational-creation-receipt.json": "f099181d7270355dc6d01640d2e70fe06bd1498c26b7a431a7e20db0098eae18",
+    "docs/evidence/phase4/group-b-create-stat-table/executed.sql": "3348af7a0a55c801787b4cbbee790290f5d37d5437c16e709858b24d2794fb49"
+  },
+  "public_derivative": true,
+  "scope": "Seven exported forensic regression fixture files; original full private inventory intentionally excluded"
+}

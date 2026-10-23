@@ -1,0 +1,1872 @@
+{
+  "schemaVersion": 1,
+  "evidenceEdition": "sanitized-public-edition",
+  "dataset": {
+    "profile": "small",
+    "seed": 20261016,
+    "counts": {
+      "customers": 2000,
+      "order_items": 30000,
+      "orders": 10000,
+      "products": 500
+    },
+    "businessRows": 42500
+  },
+  "quality": {
+    "unitTests": 180,
+    "subtests": 55,
+    "unitEvidence": "docs/evidence/phase5/stage-d/summary.json",
+    "integrationEvidence": "docs/evidence/phase5/stage-a/summary.json"
+  },
+  "statusCounts": {
+    "PAID": 5876,
+    "SHIPPED": 2523,
+    "NEW": 1060,
+    "CANCELLED": 541
+  },
+  "histogram": {
+    "evidence": "docs/evidence/phase4/group-b-histogram-final/observed-histogram.json",
+    "estimatedRows": 2500,
+    "cohorts": [
+      {
+        "status": "PAID",
+        "before": {
+          "experimentId": "E04",
+          "queryId": "Q06",
+          "variant": "baseline",
+          "scenario": "baseline",
+          "sql": "SELECT order_id, status, total_amount FROM orders WHERE status=:status ORDER BY order_id",
+          "rows": 5876,
+          "resultSha256": "286439549989d570b96b1ce7febd9c2f531207248d637adb027141e9c6c5b200",
+          "median": 9.014788,
+          "iqr": 0.8693657500000018,
+          "p95": 10.903322049999998,
+          "q25": 8.795518,
+          "q75": 9.664883750000001,
+          "n": 10,
+          "warmups": 5,
+          "unit": "ms",
+          "indexConfiguration": [],
+          "estimatedPlan": {
+            "hash": 36248429,
+            "operators": [
+              {
+                "id": 0,
+                "parent_id": null,
+                "operation": "SELECT STATEMENT",
+                "options": null,
+                "owner": null,
+                "object": null,
+                "estimated_rows": 2500,
+                "optimizer_cost": 16,
+                "access_predicates": null,
+                "filter_predicates": null
+              },
+              {
+                "id": 1,
+                "parent_id": 0,
+                "operation": "SORT",
+                "options": "ORDER BY",
+                "owner": null,
+                "object": null,
+                "estimated_rows": 2500,
+                "optimizer_cost": 16,
+                "access_predicates": null,
+                "filter_predicates": null
+              },
+              {
+                "id": 2,
+                "parent_id": 1,
+                "operation": "TABLE ACCESS",
+                "options": "FULL",
+                "owner": "ORACLE_SPA",
+                "object": "ORDERS",
+                "estimated_rows": 2500,
+                "optimizer_cost": 15,
+                "access_predicates": null,
+                "filter_predicates": "\"STATUS\"=:STATUS"
+              }
+            ]
+          },
+          "actualCursorMetrics": null,
+          "evidence": "docs/evidence/phase4/group-b-histogram-final/runs/82b1df0bc6bb40738719801106790567/run.json",
+          "caveats": [
+            "client_execute_full_fetch",
+            "sequential_blocks",
+            "single_host_small_seed",
+            "estimated_plans_only"
+          ]
+        },
+        "after": {
+          "experimentId": "E04",
+          "queryId": "Q06",
+          "variant": "baseline",
+          "scenario": "status-histogram",
+          "sql": "SELECT order_id, status, total_amount FROM orders WHERE status=:status ORDER BY order_id",
+          "rows": 5876,
+          "resultSha256": "286439549989d570b96b1ce7febd9c2f531207248d637adb027141e9c6c5b200",
+          "median": 9.338680499999999,
+          "iqr": 1.2497305,
+          "p95": 20.903669949999983,
+          "q25": 8.47732175,
+          "q75": 9.72705225,
+          "n": 10,
+          "warmups": 5,
+          "unit": "ms",
+          "indexConfiguration": [],
+          "estimatedPlan": {
+            "hash": 36248429,
+            "operators": [
+              {
+                "id": 0,
+                "parent_id": null,
+                "operation": "SELECT STATEMENT",
+                "options": null,
+                "owner": null,
+                "object": null,
+                "estimated_rows": 2500,
+                "optimizer_cost": 16,
+                "access_predicates": null,
+                "filter_predicates": null
+              },
+              {
+                "id": 1,
+                "parent_id": 0,
+                "operation": "SORT",
+                "options": "ORDER BY",
+                "owner": null,
+                "object": null,
+                "estimated_rows": 2500,
+                "optimizer_cost": 16,
+                "access_predicates": null,
+                "filter_predicates": null
+              },
+              {
+                "id": 2,
+                "parent_id": 1,
+                "operation": "TABLE ACCESS",
+                "options": "FULL",
+                "owner": "ORACLE_SPA",
+                "object": "ORDERS",
+                "estimated_rows": 2500,
+                "optimizer_cost": 15,
+                "access_predicates": null,
+                "filter_predicates": "\"STATUS\"=:STATUS"
+              }
+            ]
+          },
+          "actualCursorMetrics": null,
+          "evidence": "docs/evidence/phase4/group-b-histogram-final/runs/232234a4a9ea4f56880afbb6749b585e/run.json",
+          "caveats": [
+            "client_execute_full_fetch",
+            "sequential_blocks",
+            "single_host_small_seed",
+            "estimated_plans_only"
+          ]
+        },
+        "changePercent": 3.5929020183280924
+      },
+      {
+        "status": "CANCELLED",
+        "before": {
+          "experimentId": "E04",
+          "queryId": "Q06",
+          "variant": "rare",
+          "scenario": "baseline",
+          "sql": "SELECT order_id, status, total_amount FROM orders WHERE status=:status ORDER BY order_id",
+          "rows": 541,
+          "resultSha256": "bb68c733888881baf576256d47c63bb195d0fd7fd1553e194666b754babb342c",
+          "median": 1.570132,
+          "iqr": 0.08301675000000008,
+          "p95": 1.6222115,
+          "q25": 1.51772625,
+          "q75": 1.600743,
+          "n": 10,
+          "warmups": 5,
+          "unit": "ms",
+          "indexConfiguration": [],
+          "estimatedPlan": {
+            "hash": 36248429,
+            "operators": [
+              {
+                "id": 0,
+                "parent_id": null,
+                "operation": "SELECT STATEMENT",
+                "options": null,
+                "owner": null,
+                "object": null,
+                "estimated_rows": 2500,
+                "optimizer_cost": 16,
+                "access_predicates": null,
+                "filter_predicates": null
+              },
+              {
+                "id": 1,
+                "parent_id": 0,
+                "operation": "SORT",
+                "options": "ORDER BY",
+                "owner": null,
+                "object": null,
+                "estimated_rows": 2500,
+                "optimizer_cost": 16,
+                "access_predicates": null,
+                "filter_predicates": null
+              },
+              {
+                "id": 2,
+                "parent_id": 1,
+                "operation": "TABLE ACCESS",
+                "options": "FULL",
+                "owner": "ORACLE_SPA",
+                "object": "ORDERS",
+                "estimated_rows": 2500,
+                "optimizer_cost": 15,
+                "access_predicates": null,
+                "filter_predicates": "\"STATUS\"=:STATUS"
+              }
+            ]
+          },
+          "actualCursorMetrics": null,
+          "evidence": "docs/evidence/phase4/group-b-histogram-final/runs/82b1df0bc6bb40738719801106790567/run.json",
+          "caveats": [
+            "client_execute_full_fetch",
+            "sequential_blocks",
+            "single_host_small_seed",
+            "estimated_plans_only"
+          ]
+        },
+        "after": {
+          "experimentId": "E04",
+          "queryId": "Q06",
+          "variant": "rare",
+          "scenario": "status-histogram",
+          "sql": "SELECT order_id, status, total_amount FROM orders WHERE status=:status ORDER BY order_id",
+          "rows": 541,
+          "resultSha256": "bb68c733888881baf576256d47c63bb195d0fd7fd1553e194666b754babb342c",
+          "median": 1.59159,
+          "iqr": 0.09339899999999979,
+          "p95": 1.65921995,
+          "q25": 1.535892,
+          "q75": 1.6292909999999998,
+          "n": 10,
+          "warmups": 5,
+          "unit": "ms",
+          "indexConfiguration": [],
+          "estimatedPlan": {
+            "hash": 36248429,
+            "operators": [
+              {
+                "id": 0,
+                "parent_id": null,
+                "operation": "SELECT STATEMENT",
+                "options": null,
+                "owner": null,
+                "object": null,
+                "estimated_rows": 2500,
+                "optimizer_cost": 16,
+                "access_predicates": null,
+                "filter_predicates": null
+              },
+              {
+                "id": 1,
+                "parent_id": 0,
+                "operation": "SORT",
+                "options": "ORDER BY",
+                "owner": null,
+                "object": null,
+                "estimated_rows": 2500,
+                "optimizer_cost": 16,
+                "access_predicates": null,
+                "filter_predicates": null
+              },
+              {
+                "id": 2,
+                "parent_id": 1,
+                "operation": "TABLE ACCESS",
+                "options": "FULL",
+                "owner": "ORACLE_SPA",
+                "object": "ORDERS",
+                "estimated_rows": 2500,
+                "optimizer_cost": 15,
+                "access_predicates": null,
+                "filter_predicates": "\"STATUS\"=:STATUS"
+              }
+            ]
+          },
+          "actualCursorMetrics": null,
+          "evidence": "docs/evidence/phase4/group-b-histogram-final/runs/232234a4a9ea4f56880afbb6749b585e/run.json",
+          "caveats": [
+            "client_execute_full_fetch",
+            "sequential_blocks",
+            "single_host_small_seed",
+            "estimated_plans_only"
+          ]
+        },
+        "changePercent": 1.366636690418388
+      }
+    ]
+  },
+  "baselines": [
+    {
+      "experimentId": "E01",
+      "queryId": "Q01",
+      "variant": "baseline",
+      "scenario": "baseline",
+      "sql": "SELECT customer_id, full_name, email FROM customers WHERE email = :email",
+      "rows": 1,
+      "resultSha256": "e9467d77ca7e35a63cd5c76f47f87b8cc58c0f52869107274947839c7c327788",
+      "median": 0.6538835000000001,
+      "iqr": 0.15964349999999994,
+      "p95": 1.0406855499999998,
+      "q25": 0.5983890000000001,
+      "q75": 0.7580325,
+      "n": 10,
+      "warmups": 5,
+      "unit": "ms",
+      "indexConfiguration": [],
+      "estimatedPlan": {
+        "hash": 2008213504,
+        "operators": [
+          {
+            "id": 0,
+            "parent_id": null,
+            "operation": "SELECT STATEMENT",
+            "options": null,
+            "owner": null,
+            "object": null,
+            "estimated_rows": 1,
+            "optimizer_cost": 9,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 1,
+            "parent_id": 0,
+            "operation": "TABLE ACCESS",
+            "options": "FULL",
+            "owner": "ORACLE_SPA",
+            "object": "CUSTOMERS",
+            "estimated_rows": 1,
+            "optimizer_cost": 9,
+            "access_predicates": null,
+            "filter_predicates": "\"EMAIL\"=:EMAIL"
+          }
+        ]
+      },
+      "actualCursorMetrics": null,
+      "evidence": "docs/evidence/phase4/runs/c4cd44eae137426cbdfec81f66cab75a/run.json",
+      "caveats": [
+        "client_execute_full_fetch",
+        "sequential_blocks",
+        "single_host_small_seed",
+        "estimated_plans_only"
+      ]
+    },
+    {
+      "experimentId": "E02",
+      "queryId": "Q02",
+      "variant": "baseline",
+      "scenario": "baseline",
+      "sql": "SELECT order_id, customer_id, order_date, total_amount FROM orders WHERE customer_id = :customer_id AND order_date >= :start_date AND order_date < :end_date ORDER BY order_id",
+      "rows": 40,
+      "resultSha256": "e26ec335ea897bdf74d92be648be5504b387df91ce5c5ffa99f5b6954aa0ec77",
+      "median": 1.5513115000000002,
+      "iqr": 0.32609675000000005,
+      "p95": 1.8147642,
+      "q25": 1.428201,
+      "q75": 1.75429775,
+      "n": 10,
+      "warmups": 5,
+      "unit": "ms",
+      "indexConfiguration": [],
+      "estimatedPlan": {
+        "hash": 1132935394,
+        "operators": [
+          {
+            "id": 0,
+            "parent_id": null,
+            "operation": "SELECT STATEMENT",
+            "options": null,
+            "owner": null,
+            "object": null,
+            "estimated_rows": 1,
+            "optimizer_cost": 16,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 1,
+            "parent_id": 0,
+            "operation": "SORT",
+            "options": "ORDER BY",
+            "owner": null,
+            "object": null,
+            "estimated_rows": 1,
+            "optimizer_cost": 16,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 2,
+            "parent_id": 1,
+            "operation": "FILTER",
+            "options": null,
+            "owner": null,
+            "object": null,
+            "estimated_rows": null,
+            "optimizer_cost": null,
+            "access_predicates": null,
+            "filter_predicates": ":END_DATE>:START_DATE"
+          },
+          {
+            "id": 3,
+            "parent_id": 2,
+            "operation": "TABLE ACCESS",
+            "options": "FULL",
+            "owner": "ORACLE_SPA",
+            "object": "ORDERS",
+            "estimated_rows": 1,
+            "optimizer_cost": 15,
+            "access_predicates": null,
+            "filter_predicates": "\"CUSTOMER_ID\"=:CUSTOMER_ID AND \"ORDER_DATE\">=:START_DATE AND \"ORDER_DATE\"<:END_DATE"
+          }
+        ]
+      },
+      "actualCursorMetrics": null,
+      "evidence": "docs/evidence/phase4/runs/9dffbb99f3fe48e08ec80e18a9aa536d/run.json",
+      "caveats": [
+        "client_execute_full_fetch",
+        "sequential_blocks",
+        "single_host_small_seed",
+        "estimated_plans_only"
+      ]
+    },
+    {
+      "experimentId": "E03",
+      "queryId": "Q07",
+      "variant": "baseline",
+      "scenario": "baseline",
+      "sql": "SELECT order_id, order_date, total_amount FROM orders WHERE TRUNC(order_date)=:day ORDER BY order_id",
+      "rows": 113,
+      "resultSha256": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "median": 3.1723334999999997,
+      "iqr": 0.4085597500000002,
+      "p95": 4.21471515,
+      "q25": 2.9967569999999997,
+      "q75": 3.40531675,
+      "n": 10,
+      "warmups": 5,
+      "unit": "ms",
+      "indexConfiguration": [],
+      "estimatedPlan": {
+        "hash": 36248429,
+        "operators": [
+          {
+            "id": 0,
+            "parent_id": null,
+            "operation": "SELECT STATEMENT",
+            "options": null,
+            "owner": null,
+            "object": null,
+            "estimated_rows": 100,
+            "optimizer_cost": 16,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 1,
+            "parent_id": 0,
+            "operation": "SORT",
+            "options": "ORDER BY",
+            "owner": null,
+            "object": null,
+            "estimated_rows": 100,
+            "optimizer_cost": 16,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 2,
+            "parent_id": 1,
+            "operation": "TABLE ACCESS",
+            "options": "FULL",
+            "owner": "ORACLE_SPA",
+            "object": "ORDERS",
+            "estimated_rows": 100,
+            "optimizer_cost": 15,
+            "access_predicates": null,
+            "filter_predicates": "TRUNC(INTERNAL_FUNCTION(\"ORDER_DATE\"))=:DAY"
+          }
+        ]
+      },
+      "actualCursorMetrics": null,
+      "evidence": "docs/evidence/phase4/runs/b158e3a5c72249f9bf8a362f8a75eeea/run.json",
+      "caveats": [
+        "client_execute_full_fetch",
+        "sequential_blocks",
+        "single_host_small_seed",
+        "estimated_plans_only"
+      ]
+    },
+    {
+      "experimentId": "E03",
+      "queryId": "Q07",
+      "variant": "range",
+      "scenario": "baseline",
+      "sql": "SELECT order_id, order_date, total_amount FROM orders WHERE order_date>=:day AND order_date<:next_day ORDER BY order_id",
+      "rows": 113,
+      "resultSha256": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+      "median": 1.4802495,
+      "iqr": 0.2663114999999998,
+      "p95": 1.87330765,
+      "q25": 1.42635525,
+      "q75": 1.6926667499999999,
+      "n": 10,
+      "warmups": 5,
+      "unit": "ms",
+      "indexConfiguration": [],
+      "estimatedPlan": {
+        "hash": 1132935394,
+        "operators": [
+          {
+            "id": 0,
+            "parent_id": null,
+            "operation": "SELECT STATEMENT",
+            "options": null,
+            "owner": null,
+            "object": null,
+            "estimated_rows": 25,
+            "optimizer_cost": 16,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 1,
+            "parent_id": 0,
+            "operation": "SORT",
+            "options": "ORDER BY",
+            "owner": null,
+            "object": null,
+            "estimated_rows": 25,
+            "optimizer_cost": 16,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 2,
+            "parent_id": 1,
+            "operation": "FILTER",
+            "options": null,
+            "owner": null,
+            "object": null,
+            "estimated_rows": null,
+            "optimizer_cost": null,
+            "access_predicates": null,
+            "filter_predicates": ":NEXT_DAY>:DAY"
+          },
+          {
+            "id": 3,
+            "parent_id": 2,
+            "operation": "TABLE ACCESS",
+            "options": "FULL",
+            "owner": "ORACLE_SPA",
+            "object": "ORDERS",
+            "estimated_rows": 25,
+            "optimizer_cost": 15,
+            "access_predicates": null,
+            "filter_predicates": "\"ORDER_DATE\">=:DAY AND \"ORDER_DATE\"<:NEXT_DAY"
+          }
+        ]
+      },
+      "actualCursorMetrics": null,
+      "evidence": "docs/evidence/phase4/runs/b158e3a5c72249f9bf8a362f8a75eeea/run.json",
+      "caveats": [
+        "client_execute_full_fetch",
+        "sequential_blocks",
+        "single_host_small_seed",
+        "estimated_plans_only"
+      ]
+    },
+    {
+      "experimentId": "E04",
+      "queryId": "Q06",
+      "variant": "baseline",
+      "scenario": "baseline",
+      "sql": "SELECT order_id, status, total_amount FROM orders WHERE status=:status ORDER BY order_id",
+      "rows": 5876,
+      "resultSha256": "286439549989d570b96b1ce7febd9c2f531207248d637adb027141e9c6c5b200",
+      "median": 13.9024275,
+      "iqr": 2.3166100000000007,
+      "p95": 22.66462179999999,
+      "q25": 13.049031249999999,
+      "q75": 15.36564125,
+      "n": 10,
+      "warmups": 5,
+      "unit": "ms",
+      "indexConfiguration": [],
+      "estimatedPlan": {
+        "hash": 36248429,
+        "operators": [
+          {
+            "id": 0,
+            "parent_id": null,
+            "operation": "SELECT STATEMENT",
+            "options": null,
+            "owner": null,
+            "object": null,
+            "estimated_rows": 2500,
+            "optimizer_cost": 16,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 1,
+            "parent_id": 0,
+            "operation": "SORT",
+            "options": "ORDER BY",
+            "owner": null,
+            "object": null,
+            "estimated_rows": 2500,
+            "optimizer_cost": 16,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 2,
+            "parent_id": 1,
+            "operation": "TABLE ACCESS",
+            "options": "FULL",
+            "owner": "ORACLE_SPA",
+            "object": "ORDERS",
+            "estimated_rows": 2500,
+            "optimizer_cost": 15,
+            "access_predicates": null,
+            "filter_predicates": "\"STATUS\"=:STATUS"
+          }
+        ]
+      },
+      "actualCursorMetrics": null,
+      "evidence": "docs/evidence/phase4/runs/a64fbcf36ff14a758698e301435ff310/run.json",
+      "caveats": [
+        "client_execute_full_fetch",
+        "sequential_blocks",
+        "single_host_small_seed",
+        "estimated_plans_only"
+      ]
+    },
+    {
+      "experimentId": "E04",
+      "queryId": "Q06",
+      "variant": "rare",
+      "scenario": "baseline",
+      "sql": "SELECT order_id, status, total_amount FROM orders WHERE status=:status ORDER BY order_id",
+      "rows": 541,
+      "resultSha256": "bb68c733888881baf576256d47c63bb195d0fd7fd1553e194666b754babb342c",
+      "median": 2.268922,
+      "iqr": 0.1788177499999999,
+      "p95": 2.52357285,
+      "q25": 2.19351625,
+      "q75": 2.372334,
+      "n": 10,
+      "warmups": 5,
+      "unit": "ms",
+      "indexConfiguration": [],
+      "estimatedPlan": {
+        "hash": 36248429,
+        "operators": [
+          {
+            "id": 0,
+            "parent_id": null,
+            "operation": "SELECT STATEMENT",
+            "options": null,
+            "owner": null,
+            "object": null,
+            "estimated_rows": 2500,
+            "optimizer_cost": 16,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 1,
+            "parent_id": 0,
+            "operation": "SORT",
+            "options": "ORDER BY",
+            "owner": null,
+            "object": null,
+            "estimated_rows": 2500,
+            "optimizer_cost": 16,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 2,
+            "parent_id": 1,
+            "operation": "TABLE ACCESS",
+            "options": "FULL",
+            "owner": "ORACLE_SPA",
+            "object": "ORDERS",
+            "estimated_rows": 2500,
+            "optimizer_cost": 15,
+            "access_predicates": null,
+            "filter_predicates": "\"STATUS\"=:STATUS"
+          }
+        ]
+      },
+      "actualCursorMetrics": null,
+      "evidence": "docs/evidence/phase4/runs/a64fbcf36ff14a758698e301435ff310/run.json",
+      "caveats": [
+        "client_execute_full_fetch",
+        "sequential_blocks",
+        "single_host_small_seed",
+        "estimated_plans_only"
+      ]
+    },
+    {
+      "experimentId": "E05",
+      "queryId": "Q08",
+      "variant": "baseline",
+      "scenario": "baseline",
+      "sql": "SELECT order_id, order_date, total_amount FROM orders WHERE status=:status ORDER BY order_date DESC, order_id DESC FETCH FIRST 20 ROWS ONLY",
+      "rows": 20,
+      "resultSha256": "fb280f9e58f8ebdb53fe5d10a9ac7eb5bfdc73822e2b24649db212d4fa5a2de3",
+      "median": 1.9508044999999998,
+      "iqr": 0.41491824999999993,
+      "p95": 2.31860055,
+      "q25": 1.79051925,
+      "q75": 2.2054375,
+      "n": 10,
+      "warmups": 5,
+      "unit": "ms",
+      "indexConfiguration": [],
+      "estimatedPlan": {
+        "hash": 399652421,
+        "operators": [
+          {
+            "id": 0,
+            "parent_id": null,
+            "operation": "SELECT STATEMENT",
+            "options": null,
+            "owner": null,
+            "object": null,
+            "estimated_rows": 20,
+            "optimizer_cost": 16,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 1,
+            "parent_id": 0,
+            "operation": "COUNT",
+            "options": "STOPKEY",
+            "owner": null,
+            "object": null,
+            "estimated_rows": null,
+            "optimizer_cost": null,
+            "access_predicates": null,
+            "filter_predicates": "ROWNUM<=20"
+          },
+          {
+            "id": 2,
+            "parent_id": 1,
+            "operation": "VIEW",
+            "options": null,
+            "owner": "SYS",
+            "object": null,
+            "estimated_rows": 2500,
+            "optimizer_cost": 16,
+            "access_predicates": null,
+            "filter_predicates": null
+          },
+          {
+            "id": 3,
+            "parent_id": 2,
+            "operation": "SORT",
+            "options": "ORDER BY STOPKEY",
+            "owner": null,
+            "object": null,
+            "estimated_rows": 2500,
+            "optimizer_cost": 16,
+            "access_predicates": null,
+            "filter_predicates": "ROWNUM<=20"
+          },
+          {
+            "id": 4,
+            "parent_id": 3,
+            "operation": "TABLE ACCESS",
+            "options": "FULL",
+            "owner": "ORACLE_SPA",
+            "object": "ORDERS",
+            "estimated_rows": 2500,
+            "optimizer_cost": 15,
+            "access_predicates": null,
+            "filter_predicates": "\"STATUS\"=:STATUS"
+          }
+        ]
+      },
+      "actualCursorMetrics": null,
+      "evidence": "docs/evidence/phase4/runs/7efe329021d4435688bf2ca9f755cca7/run.json",
+      "caveats": [
+        "client_execute_full_fetch",
+        "sequential_blocks",
+        "single_host_small_seed",
+        "estimated_plans_only"
+      ]
+    }
+  ],
+  "indexes": [
+    {
+      "id": "E01-email-baseline",
+      "index": "OSPA_CUSTOMERS_EMAIL",
+      "configuration": "CREATE INDEX ORACLE_SPA.OSPA_CUSTOMERS_EMAIL ON ORACLE_SPA.CUSTOMERS (EMAIL) TABLESPACE USERS",
+      "storageKiB": 192,
+      "before": {
+        "experimentId": "E01",
+        "queryId": "Q01",
+        "variant": "baseline",
+        "scenario": "baseline",
+        "sql": "SELECT customer_id, full_name, email FROM customers WHERE email = :email",
+        "rows": 1,
+        "resultSha256": "e9467d77ca7e35a63cd5c76f47f87b8cc58c0f52869107274947839c7c327788",
+        "median": 0.930913,
+        "iqr": 0.17909224999999995,
+        "p95": 1.12258525,
+        "q25": 0.84428125,
+        "q75": 1.0233735,
+        "n": 10,
+        "warmups": 5,
+        "unit": "ms",
+        "indexConfiguration": [],
+        "estimatedPlan": {
+          "hash": 2008213504,
+          "operators": [
+            {
+              "id": 0,
+              "parent_id": null,
+              "operation": "SELECT STATEMENT",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": 1,
+              "optimizer_cost": 9,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 1,
+              "parent_id": 0,
+              "operation": "TABLE ACCESS",
+              "options": "FULL",
+              "owner": "ORACLE_SPA",
+              "object": "CUSTOMERS",
+              "estimated_rows": 1,
+              "optimizer_cost": 9,
+              "access_predicates": null,
+              "filter_predicates": "\"EMAIL\"=:EMAIL"
+            }
+          ]
+        },
+        "actualCursorMetrics": null,
+        "evidence": "docs/evidence/phase4/group-a/runs/fc30f0efd7964149b4836b9ecc862efb/run.json",
+        "caveats": [
+          "client_execute_full_fetch",
+          "sequential_blocks",
+          "single_host_small_seed",
+          "estimated_plans_only"
+        ]
+      },
+      "after": {
+        "experimentId": "E01",
+        "queryId": "Q01",
+        "variant": "baseline",
+        "scenario": "email",
+        "sql": "SELECT customer_id, full_name, email FROM customers WHERE email = :email",
+        "rows": 1,
+        "resultSha256": "e9467d77ca7e35a63cd5c76f47f87b8cc58c0f52869107274947839c7c327788",
+        "median": 0.4359655,
+        "iqr": 0.09603974999999998,
+        "p95": 0.53678645,
+        "q25": 0.40787775000000004,
+        "q75": 0.5039175,
+        "n": 10,
+        "warmups": 5,
+        "unit": "ms",
+        "indexConfiguration": [
+          "OSPA_CUSTOMERS_EMAIL"
+        ],
+        "estimatedPlan": {
+          "hash": 1674652433,
+          "operators": [
+            {
+              "id": 0,
+              "parent_id": null,
+              "operation": "SELECT STATEMENT",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": 1,
+              "optimizer_cost": 2,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 1,
+              "parent_id": 0,
+              "operation": "TABLE ACCESS",
+              "options": "BY INDEX ROWID BATCHED",
+              "owner": "ORACLE_SPA",
+              "object": "CUSTOMERS",
+              "estimated_rows": 1,
+              "optimizer_cost": 2,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 2,
+              "parent_id": 1,
+              "operation": "INDEX",
+              "options": "RANGE SCAN",
+              "owner": "ORACLE_SPA",
+              "object": "OSPA_CUSTOMERS_EMAIL",
+              "estimated_rows": 1,
+              "optimizer_cost": 1,
+              "access_predicates": "\"EMAIL\"=:EMAIL",
+              "filter_predicates": null
+            }
+          ]
+        },
+        "actualCursorMetrics": null,
+        "evidence": "docs/evidence/phase4/group-a/runs/8b6f8781e29e412a81ee4b9789dc5954/run.json",
+        "caveats": [
+          "client_execute_full_fetch",
+          "sequential_blocks",
+          "single_host_small_seed",
+          "estimated_plans_only"
+        ]
+      },
+      "changePercent": -53.16796521264608,
+      "evidence": "docs/evidence/phase4/group-a/OSPA_CUSTOMERS_EMAIL.json"
+    },
+    {
+      "id": "E02-simple-baseline",
+      "index": "OSPA_ORDERS_CUSTOMER",
+      "configuration": "CREATE INDEX ORACLE_SPA.OSPA_ORDERS_CUSTOMER ON ORACLE_SPA.ORDERS (CUSTOMER_ID) TABLESPACE USERS",
+      "storageKiB": 256,
+      "before": {
+        "experimentId": "E02",
+        "queryId": "Q02",
+        "variant": "baseline",
+        "scenario": "baseline",
+        "sql": "SELECT order_id, customer_id, order_date, total_amount FROM orders WHERE customer_id = :customer_id AND order_date >= :start_date AND order_date < :end_date ORDER BY order_id",
+        "rows": 40,
+        "resultSha256": "e26ec335ea897bdf74d92be648be5504b387df91ce5c5ffa99f5b6954aa0ec77",
+        "median": 1.6993025,
+        "iqr": 0.1663659999999998,
+        "p95": 1.9288812,
+        "q25": 1.624637,
+        "q75": 1.791003,
+        "n": 10,
+        "warmups": 5,
+        "unit": "ms",
+        "indexConfiguration": [],
+        "estimatedPlan": {
+          "hash": 1132935394,
+          "operators": [
+            {
+              "id": 0,
+              "parent_id": null,
+              "operation": "SELECT STATEMENT",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": 1,
+              "optimizer_cost": 16,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 1,
+              "parent_id": 0,
+              "operation": "SORT",
+              "options": "ORDER BY",
+              "owner": null,
+              "object": null,
+              "estimated_rows": 1,
+              "optimizer_cost": 16,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 2,
+              "parent_id": 1,
+              "operation": "FILTER",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": null,
+              "optimizer_cost": null,
+              "access_predicates": null,
+              "filter_predicates": ":END_DATE>:START_DATE"
+            },
+            {
+              "id": 3,
+              "parent_id": 2,
+              "operation": "TABLE ACCESS",
+              "options": "FULL",
+              "owner": "ORACLE_SPA",
+              "object": "ORDERS",
+              "estimated_rows": 1,
+              "optimizer_cost": 15,
+              "access_predicates": null,
+              "filter_predicates": "\"CUSTOMER_ID\"=:CUSTOMER_ID AND \"ORDER_DATE\">=:START_DATE AND \"ORDER_DATE\"<:END_DATE"
+            }
+          ]
+        },
+        "actualCursorMetrics": null,
+        "evidence": "docs/evidence/phase4/group-a/runs/b1cb371a97e54ce0b6226a52c73c3e05/run.json",
+        "caveats": [
+          "client_execute_full_fetch",
+          "sequential_blocks",
+          "single_host_small_seed",
+          "estimated_plans_only"
+        ]
+      },
+      "after": {
+        "experimentId": "E02",
+        "queryId": "Q02",
+        "variant": "baseline",
+        "scenario": "simple",
+        "sql": "SELECT order_id, customer_id, order_date, total_amount FROM orders WHERE customer_id = :customer_id AND order_date >= :start_date AND order_date < :end_date ORDER BY order_id",
+        "rows": 40,
+        "resultSha256": "e26ec335ea897bdf74d92be648be5504b387df91ce5c5ffa99f5b6954aa0ec77",
+        "median": 0.95414,
+        "iqr": 0.3608547500000001,
+        "p95": 1.283493,
+        "q25": 0.8218907499999999,
+        "q75": 1.1827455,
+        "n": 10,
+        "warmups": 5,
+        "unit": "ms",
+        "indexConfiguration": [
+          "OSPA_ORDERS_CUSTOMER"
+        ],
+        "estimatedPlan": {
+          "hash": 889078177,
+          "operators": [
+            {
+              "id": 0,
+              "parent_id": null,
+              "operation": "SELECT STATEMENT",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": 1,
+              "optimizer_cost": 8,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 1,
+              "parent_id": 0,
+              "operation": "SORT",
+              "options": "ORDER BY",
+              "owner": null,
+              "object": null,
+              "estimated_rows": 1,
+              "optimizer_cost": 8,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 2,
+              "parent_id": 1,
+              "operation": "FILTER",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": null,
+              "optimizer_cost": null,
+              "access_predicates": null,
+              "filter_predicates": ":END_DATE>:START_DATE"
+            },
+            {
+              "id": 3,
+              "parent_id": 2,
+              "operation": "TABLE ACCESS",
+              "options": "BY INDEX ROWID BATCHED",
+              "owner": "ORACLE_SPA",
+              "object": "ORDERS",
+              "estimated_rows": 1,
+              "optimizer_cost": 7,
+              "access_predicates": null,
+              "filter_predicates": "\"ORDER_DATE\">=:START_DATE AND \"ORDER_DATE\"<:END_DATE"
+            },
+            {
+              "id": 4,
+              "parent_id": 3,
+              "operation": "INDEX",
+              "options": "RANGE SCAN",
+              "owner": "ORACLE_SPA",
+              "object": "OSPA_ORDERS_CUSTOMER",
+              "estimated_rows": 8,
+              "optimizer_cost": 1,
+              "access_predicates": "\"CUSTOMER_ID\"=:CUSTOMER_ID",
+              "filter_predicates": null
+            }
+          ]
+        },
+        "actualCursorMetrics": null,
+        "evidence": "docs/evidence/phase4/group-a/runs/9fa9fa3300024bed8a905c6b668c46c8/run.json",
+        "caveats": [
+          "client_execute_full_fetch",
+          "sequential_blocks",
+          "single_host_small_seed",
+          "estimated_plans_only"
+        ]
+      },
+      "changePercent": -43.85108007550157,
+      "evidence": "docs/evidence/phase4/group-a/OSPA_ORDERS_CUSTOMER.json"
+    },
+    {
+      "id": "E02-composite-baseline",
+      "index": "OSPA_ORDERS_CUST_DATE",
+      "configuration": "CREATE INDEX ORACLE_SPA.OSPA_ORDERS_CUST_DATE ON ORACLE_SPA.ORDERS (CUSTOMER_ID, ORDER_DATE) TABLESPACE USERS",
+      "storageKiB": 320,
+      "before": {
+        "experimentId": "E02",
+        "queryId": "Q02",
+        "variant": "baseline",
+        "scenario": "baseline",
+        "sql": "SELECT order_id, customer_id, order_date, total_amount FROM orders WHERE customer_id = :customer_id AND order_date >= :start_date AND order_date < :end_date ORDER BY order_id",
+        "rows": 40,
+        "resultSha256": "e26ec335ea897bdf74d92be648be5504b387df91ce5c5ffa99f5b6954aa0ec77",
+        "median": 1.593046,
+        "iqr": 0.21560575000000015,
+        "p95": 1.80227,
+        "q25": 1.4898069999999999,
+        "q75": 1.70541275,
+        "n": 10,
+        "warmups": 5,
+        "unit": "ms",
+        "indexConfiguration": [],
+        "estimatedPlan": {
+          "hash": 1132935394,
+          "operators": [
+            {
+              "id": 0,
+              "parent_id": null,
+              "operation": "SELECT STATEMENT",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": 1,
+              "optimizer_cost": 16,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 1,
+              "parent_id": 0,
+              "operation": "SORT",
+              "options": "ORDER BY",
+              "owner": null,
+              "object": null,
+              "estimated_rows": 1,
+              "optimizer_cost": 16,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 2,
+              "parent_id": 1,
+              "operation": "FILTER",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": null,
+              "optimizer_cost": null,
+              "access_predicates": null,
+              "filter_predicates": ":END_DATE>:START_DATE"
+            },
+            {
+              "id": 3,
+              "parent_id": 2,
+              "operation": "TABLE ACCESS",
+              "options": "FULL",
+              "owner": "ORACLE_SPA",
+              "object": "ORDERS",
+              "estimated_rows": 1,
+              "optimizer_cost": 15,
+              "access_predicates": null,
+              "filter_predicates": "\"CUSTOMER_ID\"=:CUSTOMER_ID AND \"ORDER_DATE\">=:START_DATE AND \"ORDER_DATE\"<:END_DATE"
+            }
+          ]
+        },
+        "actualCursorMetrics": null,
+        "evidence": "docs/evidence/phase4/group-a/runs/43fb7a0f56cb4c6195e4adf71f7d5f10/run.json",
+        "caveats": [
+          "client_execute_full_fetch",
+          "sequential_blocks",
+          "single_host_small_seed",
+          "estimated_plans_only"
+        ]
+      },
+      "after": {
+        "experimentId": "E02",
+        "queryId": "Q02",
+        "variant": "baseline",
+        "scenario": "composite",
+        "sql": "SELECT order_id, customer_id, order_date, total_amount FROM orders WHERE customer_id = :customer_id AND order_date >= :start_date AND order_date < :end_date ORDER BY order_id",
+        "rows": 40,
+        "resultSha256": "e26ec335ea897bdf74d92be648be5504b387df91ce5c5ffa99f5b6954aa0ec77",
+        "median": 1.1560394999999999,
+        "iqr": 0.3548055,
+        "p95": 1.42025685,
+        "q25": 0.8602785000000001,
+        "q75": 1.215084,
+        "n": 10,
+        "warmups": 5,
+        "unit": "ms",
+        "indexConfiguration": [
+          "OSPA_ORDERS_CUST_DATE"
+        ],
+        "estimatedPlan": {
+          "hash": 1066011995,
+          "operators": [
+            {
+              "id": 0,
+              "parent_id": null,
+              "operation": "SELECT STATEMENT",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": 1,
+              "optimizer_cost": 4,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 1,
+              "parent_id": 0,
+              "operation": "SORT",
+              "options": "ORDER BY",
+              "owner": null,
+              "object": null,
+              "estimated_rows": 1,
+              "optimizer_cost": 4,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 2,
+              "parent_id": 1,
+              "operation": "FILTER",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": null,
+              "optimizer_cost": null,
+              "access_predicates": null,
+              "filter_predicates": ":END_DATE>:START_DATE"
+            },
+            {
+              "id": 3,
+              "parent_id": 2,
+              "operation": "TABLE ACCESS",
+              "options": "BY INDEX ROWID BATCHED",
+              "owner": "ORACLE_SPA",
+              "object": "ORDERS",
+              "estimated_rows": 1,
+              "optimizer_cost": 3,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 4,
+              "parent_id": 3,
+              "operation": "INDEX",
+              "options": "RANGE SCAN",
+              "owner": "ORACLE_SPA",
+              "object": "OSPA_ORDERS_CUST_DATE",
+              "estimated_rows": 1,
+              "optimizer_cost": 2,
+              "access_predicates": "\"CUSTOMER_ID\"=:CUSTOMER_ID AND \"ORDER_DATE\">=:START_DATE AND \"ORDER_DATE\"<:END_DATE",
+              "filter_predicates": null
+            }
+          ]
+        },
+        "actualCursorMetrics": null,
+        "evidence": "docs/evidence/phase4/group-a/runs/28c29bc26e204818adc0fe50c0891528/run.json",
+        "caveats": [
+          "client_execute_full_fetch",
+          "sequential_blocks",
+          "single_host_small_seed",
+          "estimated_plans_only"
+        ]
+      },
+      "changePercent": -27.43213315874118,
+      "evidence": "docs/evidence/phase4/group-a/OSPA_ORDERS_CUST_DATE.json"
+    },
+    {
+      "id": "E03-date-index-baseline",
+      "index": "OSPA_ORDERS_DATE",
+      "configuration": "CREATE INDEX ORACLE_SPA.OSPA_ORDERS_DATE ON ORACLE_SPA.ORDERS (ORDER_DATE) TABLESPACE USERS",
+      "storageKiB": 256,
+      "before": {
+        "experimentId": "E03",
+        "queryId": "Q07",
+        "variant": "baseline",
+        "scenario": "baseline",
+        "sql": "SELECT order_id, order_date, total_amount FROM orders WHERE TRUNC(order_date)=:day ORDER BY order_id",
+        "rows": 113,
+        "resultSha256": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+        "median": 2.98287,
+        "iqr": 0.3690022500000003,
+        "p95": 3.983282249999999,
+        "q25": 2.882147,
+        "q75": 3.25114925,
+        "n": 10,
+        "warmups": 5,
+        "unit": "ms",
+        "indexConfiguration": [],
+        "estimatedPlan": {
+          "hash": 36248429,
+          "operators": [
+            {
+              "id": 0,
+              "parent_id": null,
+              "operation": "SELECT STATEMENT",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": 100,
+              "optimizer_cost": 16,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 1,
+              "parent_id": 0,
+              "operation": "SORT",
+              "options": "ORDER BY",
+              "owner": null,
+              "object": null,
+              "estimated_rows": 100,
+              "optimizer_cost": 16,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 2,
+              "parent_id": 1,
+              "operation": "TABLE ACCESS",
+              "options": "FULL",
+              "owner": "ORACLE_SPA",
+              "object": "ORDERS",
+              "estimated_rows": 100,
+              "optimizer_cost": 15,
+              "access_predicates": null,
+              "filter_predicates": "TRUNC(INTERNAL_FUNCTION(\"ORDER_DATE\"))=:DAY"
+            }
+          ]
+        },
+        "actualCursorMetrics": null,
+        "evidence": "docs/evidence/phase4/group-a/runs/8ea3e71c7d5d4434871a5636c2bdc948/run.json",
+        "caveats": [
+          "client_execute_full_fetch",
+          "sequential_blocks",
+          "single_host_small_seed",
+          "estimated_plans_only"
+        ]
+      },
+      "after": {
+        "experimentId": "E03",
+        "queryId": "Q07",
+        "variant": "baseline",
+        "scenario": "date-index",
+        "sql": "SELECT order_id, order_date, total_amount FROM orders WHERE TRUNC(order_date)=:day ORDER BY order_id",
+        "rows": 113,
+        "resultSha256": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+        "median": 3.0911619999999997,
+        "iqr": 0.5091075000000003,
+        "p95": 4.30556535,
+        "q25": 3.03477725,
+        "q75": 3.54388475,
+        "n": 10,
+        "warmups": 5,
+        "unit": "ms",
+        "indexConfiguration": [
+          "OSPA_ORDERS_DATE"
+        ],
+        "estimatedPlan": {
+          "hash": 36248429,
+          "operators": [
+            {
+              "id": 0,
+              "parent_id": null,
+              "operation": "SELECT STATEMENT",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": 100,
+              "optimizer_cost": 16,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 1,
+              "parent_id": 0,
+              "operation": "SORT",
+              "options": "ORDER BY",
+              "owner": null,
+              "object": null,
+              "estimated_rows": 100,
+              "optimizer_cost": 16,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 2,
+              "parent_id": 1,
+              "operation": "TABLE ACCESS",
+              "options": "FULL",
+              "owner": "ORACLE_SPA",
+              "object": "ORDERS",
+              "estimated_rows": 100,
+              "optimizer_cost": 15,
+              "access_predicates": null,
+              "filter_predicates": "TRUNC(INTERNAL_FUNCTION(\"ORDER_DATE\"))=:DAY"
+            }
+          ]
+        },
+        "actualCursorMetrics": null,
+        "evidence": "docs/evidence/phase4/group-a/runs/514f51728fe54076b45f2c2d4f7a3ef2/run.json",
+        "caveats": [
+          "client_execute_full_fetch",
+          "sequential_blocks",
+          "single_host_small_seed",
+          "estimated_plans_only"
+        ]
+      },
+      "changePercent": 3.630463278654439,
+      "evidence": "docs/evidence/phase4/group-a/OSPA_ORDERS_DATE.json"
+    },
+    {
+      "id": "E03-date-index-range",
+      "index": "OSPA_ORDERS_DATE",
+      "configuration": "CREATE INDEX ORACLE_SPA.OSPA_ORDERS_DATE ON ORACLE_SPA.ORDERS (ORDER_DATE) TABLESPACE USERS",
+      "storageKiB": 256,
+      "before": {
+        "experimentId": "E03",
+        "queryId": "Q07",
+        "variant": "range",
+        "scenario": "baseline",
+        "sql": "SELECT order_id, order_date, total_amount FROM orders WHERE order_date>=:day AND order_date<:next_day ORDER BY order_id",
+        "rows": 113,
+        "resultSha256": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+        "median": 1.4326555,
+        "iqr": 0.14396549999999997,
+        "p95": 1.61794975,
+        "q25": 1.3403765,
+        "q75": 1.484342,
+        "n": 10,
+        "warmups": 5,
+        "unit": "ms",
+        "indexConfiguration": [],
+        "estimatedPlan": {
+          "hash": 1132935394,
+          "operators": [
+            {
+              "id": 0,
+              "parent_id": null,
+              "operation": "SELECT STATEMENT",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": 25,
+              "optimizer_cost": 16,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 1,
+              "parent_id": 0,
+              "operation": "SORT",
+              "options": "ORDER BY",
+              "owner": null,
+              "object": null,
+              "estimated_rows": 25,
+              "optimizer_cost": 16,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 2,
+              "parent_id": 1,
+              "operation": "FILTER",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": null,
+              "optimizer_cost": null,
+              "access_predicates": null,
+              "filter_predicates": ":NEXT_DAY>:DAY"
+            },
+            {
+              "id": 3,
+              "parent_id": 2,
+              "operation": "TABLE ACCESS",
+              "options": "FULL",
+              "owner": "ORACLE_SPA",
+              "object": "ORDERS",
+              "estimated_rows": 25,
+              "optimizer_cost": 15,
+              "access_predicates": null,
+              "filter_predicates": "\"ORDER_DATE\">=:DAY AND \"ORDER_DATE\"<:NEXT_DAY"
+            }
+          ]
+        },
+        "actualCursorMetrics": null,
+        "evidence": "docs/evidence/phase4/group-a/runs/8ea3e71c7d5d4434871a5636c2bdc948/run.json",
+        "caveats": [
+          "client_execute_full_fetch",
+          "sequential_blocks",
+          "single_host_small_seed",
+          "estimated_plans_only"
+        ]
+      },
+      "after": {
+        "experimentId": "E03",
+        "queryId": "Q07",
+        "variant": "range",
+        "scenario": "date-index",
+        "sql": "SELECT order_id, order_date, total_amount FROM orders WHERE order_date>=:day AND order_date<:next_day ORDER BY order_id",
+        "rows": 113,
+        "resultSha256": "4d1177671062cab7c09290d3d5ec944c42a1ac8615b5005ee748a2d0066f6323",
+        "median": 1.7942935,
+        "iqr": 0.18391175000000004,
+        "p95": 1.8749048,
+        "q25": 1.622646,
+        "q75": 1.80655775,
+        "n": 10,
+        "warmups": 5,
+        "unit": "ms",
+        "indexConfiguration": [
+          "OSPA_ORDERS_DATE"
+        ],
+        "estimatedPlan": {
+          "hash": 488376564,
+          "operators": [
+            {
+              "id": 0,
+              "parent_id": null,
+              "operation": "SELECT STATEMENT",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": 25,
+              "optimizer_cost": 15,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 1,
+              "parent_id": 0,
+              "operation": "SORT",
+              "options": "ORDER BY",
+              "owner": null,
+              "object": null,
+              "estimated_rows": 25,
+              "optimizer_cost": 15,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 2,
+              "parent_id": 1,
+              "operation": "FILTER",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": null,
+              "optimizer_cost": null,
+              "access_predicates": null,
+              "filter_predicates": ":NEXT_DAY>:DAY"
+            },
+            {
+              "id": 3,
+              "parent_id": 2,
+              "operation": "TABLE ACCESS",
+              "options": "BY INDEX ROWID BATCHED",
+              "owner": "ORACLE_SPA",
+              "object": "ORDERS",
+              "estimated_rows": 25,
+              "optimizer_cost": 14,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 4,
+              "parent_id": 3,
+              "operation": "INDEX",
+              "options": "RANGE SCAN",
+              "owner": "ORACLE_SPA",
+              "object": "OSPA_ORDERS_DATE",
+              "estimated_rows": 45,
+              "optimizer_cost": 2,
+              "access_predicates": "\"ORDER_DATE\">=:DAY AND \"ORDER_DATE\"<:NEXT_DAY",
+              "filter_predicates": null
+            }
+          ]
+        },
+        "actualCursorMetrics": null,
+        "evidence": "docs/evidence/phase4/group-a/runs/514f51728fe54076b45f2c2d4f7a3ef2/run.json",
+        "caveats": [
+          "client_execute_full_fetch",
+          "sequential_blocks",
+          "single_host_small_seed",
+          "estimated_plans_only"
+        ]
+      },
+      "changePercent": 25.24249549176336,
+      "evidence": "docs/evidence/phase4/group-a/OSPA_ORDERS_DATE.json"
+    },
+    {
+      "id": "E05-status-date-baseline",
+      "index": "OSPA_ORDERS_STATUS_DATE",
+      "configuration": "CREATE INDEX ORACLE_SPA.OSPA_ORDERS_STATUS_DATE ON ORACLE_SPA.ORDERS (STATUS, ORDER_DATE, ORDER_ID) TABLESPACE USERS",
+      "storageKiB": 384,
+      "before": {
+        "experimentId": "E05",
+        "queryId": "Q08",
+        "variant": "baseline",
+        "scenario": "baseline",
+        "sql": "SELECT order_id, order_date, total_amount FROM orders WHERE status=:status ORDER BY order_date DESC, order_id DESC FETCH FIRST 20 ROWS ONLY",
+        "rows": 20,
+        "resultSha256": "fb280f9e58f8ebdb53fe5d10a9ac7eb5bfdc73822e2b24649db212d4fa5a2de3",
+        "median": 1.883601,
+        "iqr": 0.19848874999999988,
+        "p95": 2.7410075999999997,
+        "q25": 1.7833032500000001,
+        "q75": 1.981792,
+        "n": 10,
+        "warmups": 5,
+        "unit": "ms",
+        "indexConfiguration": [],
+        "estimatedPlan": {
+          "hash": 399652421,
+          "operators": [
+            {
+              "id": 0,
+              "parent_id": null,
+              "operation": "SELECT STATEMENT",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": 20,
+              "optimizer_cost": 16,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 1,
+              "parent_id": 0,
+              "operation": "COUNT",
+              "options": "STOPKEY",
+              "owner": null,
+              "object": null,
+              "estimated_rows": null,
+              "optimizer_cost": null,
+              "access_predicates": null,
+              "filter_predicates": "ROWNUM<=20"
+            },
+            {
+              "id": 2,
+              "parent_id": 1,
+              "operation": "VIEW",
+              "options": null,
+              "owner": "SYS",
+              "object": null,
+              "estimated_rows": 2500,
+              "optimizer_cost": 16,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 3,
+              "parent_id": 2,
+              "operation": "SORT",
+              "options": "ORDER BY STOPKEY",
+              "owner": null,
+              "object": null,
+              "estimated_rows": 2500,
+              "optimizer_cost": 16,
+              "access_predicates": null,
+              "filter_predicates": "ROWNUM<=20"
+            },
+            {
+              "id": 4,
+              "parent_id": 3,
+              "operation": "TABLE ACCESS",
+              "options": "FULL",
+              "owner": "ORACLE_SPA",
+              "object": "ORDERS",
+              "estimated_rows": 2500,
+              "optimizer_cost": 15,
+              "access_predicates": null,
+              "filter_predicates": "\"STATUS\"=:STATUS"
+            }
+          ]
+        },
+        "actualCursorMetrics": null,
+        "evidence": "docs/evidence/phase4/group-a/runs/c616d2f6e9fe43e0aa29f2a1ae0e06cf/run.json",
+        "caveats": [
+          "client_execute_full_fetch",
+          "sequential_blocks",
+          "single_host_small_seed",
+          "estimated_plans_only"
+        ]
+      },
+      "after": {
+        "experimentId": "E05",
+        "queryId": "Q08",
+        "variant": "baseline",
+        "scenario": "status-date",
+        "sql": "SELECT order_id, order_date, total_amount FROM orders WHERE status=:status ORDER BY order_date DESC, order_id DESC FETCH FIRST 20 ROWS ONLY",
+        "rows": 20,
+        "resultSha256": "fb280f9e58f8ebdb53fe5d10a9ac7eb5bfdc73822e2b24649db212d4fa5a2de3",
+        "median": 2.0865505,
+        "iqr": 0.3530595000000001,
+        "p95": 2.46724875,
+        "q25": 2.02191525,
+        "q75": 2.3749747500000002,
+        "n": 10,
+        "warmups": 5,
+        "unit": "ms",
+        "indexConfiguration": [
+          "OSPA_ORDERS_STATUS_DATE"
+        ],
+        "estimatedPlan": {
+          "hash": 399652421,
+          "operators": [
+            {
+              "id": 0,
+              "parent_id": null,
+              "operation": "SELECT STATEMENT",
+              "options": null,
+              "owner": null,
+              "object": null,
+              "estimated_rows": 20,
+              "optimizer_cost": 16,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 1,
+              "parent_id": 0,
+              "operation": "COUNT",
+              "options": "STOPKEY",
+              "owner": null,
+              "object": null,
+              "estimated_rows": null,
+              "optimizer_cost": null,
+              "access_predicates": null,
+              "filter_predicates": "ROWNUM<=20"
+            },
+            {
+              "id": 2,
+              "parent_id": 1,
+              "operation": "VIEW",
+              "options": null,
+              "owner": "SYS",
+              "object": null,
+              "estimated_rows": 2500,
+              "optimizer_cost": 16,
+              "access_predicates": null,
+              "filter_predicates": null
+            },
+            {
+              "id": 3,
+              "parent_id": 2,
+              "operation": "SORT",
+              "options": "ORDER BY STOPKEY",
+              "owner": null,
+              "object": null,
+              "estimated_rows": 2500,
+              "optimizer_cost": 16,
+              "access_predicates": null,
+              "filter_predicates": "ROWNUM<=20"
+            },
+            {
+              "id": 4,
+              "parent_id": 3,
+              "operation": "TABLE ACCESS",
+              "options": "FULL",
+              "owner": "ORACLE_SPA",
+              "object": "ORDERS",
+              "estimated_rows": 2500,
+              "optimizer_cost": 15,
+              "access_predicates": null,
+              "filter_predicates": "\"STATUS\"=:STATUS"
+            }
+          ]
+        },
+        "actualCursorMetrics": null,
+        "evidence": "docs/evidence/phase4/group-a/runs/cdfca9aef4644ce1aa00e24b28ad0010/run.json",
+        "caveats": [
+          "client_execute_full_fetch",
+          "sequential_blocks",
+          "single_host_small_seed",
+          "estimated_plans_only"
+        ]
+      },
+      "changePercent": 10.774548325255706,
+      "evidence": "docs/evidence/phase4/group-a/OSPA_ORDERS_STATUS_DATE.json"
+    }
+  ],
+  "sources": {
+    "docs/evidence/phase4/group-a/OSPA_CUSTOMERS_EMAIL.json": "01fee0a0c8f81c4bebf8c57c3883aadd2709c1efc09c69dda6eefb2b7c833b0f",
+    "docs/evidence/phase4/group-a/OSPA_ORDERS_CUST_DATE.json": "13012fd78ade3cb017cec529c08ded0364751218551bc126424799c2e290b3d3",
+    "docs/evidence/phase4/group-a/OSPA_ORDERS_CUSTOMER.json": "fafcae818a4bd44f2b9301a6dd0c906b6024ef9adcb2c850cc602a278e62d97b",
+    "docs/evidence/phase4/group-a/OSPA_ORDERS_DATE.json": "70e304c38c19bf7ebfcbb1c877b52b5797870e92c1c6ab7ad33bffade102220a",
+    "docs/evidence/phase4/group-a/OSPA_ORDERS_STATUS_DATE.json": "0303aa5fd547d95351535d69726ac74ced193a5ec7faa5b58bdd18a730e4193b",
+    "docs/evidence/phase4/group-a/runs/28c29bc26e204818adc0fe50c0891528/run.json": "baf4c0d4d2c77d3184e381e9591bab2c77e4f82f187eb90cbe3cc404b14ec28b",
+    "docs/evidence/phase4/group-a/runs/28c29bc26e204818adc0fe50c0891528/summary.json": "1d10b2453d74a3ed0c6b29f787227bfeda2bea72a6b69aebb5d27ff3e6a299fb",
+    "docs/evidence/phase4/group-a/runs/43fb7a0f56cb4c6195e4adf71f7d5f10/run.json": "8a1922f8d1f99c400ab9a603880bf491ccaa3dbc8a6c1f5e38746ccc0be91151",
+    "docs/evidence/phase4/group-a/runs/43fb7a0f56cb4c6195e4adf71f7d5f10/summary.json": "c398352626e9d8884bbcfbc4a7c840d1d7bd26d56565870a44f071202b52b506",
+    "docs/evidence/phase4/group-a/runs/514f51728fe54076b45f2c2d4f7a3ef2/run.json": "e4db277ecfe64c8d3483a4fc0ee5e47e59e6cfaee985a3b2af27aa5e47c9641d",
+    "docs/evidence/phase4/group-a/runs/514f51728fe54076b45f2c2d4f7a3ef2/summary.json": "7146279e92c4a6945155b0942d56c559b6a41ecd155395241c56802d570824c7",
+    "docs/evidence/phase4/group-a/runs/8b6f8781e29e412a81ee4b9789dc5954/run.json": "df2f342675d381cf992afbe5e08c94f8965023b882d9ce5ca5b3cc7f4dca651b",
+    "docs/evidence/phase4/group-a/runs/8b6f8781e29e412a81ee4b9789dc5954/summary.json": "a1af584171ae7b95ce4b84934f52e3822348a1f5c7eef78fb69de34a9e152306",
+    "docs/evidence/phase4/group-a/runs/8ea3e71c7d5d4434871a5636c2bdc948/run.json": "9b9a4d79d6fdb5bb0336045220eaeb866682e420fb51555e5128365237d113a6",
+    "docs/evidence/phase4/group-a/runs/8ea3e71c7d5d4434871a5636c2bdc948/summary.json": "ac485c634fb62c5ec4af48db6e85bcd62c880007b9f2fdfecd4573609f982441",
+    "docs/evidence/phase4/group-a/runs/9fa9fa3300024bed8a905c6b668c46c8/run.json": "03445fae0292aa6dcfb5c885d895a755d8bcda8d56f219881ad8e1e0ad3bab0b",
+    "docs/evidence/phase4/group-a/runs/9fa9fa3300024bed8a905c6b668c46c8/summary.json": "0acbaba4af56e4165e94f58135a01fa3f984ee60ef6dc6a45dee46973b203e9b",
+    "docs/evidence/phase4/group-a/runs/b1cb371a97e54ce0b6226a52c73c3e05/run.json": "066abded0b9e09ce41f9b2b21a98aab47e36d816a54d52808ce99fc9973dffe8",
+    "docs/evidence/phase4/group-a/runs/b1cb371a97e54ce0b6226a52c73c3e05/summary.json": "21ed398a2beaa3ab2e6259d565ce43e044cddfa560cf032f24019fab2ef0d1a9",
+    "docs/evidence/phase4/group-a/runs/c616d2f6e9fe43e0aa29f2a1ae0e06cf/run.json": "55c2c71df626604f042c4cda64660e2963096e9f3981c6589989cc6942dd80f8",
+    "docs/evidence/phase4/group-a/runs/c616d2f6e9fe43e0aa29f2a1ae0e06cf/summary.json": "817cfef67bd97634363d384bbfb1d50ee24b28f7db8d1ac99a36870ac735eed5",
+    "docs/evidence/phase4/group-a/runs/cdfca9aef4644ce1aa00e24b28ad0010/run.json": "905a3d91415162d5df9e38fc635391bd12cc87664c4ed9204495ab478b1223d1",
+    "docs/evidence/phase4/group-a/runs/cdfca9aef4644ce1aa00e24b28ad0010/summary.json": "93ccc98f8032cb79aea8e2444d02bfee970639601bb1e28f378e4b796e88d21d",
+    "docs/evidence/phase4/group-a/runs/fc30f0efd7964149b4836b9ecc862efb/run.json": "8434f7447647923e2316bf12174ba5168b95e0b5194704546c88ba307daa5dd1",
+    "docs/evidence/phase4/group-a/runs/fc30f0efd7964149b4836b9ecc862efb/summary.json": "a497328779663c04954644c0238f01d2ecda7daaf81fa3331d99e58a0f6ae3cb",
+    "docs/evidence/phase4/group-a/summary.json": "2cce60f505383bc357fd6d35d9f9a0b07b89337c59ee66e8e1d9f17fb07490f7",
+    "docs/evidence/phase4/group-b-histogram-final/cohort-comparisons.json": "c7970e9855a7bef5d976b3f250720ddef38b487b990312e779f9c0b21e7a4505",
+    "docs/evidence/phase4/group-b-histogram-final/observed-histogram.json": "0005385af907d55c36229ede4d4b727b93eea84ddc0e3fde323ce080d8dba2ea",
+    "docs/evidence/phase4/group-b-histogram-final/runs/232234a4a9ea4f56880afbb6749b585e/run.json": "e3af5f13b410032cc3495174b7360d36d974e3403e4e5958ce004488b53977c5",
+    "docs/evidence/phase4/group-b-histogram-final/runs/232234a4a9ea4f56880afbb6749b585e/summary.json": "cecbb324024821486148e65b161551188b2fb874ffa1bf2e0b09c58b5c3e9839",
+    "docs/evidence/phase4/group-b-histogram-final/runs/82b1df0bc6bb40738719801106790567/run.json": "e33c1bae63b867f75c0a34f6d74e6d8aa048506c7d25b53bb86fe5836d483d1e",
+    "docs/evidence/phase4/group-b-histogram-final/runs/82b1df0bc6bb40738719801106790567/summary.json": "d2ca4b289918ac5844a5032e083bb192978b747d7c8bcecd985b19f1ce48054f",
+    "docs/evidence/phase4/runs/7efe329021d4435688bf2ca9f755cca7/run.json": "79fd9ffe79659f35ce48b1948a08afec67b1488bdfd371d4339d472a6a6e9a07",
+    "docs/evidence/phase4/runs/7efe329021d4435688bf2ca9f755cca7/summary.json": "61a09264b1af1c09a8ec4f88a96c938ec49eff5ad899663bd192ad6eaa545b00",
+    "docs/evidence/phase4/runs/9dffbb99f3fe48e08ec80e18a9aa536d/run.json": "6a79513b15c0bb1b36fea88466c952c192509fe8ee34f351cac253252b33b4c6",
+    "docs/evidence/phase4/runs/9dffbb99f3fe48e08ec80e18a9aa536d/summary.json": "9b5827cb754306d62a4dfe9972f2c06f40416c120a5849df814df1c7ff74eca9",
+    "docs/evidence/phase4/runs/a64fbcf36ff14a758698e301435ff310/run.json": "cb9282f11c9a25b8cbb042ff92c5ca7250467b66124d404720825f8182b72120",
+    "docs/evidence/phase4/runs/a64fbcf36ff14a758698e301435ff310/summary.json": "61c6eda015601eab84ccc8e7d375cda0bac008ba6dcb2e2a754d1bcd5a89fddc",
+    "docs/evidence/phase4/runs/b158e3a5c72249f9bf8a362f8a75eeea/run.json": "b99288e86ab2c8462256c7f8d94bfe59b309e18d6c0dae29be005e2c01a57d14",
+    "docs/evidence/phase4/runs/b158e3a5c72249f9bf8a362f8a75eeea/summary.json": "66afaf529dabed43b3ade32683aebc9c77c3535d8e70196413750b49aa18520e",
+    "docs/evidence/phase4/runs/c4cd44eae137426cbdfec81f66cab75a/run.json": "28f18fa68ce4cdd06f0610d71775152fbe421fa4ad0eaa6afc83c253a8d287e4",
+    "docs/evidence/phase4/runs/c4cd44eae137426cbdfec81f66cab75a/summary.json": "1ec83cfe0c6cd06da66bb49300388d1865ece41ad98cd0f1227f3c2e0c1b572b",
+    "docs/evidence/phase5/stage-a/summary.json": "c04c8a443963cfa198aa071f1a26b325174dba639aa5b67aee0250cee40f0c5c",
+    "docs/evidence/phase5/stage-d/summary.json": "71b0d499e7a77444fe1c99480bd9f9c4df9578cc803d0b10d3a02ef91aaba236"
+  }
+}

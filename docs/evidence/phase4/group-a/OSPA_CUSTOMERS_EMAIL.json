@@ -1,0 +1,2135 @@
+{
+  "index": "OSPA_CUSTOMERS_EMAIL",
+  "experiment": "email-index",
+  "scenario": "email",
+  "status": "CLOSED",
+  "started_at_utc": "2026-10-19T04:03:19.551089+00:00",
+  "ddl_attempts": [
+    {
+      "action": "create",
+      "sql": "CREATE INDEX ORACLE_SPA.OSPA_CUSTOMERS_EMAIL ON ORACLE_SPA.CUSTOMERS (EMAIL) TABLESPACE USERS",
+      "timestamp_utc": "2026-10-19T04:03:47.029296+00:00"
+    },
+    {
+      "action": "drop",
+      "sql": "DROP INDEX ORACLE_SPA.OSPA_CUSTOMERS_EMAIL",
+      "timestamp_utc": "2026-10-19T04:04:14.545778+00:00"
+    }
+  ],
+  "activity_before": {
+    "container": "running healthy []",
+    "host_established_clients": 0,
+    "internal_socket_owners": [
+      [
+        "ora_lreg_free"
+      ],
+      [
+        "tnslsnr"
+      ]
+    ],
+    "preexisting_exec_sessions": 0,
+    "assessment": "No relevant external activity observed; no global V$SESSION visibility or guarantee against future arrivals."
+  },
+  "before": {
+    "context": {
+      "profile": "small",
+      "seed": 20261016,
+      "manifest": {
+        "checksums": {
+          "CUSTOMERS": "395df2f0f86379a9a90b179ed1e02975f831e6afe67e66357a7b7dcd05f3151e",
+          "ORDERS": "ab73c989724b22af845c93be53e0a960c0ef5b2a64c76ea4044d98d2c4714dbc",
+          "ORDER_ITEMS": "9703d865ffe3860ac0421bafdf29d162b0b30172687b0a8973a6c5cda1f4c78d",
+          "PRODUCTS": "d65521ee5958c21a630e5f41131d77cc32e2a776dd1478dce707959cfa0f8bf0"
+        },
+        "config_sha256": "f3a65446503a62349f9c3c15f9145bc05f48d9e1cb9c0b7adf439596ad21f7eb",
+        "counts": {
+          "customers": 2000,
+          "order_items": 30000,
+          "orders": 10000,
+          "products": 500
+        },
+        "profile": "small",
+        "reference_date": "2026-10-16",
+        "seed": 20261016,
+        "version": 1
+      },
+      "statistics": [
+        [
+          "CUSTOMERS",
+          2000,
+          "2026-10-18 18:17:24",
+          "NO"
+        ],
+        [
+          "ORDERS",
+          10000,
+          "2026-10-18 18:17:24",
+          "NO"
+        ],
+        [
+          "ORDER_ITEMS",
+          30000,
+          "2026-10-18 18:17:24",
+          "NO"
+        ],
+        [
+          "OSPA_DATASET",
+          1,
+          "2026-10-18 17:47:08",
+          "YES"
+        ],
+        [
+          "PRODUCTS",
+          500,
+          "2026-10-18 18:17:24",
+          "NO"
+        ]
+      ],
+      "column_statistics": [
+        [
+          "CUSTOMERS",
+          "CREATED_AT",
+          362,
+          "NONE",
+          1
+        ],
+        [
+          "CUSTOMERS",
+          "CUSTOMER_ID",
+          2000,
+          "NONE",
+          1
+        ],
+        [
+          "CUSTOMERS",
+          "EMAIL",
+          2000,
+          "NONE",
+          1
+        ],
+        [
+          "CUSTOMERS",
+          "FULL_NAME",
+          2000,
+          "NONE",
+          1
+        ],
+        [
+          "CUSTOMERS",
+          "REGION",
+          5,
+          "NONE",
+          1
+        ],
+        [
+          "ORDERS",
+          "CUSTOMER_ID",
+          1299,
+          "NONE",
+          1
+        ],
+        [
+          "ORDERS",
+          "ORDER_DATE",
+          9997,
+          "NONE",
+          1
+        ],
+        [
+          "ORDERS",
+          "ORDER_ID",
+          10000,
+          "NONE",
+          1
+        ],
+        [
+          "ORDERS",
+          "STATUS",
+          4,
+          "NONE",
+          1
+        ],
+        [
+          "ORDERS",
+          "TOTAL_AMOUNT",
+          9654,
+          "NONE",
+          1
+        ],
+        [
+          "ORDER_ITEMS",
+          "ORDER_ID",
+          10000,
+          "NONE",
+          1
+        ],
+        [
+          "ORDER_ITEMS",
+          "ORDER_ITEM_ID",
+          30000,
+          "NONE",
+          1
+        ],
+        [
+          "ORDER_ITEMS",
+          "PRODUCT_ID",
+          500,
+          "NONE",
+          1
+        ],
+        [
+          "ORDER_ITEMS",
+          "QUANTITY",
+          5,
+          "NONE",
+          1
+        ],
+        [
+          "ORDER_ITEMS",
+          "UNIT_PRICE",
+          500,
+          "NONE",
+          1
+        ],
+        [
+          "OSPA_DATASET",
+          "DATASET_ID",
+          1,
+          "NONE",
+          1
+        ],
+        [
+          "OSPA_DATASET",
+          "LOADED_AT",
+          1,
+          "NONE",
+          1
+        ],
+        [
+          "OSPA_DATASET",
+          "MANIFEST",
+          1,
+          "NONE",
+          1
+        ],
+        [
+          "OSPA_DATASET",
+          "PROFILE",
+          1,
+          "NONE",
+          1
+        ],
+        [
+          "OSPA_DATASET",
+          "SEED",
+          1,
+          "NONE",
+          1
+        ],
+        [
+          "PRODUCTS",
+          "CATEGORY",
+          5,
+          "NONE",
+          1
+        ],
+        [
+          "PRODUCTS",
+          "IS_ACTIVE",
+          2,
+          "NONE",
+          1
+        ],
+        [
+          "PRODUCTS",
+          "PRODUCT_ID",
+          500,
+          "NONE",
+          1
+        ],
+        [
+          "PRODUCTS",
+          "PRODUCT_NAME",
+          500,
+          "NONE",
+          1
+        ],
+        [
+          "PRODUCTS",
+          "UNIT_PRICE",
+          500,
+          "NONE",
+          1
+        ]
+      ],
+      "indexes": [
+        [
+          "CUSTOMERS_PK",
+          "CUSTOMERS",
+          "UNIQUE"
+        ],
+        [
+          "ORDERS_PK",
+          "ORDERS",
+          "UNIQUE"
+        ],
+        [
+          "ORDER_ITEMS_PK",
+          "ORDER_ITEMS",
+          "UNIQUE"
+        ],
+        [
+          "OSPA_DATASET_PK",
+          "OSPA_DATASET",
+          "UNIQUE"
+        ],
+        [
+          "PRODUCTS_PK",
+          "PRODUCTS",
+          "UNIQUE"
+        ]
+      ],
+      "bind_observations": {
+        "customer_order_count": 58,
+        "day_order_count": 113,
+        "status_counts": {
+          "PAID": 5876,
+          "SHIPPED": 2523,
+          "NEW": 1060,
+          "CANCELLED": 541
+        },
+        "status_proportions": {
+          "PAID": 0.5876,
+          "SHIPPED": 0.2523,
+          "NEW": 0.106,
+          "CANCELLED": 0.0541
+        },
+        "selection": "First synthetic email, most frequent customer, last 90 days before fixed reference, busiest day, most/least frequent observed status; ties deterministic."
+      },
+      "selected": {
+        "email": "customer00000001@example.invalid",
+        "customer_id": 155,
+        "start_date": "2026-07-18T00:00:00",
+        "end_date": "2026-10-16T00:00:00",
+        "status": "PAID",
+        "rare_status": "CANCELLED",
+        "day": "2026-09-05T00:00:00",
+        "next_day": "2026-09-06T00:00:00"
+      },
+      "oracle_version": "23.26.3.0.0",
+      "identity": [
+        "ORACLE_SPA",
+        "FREEPDB1",
+        "ORACLE_SPA"
+      ],
+      "baseline": "without experimental indexes",
+      "authorized_indexes": []
+    },
+    "metadata": [
+      [
+        1,
+        "small",
+        20261016,
+        "{\"checksums\": {\"CUSTOMERS\": \"395df2f0f86379a9a90b179ed1e02975f831e6afe67e66357a7b7dcd05f3151e\", \"ORDERS\": \"ab73c989724b22af845c93be53e0a960c0ef5b2a64c76ea4044d98d2c4714dbc\", \"ORDER_ITEMS\": \"9703d865ffe3860ac0421bafdf29d162b0b30172687b0a8973a6c5cda1f4c78d\", \"PRODUCTS\": \"d65521ee5958c21a630e5f41131d77cc32e2a776dd1478dce707959cfa0f8bf0\"}, \"config_sha256\": \"f3a65446503a62349f9c3c15f9145bc05f48d9e1cb9c0b7adf439596ad21f7eb\", \"counts\": {\"customers\": 2000, \"order_items\": 30000, \"orders\": 10000, \"products\": 500}, \"profile\": \"small\", \"reference_date\": \"2026-10-16\", \"seed\": 20261016, \"version\": 1}",
+        "2026-10-18 18:16:47"
+      ]
+    ],
+    "index_statistics": [
+      [
+        "CUSTOMERS_PK",
+        2000,
+        4,
+        2000,
+        24,
+        1,
+        2000,
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS_PK",
+        10000,
+        18,
+        10000,
+        44,
+        1,
+        10000,
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS_PK",
+        30000,
+        56,
+        30000,
+        106,
+        1,
+        30000,
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "OSPA_DATASET_PK",
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "PRODUCTS_PK",
+        500,
+        1,
+        500,
+        4,
+        0,
+        500,
+        "2026-10-18 18:17:24"
+      ]
+    ],
+    "column_statistics": [
+      [
+        "CUSTOMERS",
+        "CREATED_AT",
+        362,
+        0.00276243093922652,
+        0,
+        1,
+        "NONE",
+        "787B0A12010101",
+        "787C0A10010101",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "CUSTOMERS",
+        "CUSTOMER_ID",
+        2000,
+        0.0005,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C215",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "CUSTOMERS",
+        "EMAIL",
+        2000,
+        0.0005,
+        0,
+        1,
+        "NONE",
+        "637573746F6D65723030303030303031406578616D706C652E696E76616C6964",
+        "637573746F6D65723030303032303030406578616D706C652E696E76616C6964",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "CUSTOMERS",
+        "FULL_NAME",
+        2000,
+        0.0005,
+        0,
+        1,
+        "NONE",
+        "53796E74686574696320437573746F6D6572203030303030303031",
+        "53796E74686574696320437573746F6D6572203030303032303030",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "CUSTOMERS",
+        "REGION",
+        5,
+        0.2,
+        0,
+        1,
+        "NONE",
+        "43454E5452414C",
+        "57455354",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS",
+        "CUSTOMER_ID",
+        1299,
+        0.000769822940723634,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C21460",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS",
+        "ORDER_DATE",
+        9997,
+        0.000100030009002701,
+        0,
+        1,
+        "NONE",
+        "787D0A10040A16",
+        "787E0A0F182B3C",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS",
+        "ORDER_ID",
+        10000,
+        0.0001,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C302",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS",
+        "STATUS",
+        4,
+        0.25,
+        0,
+        1,
+        "NONE",
+        "43414E43454C4C4544",
+        "53484950504544",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS",
+        "TOTAL_AMOUNT",
+        9654,
+        0.000103584006629376,
+        0,
+        1,
+        "NONE",
+        "C13564",
+        "C3022A5E10",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS",
+        "ORDER_ID",
+        10000,
+        0.0001,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C302",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS",
+        "ORDER_ITEM_ID",
+        30000,
+        3.33333333333333e-05,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C304",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS",
+        "PRODUCT_ID",
+        500,
+        0.002,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C206",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS",
+        "QUANTITY",
+        5,
+        0.2,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C106",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS",
+        "UNIT_PRICE",
+        500,
+        0.002,
+        0,
+        1,
+        "NONE",
+        "C10303",
+        "C20A6002",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "OSPA_DATASET",
+        "DATASET_ID",
+        1,
+        1,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C102",
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "OSPA_DATASET",
+        "LOADED_AT",
+        1,
+        1,
+        0,
+        1,
+        "NONE",
+        "787E0A12042427",
+        "787E0A12042427",
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "OSPA_DATASET",
+        "MANIFEST",
+        1,
+        1,
+        0,
+        1,
+        "NONE",
+        "7B22636865636B73756D73223A207B22435553544F4D455253223A20223339356466326630663836333739613961393062313739656431653032393735663833",
+        "7B22636865636B73756D73223A207B22435553544F4D455253223A20223339356466326630663836333739613961393062313739656431653032393735663833",
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "OSPA_DATASET",
+        "PROFILE",
+        1,
+        1,
+        0,
+        1,
+        "NONE",
+        "736D616C6C",
+        "736D616C6C",
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "OSPA_DATASET",
+        "SEED",
+        1,
+        1,
+        0,
+        1,
+        "NONE",
+        "C4151B0B11",
+        "C4151B0B11",
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "PRODUCTS",
+        "CATEGORY",
+        5,
+        0.2,
+        0,
+        1,
+        "NONE",
+        "424F4F4B53",
+        "544F5953",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "PRODUCTS",
+        "IS_ACTIVE",
+        2,
+        0.5,
+        0,
+        1,
+        "NONE",
+        "80",
+        "C102",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "PRODUCTS",
+        "PRODUCT_ID",
+        500,
+        0.002,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C206",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "PRODUCTS",
+        "PRODUCT_NAME",
+        500,
+        0.002,
+        0,
+        1,
+        "NONE",
+        "53796E7468657469632050726F64756374203030303030303031",
+        "53796E7468657469632050726F64756374203030303030353030",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "PRODUCTS",
+        "UNIT_PRICE",
+        500,
+        0.002,
+        0,
+        1,
+        "NONE",
+        "C10303",
+        "C20A6002",
+        "2026-10-18 18:17:24"
+      ]
+    ],
+    "quota": [
+      [
+        "USERS",
+        2949120,
+        1073741824
+      ]
+    ]
+  },
+  "baseline_run_id": "fc30f0efd7964149b4836b9ecc862efb",
+  "activity_before_create": {
+    "container": "running healthy []",
+    "host_established_clients": 0,
+    "internal_socket_owners": [
+      [
+        "ora_lreg_free"
+      ],
+      [
+        "tnslsnr"
+      ]
+    ],
+    "preexisting_exec_sessions": 0,
+    "assessment": "No relevant external activity observed; no global V$SESSION visibility or guarantee against future arrivals."
+  },
+  "create": {
+    "operation": {
+      "action": "create",
+      "name": "OSPA_CUSTOMERS_EMAIL",
+      "sql": "CREATE INDEX ORACLE_SPA.OSPA_CUSTOMERS_EMAIL ON ORACLE_SPA.CUSTOMERS (EMAIL) TABLESPACE USERS",
+      "confirmation": "ORACLE_SPA/FREEPDB1/CREATE/OSPA_CUSTOMERS_EMAIL",
+      "implicit_commit": true,
+      "rollback_restores_index": false
+    },
+    "indexes": [
+      {
+        "name": "OSPA_CUSTOMERS_EMAIL",
+        "table": "CUSTOMERS",
+        "columns": [
+          "EMAIL"
+        ],
+        "type": "NORMAL",
+        "object_id": 73193,
+        "bytes": 196608
+      }
+    ]
+  },
+  "after_create": {
+    "context": {
+      "profile": "small",
+      "seed": 20261016,
+      "manifest": {
+        "checksums": {
+          "CUSTOMERS": "395df2f0f86379a9a90b179ed1e02975f831e6afe67e66357a7b7dcd05f3151e",
+          "ORDERS": "ab73c989724b22af845c93be53e0a960c0ef5b2a64c76ea4044d98d2c4714dbc",
+          "ORDER_ITEMS": "9703d865ffe3860ac0421bafdf29d162b0b30172687b0a8973a6c5cda1f4c78d",
+          "PRODUCTS": "d65521ee5958c21a630e5f41131d77cc32e2a776dd1478dce707959cfa0f8bf0"
+        },
+        "config_sha256": "f3a65446503a62349f9c3c15f9145bc05f48d9e1cb9c0b7adf439596ad21f7eb",
+        "counts": {
+          "customers": 2000,
+          "order_items": 30000,
+          "orders": 10000,
+          "products": 500
+        },
+        "profile": "small",
+        "reference_date": "2026-10-16",
+        "seed": 20261016,
+        "version": 1
+      },
+      "statistics": [
+        [
+          "CUSTOMERS",
+          2000,
+          "2026-10-18 18:17:24",
+          "NO"
+        ],
+        [
+          "ORDERS",
+          10000,
+          "2026-10-18 18:17:24",
+          "NO"
+        ],
+        [
+          "ORDER_ITEMS",
+          30000,
+          "2026-10-18 18:17:24",
+          "NO"
+        ],
+        [
+          "OSPA_DATASET",
+          1,
+          "2026-10-18 17:47:08",
+          "YES"
+        ],
+        [
+          "PRODUCTS",
+          500,
+          "2026-10-18 18:17:24",
+          "NO"
+        ]
+      ],
+      "column_statistics": [
+        [
+          "CUSTOMERS",
+          "CREATED_AT",
+          362,
+          "NONE",
+          1
+        ],
+        [
+          "CUSTOMERS",
+          "CUSTOMER_ID",
+          2000,
+          "NONE",
+          1
+        ],
+        [
+          "CUSTOMERS",
+          "EMAIL",
+          2000,
+          "NONE",
+          1
+        ],
+        [
+          "CUSTOMERS",
+          "FULL_NAME",
+          2000,
+          "NONE",
+          1
+        ],
+        [
+          "CUSTOMERS",
+          "REGION",
+          5,
+          "NONE",
+          1
+        ],
+        [
+          "ORDERS",
+          "CUSTOMER_ID",
+          1299,
+          "NONE",
+          1
+        ],
+        [
+          "ORDERS",
+          "ORDER_DATE",
+          9997,
+          "NONE",
+          1
+        ],
+        [
+          "ORDERS",
+          "ORDER_ID",
+          10000,
+          "NONE",
+          1
+        ],
+        [
+          "ORDERS",
+          "STATUS",
+          4,
+          "NONE",
+          1
+        ],
+        [
+          "ORDERS",
+          "TOTAL_AMOUNT",
+          9654,
+          "NONE",
+          1
+        ],
+        [
+          "ORDER_ITEMS",
+          "ORDER_ID",
+          10000,
+          "NONE",
+          1
+        ],
+        [
+          "ORDER_ITEMS",
+          "ORDER_ITEM_ID",
+          30000,
+          "NONE",
+          1
+        ],
+        [
+          "ORDER_ITEMS",
+          "PRODUCT_ID",
+          500,
+          "NONE",
+          1
+        ],
+        [
+          "ORDER_ITEMS",
+          "QUANTITY",
+          5,
+          "NONE",
+          1
+        ],
+        [
+          "ORDER_ITEMS",
+          "UNIT_PRICE",
+          500,
+          "NONE",
+          1
+        ],
+        [
+          "OSPA_DATASET",
+          "DATASET_ID",
+          1,
+          "NONE",
+          1
+        ],
+        [
+          "OSPA_DATASET",
+          "LOADED_AT",
+          1,
+          "NONE",
+          1
+        ],
+        [
+          "OSPA_DATASET",
+          "MANIFEST",
+          1,
+          "NONE",
+          1
+        ],
+        [
+          "OSPA_DATASET",
+          "PROFILE",
+          1,
+          "NONE",
+          1
+        ],
+        [
+          "OSPA_DATASET",
+          "SEED",
+          1,
+          "NONE",
+          1
+        ],
+        [
+          "PRODUCTS",
+          "CATEGORY",
+          5,
+          "NONE",
+          1
+        ],
+        [
+          "PRODUCTS",
+          "IS_ACTIVE",
+          2,
+          "NONE",
+          1
+        ],
+        [
+          "PRODUCTS",
+          "PRODUCT_ID",
+          500,
+          "NONE",
+          1
+        ],
+        [
+          "PRODUCTS",
+          "PRODUCT_NAME",
+          500,
+          "NONE",
+          1
+        ],
+        [
+          "PRODUCTS",
+          "UNIT_PRICE",
+          500,
+          "NONE",
+          1
+        ]
+      ],
+      "indexes": [
+        [
+          "CUSTOMERS_PK",
+          "CUSTOMERS",
+          "UNIQUE"
+        ],
+        [
+          "ORDERS_PK",
+          "ORDERS",
+          "UNIQUE"
+        ],
+        [
+          "ORDER_ITEMS_PK",
+          "ORDER_ITEMS",
+          "UNIQUE"
+        ],
+        [
+          "OSPA_CUSTOMERS_EMAIL",
+          "CUSTOMERS",
+          "NONUNIQUE"
+        ],
+        [
+          "OSPA_DATASET_PK",
+          "OSPA_DATASET",
+          "UNIQUE"
+        ],
+        [
+          "PRODUCTS_PK",
+          "PRODUCTS",
+          "UNIQUE"
+        ]
+      ],
+      "bind_observations": {
+        "customer_order_count": 58,
+        "day_order_count": 113,
+        "status_counts": {
+          "PAID": 5876,
+          "SHIPPED": 2523,
+          "NEW": 1060,
+          "CANCELLED": 541
+        },
+        "status_proportions": {
+          "PAID": 0.5876,
+          "SHIPPED": 0.2523,
+          "NEW": 0.106,
+          "CANCELLED": 0.0541
+        },
+        "selection": "First synthetic email, most frequent customer, last 90 days before fixed reference, busiest day, most/least frequent observed status; ties deterministic."
+      },
+      "selected": {
+        "email": "customer00000001@example.invalid",
+        "customer_id": 155,
+        "start_date": "2026-07-18T00:00:00",
+        "end_date": "2026-10-16T00:00:00",
+        "status": "PAID",
+        "rare_status": "CANCELLED",
+        "day": "2026-09-05T00:00:00",
+        "next_day": "2026-09-06T00:00:00"
+      },
+      "oracle_version": "23.26.3.0.0",
+      "identity": [
+        "ORACLE_SPA",
+        "FREEPDB1",
+        "ORACLE_SPA"
+      ],
+      "baseline": "authorized experimental index scenario",
+      "authorized_indexes": [
+        "OSPA_CUSTOMERS_EMAIL"
+      ]
+    },
+    "metadata": [
+      [
+        1,
+        "small",
+        20261016,
+        "{\"checksums\": {\"CUSTOMERS\": \"395df2f0f86379a9a90b179ed1e02975f831e6afe67e66357a7b7dcd05f3151e\", \"ORDERS\": \"ab73c989724b22af845c93be53e0a960c0ef5b2a64c76ea4044d98d2c4714dbc\", \"ORDER_ITEMS\": \"9703d865ffe3860ac0421bafdf29d162b0b30172687b0a8973a6c5cda1f4c78d\", \"PRODUCTS\": \"d65521ee5958c21a630e5f41131d77cc32e2a776dd1478dce707959cfa0f8bf0\"}, \"config_sha256\": \"f3a65446503a62349f9c3c15f9145bc05f48d9e1cb9c0b7adf439596ad21f7eb\", \"counts\": {\"customers\": 2000, \"order_items\": 30000, \"orders\": 10000, \"products\": 500}, \"profile\": \"small\", \"reference_date\": \"2026-10-16\", \"seed\": 20261016, \"version\": 1}",
+        "2026-10-18 18:16:47"
+      ]
+    ],
+    "index_statistics": [
+      [
+        "CUSTOMERS_PK",
+        2000,
+        4,
+        2000,
+        24,
+        1,
+        2000,
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS_PK",
+        10000,
+        18,
+        10000,
+        44,
+        1,
+        10000,
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS_PK",
+        30000,
+        56,
+        30000,
+        106,
+        1,
+        30000,
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "OSPA_CUSTOMERS_EMAIL",
+        2000,
+        13,
+        2000,
+        24,
+        1,
+        2000,
+        "2026-10-19 04:03:47"
+      ],
+      [
+        "OSPA_DATASET_PK",
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "PRODUCTS_PK",
+        500,
+        1,
+        500,
+        4,
+        0,
+        500,
+        "2026-10-18 18:17:24"
+      ]
+    ],
+    "column_statistics": [
+      [
+        "CUSTOMERS",
+        "CREATED_AT",
+        362,
+        0.00276243093922652,
+        0,
+        1,
+        "NONE",
+        "787B0A12010101",
+        "787C0A10010101",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "CUSTOMERS",
+        "CUSTOMER_ID",
+        2000,
+        0.0005,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C215",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "CUSTOMERS",
+        "EMAIL",
+        2000,
+        0.0005,
+        0,
+        1,
+        "NONE",
+        "637573746F6D65723030303030303031406578616D706C652E696E76616C6964",
+        "637573746F6D65723030303032303030406578616D706C652E696E76616C6964",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "CUSTOMERS",
+        "FULL_NAME",
+        2000,
+        0.0005,
+        0,
+        1,
+        "NONE",
+        "53796E74686574696320437573746F6D6572203030303030303031",
+        "53796E74686574696320437573746F6D6572203030303032303030",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "CUSTOMERS",
+        "REGION",
+        5,
+        0.2,
+        0,
+        1,
+        "NONE",
+        "43454E5452414C",
+        "57455354",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS",
+        "CUSTOMER_ID",
+        1299,
+        0.000769822940723634,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C21460",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS",
+        "ORDER_DATE",
+        9997,
+        0.000100030009002701,
+        0,
+        1,
+        "NONE",
+        "787D0A10040A16",
+        "787E0A0F182B3C",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS",
+        "ORDER_ID",
+        10000,
+        0.0001,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C302",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS",
+        "STATUS",
+        4,
+        0.25,
+        0,
+        1,
+        "NONE",
+        "43414E43454C4C4544",
+        "53484950504544",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS",
+        "TOTAL_AMOUNT",
+        9654,
+        0.000103584006629376,
+        0,
+        1,
+        "NONE",
+        "C13564",
+        "C3022A5E10",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS",
+        "ORDER_ID",
+        10000,
+        0.0001,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C302",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS",
+        "ORDER_ITEM_ID",
+        30000,
+        3.33333333333333e-05,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C304",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS",
+        "PRODUCT_ID",
+        500,
+        0.002,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C206",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS",
+        "QUANTITY",
+        5,
+        0.2,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C106",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS",
+        "UNIT_PRICE",
+        500,
+        0.002,
+        0,
+        1,
+        "NONE",
+        "C10303",
+        "C20A6002",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "OSPA_DATASET",
+        "DATASET_ID",
+        1,
+        1,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C102",
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "OSPA_DATASET",
+        "LOADED_AT",
+        1,
+        1,
+        0,
+        1,
+        "NONE",
+        "787E0A12042427",
+        "787E0A12042427",
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "OSPA_DATASET",
+        "MANIFEST",
+        1,
+        1,
+        0,
+        1,
+        "NONE",
+        "7B22636865636B73756D73223A207B22435553544F4D455253223A20223339356466326630663836333739613961393062313739656431653032393735663833",
+        "7B22636865636B73756D73223A207B22435553544F4D455253223A20223339356466326630663836333739613961393062313739656431653032393735663833",
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "OSPA_DATASET",
+        "PROFILE",
+        1,
+        1,
+        0,
+        1,
+        "NONE",
+        "736D616C6C",
+        "736D616C6C",
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "OSPA_DATASET",
+        "SEED",
+        1,
+        1,
+        0,
+        1,
+        "NONE",
+        "C4151B0B11",
+        "C4151B0B11",
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "PRODUCTS",
+        "CATEGORY",
+        5,
+        0.2,
+        0,
+        1,
+        "NONE",
+        "424F4F4B53",
+        "544F5953",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "PRODUCTS",
+        "IS_ACTIVE",
+        2,
+        0.5,
+        0,
+        1,
+        "NONE",
+        "80",
+        "C102",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "PRODUCTS",
+        "PRODUCT_ID",
+        500,
+        0.002,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C206",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "PRODUCTS",
+        "PRODUCT_NAME",
+        500,
+        0.002,
+        0,
+        1,
+        "NONE",
+        "53796E7468657469632050726F64756374203030303030303031",
+        "53796E7468657469632050726F64756374203030303030353030",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "PRODUCTS",
+        "UNIT_PRICE",
+        500,
+        0.002,
+        0,
+        1,
+        "NONE",
+        "C10303",
+        "C20A6002",
+        "2026-10-18 18:17:24"
+      ]
+    ],
+    "quota": [
+      [
+        "USERS",
+        3145728,
+        1073741824
+      ]
+    ]
+  },
+  "alternative_run_id": "8b6f8781e29e412a81ee4b9789dc5954",
+  "comparisons": {
+    "baseline": {
+      "baseline_run_id": "fc30f0efd7964149b4836b9ecc862efb",
+      "alternative_run_id": "8b6f8781e29e412a81ee4b9789dc5954",
+      "status": "DESCRIPTIVE ONLY",
+      "alternative_minus_baseline_ms": -0.4949475,
+      "change_percent": -53.167965212646074,
+      "baseline_over_alternative": 2.135290521841751,
+      "limitation": "Client latency variation is not proof of a causal improvement.",
+      "block_limitation": "Index states measured at different times; cache, load and order confounding remain. Not randomized per repetition."
+    }
+  },
+  "activity_before_drop": {
+    "container": "running healthy []",
+    "host_established_clients": 0,
+    "internal_socket_owners": [
+      [
+        "ora_lreg_free"
+      ],
+      [
+        "tnslsnr"
+      ]
+    ],
+    "preexisting_exec_sessions": 0,
+    "assessment": "No relevant external activity observed; no global V$SESSION visibility or guarantee against future arrivals."
+  },
+  "verified_creation_receipt_before_drop": {
+    "name": "OSPA_CUSTOMERS_EMAIL",
+    "table": "CUSTOMERS",
+    "columns": [
+      "EMAIL"
+    ],
+    "type": "NORMAL",
+    "object_id": 73193,
+    "bytes": 196608
+  },
+  "drop": {
+    "operation": {
+      "action": "drop",
+      "name": "OSPA_CUSTOMERS_EMAIL",
+      "sql": "DROP INDEX ORACLE_SPA.OSPA_CUSTOMERS_EMAIL",
+      "confirmation": "ORACLE_SPA/FREEPDB1/DROP/OSPA_CUSTOMERS_EMAIL",
+      "implicit_commit": true,
+      "rollback_restores_index": false
+    },
+    "indexes": []
+  },
+  "after_drop": {
+    "context": {
+      "profile": "small",
+      "seed": 20261016,
+      "manifest": {
+        "checksums": {
+          "CUSTOMERS": "395df2f0f86379a9a90b179ed1e02975f831e6afe67e66357a7b7dcd05f3151e",
+          "ORDERS": "ab73c989724b22af845c93be53e0a960c0ef5b2a64c76ea4044d98d2c4714dbc",
+          "ORDER_ITEMS": "9703d865ffe3860ac0421bafdf29d162b0b30172687b0a8973a6c5cda1f4c78d",
+          "PRODUCTS": "d65521ee5958c21a630e5f41131d77cc32e2a776dd1478dce707959cfa0f8bf0"
+        },
+        "config_sha256": "f3a65446503a62349f9c3c15f9145bc05f48d9e1cb9c0b7adf439596ad21f7eb",
+        "counts": {
+          "customers": 2000,
+          "order_items": 30000,
+          "orders": 10000,
+          "products": 500
+        },
+        "profile": "small",
+        "reference_date": "2026-10-16",
+        "seed": 20261016,
+        "version": 1
+      },
+      "statistics": [
+        [
+          "CUSTOMERS",
+          2000,
+          "2026-10-18 18:17:24",
+          "NO"
+        ],
+        [
+          "ORDERS",
+          10000,
+          "2026-10-18 18:17:24",
+          "NO"
+        ],
+        [
+          "ORDER_ITEMS",
+          30000,
+          "2026-10-18 18:17:24",
+          "NO"
+        ],
+        [
+          "OSPA_DATASET",
+          1,
+          "2026-10-18 17:47:08",
+          "YES"
+        ],
+        [
+          "PRODUCTS",
+          500,
+          "2026-10-18 18:17:24",
+          "NO"
+        ]
+      ],
+      "column_statistics": [
+        [
+          "CUSTOMERS",
+          "CREATED_AT",
+          362,
+          "NONE",
+          1
+        ],
+        [
+          "CUSTOMERS",
+          "CUSTOMER_ID",
+          2000,
+          "NONE",
+          1
+        ],
+        [
+          "CUSTOMERS",
+          "EMAIL",
+          2000,
+          "NONE",
+          1
+        ],
+        [
+          "CUSTOMERS",
+          "FULL_NAME",
+          2000,
+          "NONE",
+          1
+        ],
+        [
+          "CUSTOMERS",
+          "REGION",
+          5,
+          "NONE",
+          1
+        ],
+        [
+          "ORDERS",
+          "CUSTOMER_ID",
+          1299,
+          "NONE",
+          1
+        ],
+        [
+          "ORDERS",
+          "ORDER_DATE",
+          9997,
+          "NONE",
+          1
+        ],
+        [
+          "ORDERS",
+          "ORDER_ID",
+          10000,
+          "NONE",
+          1
+        ],
+        [
+          "ORDERS",
+          "STATUS",
+          4,
+          "NONE",
+          1
+        ],
+        [
+          "ORDERS",
+          "TOTAL_AMOUNT",
+          9654,
+          "NONE",
+          1
+        ],
+        [
+          "ORDER_ITEMS",
+          "ORDER_ID",
+          10000,
+          "NONE",
+          1
+        ],
+        [
+          "ORDER_ITEMS",
+          "ORDER_ITEM_ID",
+          30000,
+          "NONE",
+          1
+        ],
+        [
+          "ORDER_ITEMS",
+          "PRODUCT_ID",
+          500,
+          "NONE",
+          1
+        ],
+        [
+          "ORDER_ITEMS",
+          "QUANTITY",
+          5,
+          "NONE",
+          1
+        ],
+        [
+          "ORDER_ITEMS",
+          "UNIT_PRICE",
+          500,
+          "NONE",
+          1
+        ],
+        [
+          "OSPA_DATASET",
+          "DATASET_ID",
+          1,
+          "NONE",
+          1
+        ],
+        [
+          "OSPA_DATASET",
+          "LOADED_AT",
+          1,
+          "NONE",
+          1
+        ],
+        [
+          "OSPA_DATASET",
+          "MANIFEST",
+          1,
+          "NONE",
+          1
+        ],
+        [
+          "OSPA_DATASET",
+          "PROFILE",
+          1,
+          "NONE",
+          1
+        ],
+        [
+          "OSPA_DATASET",
+          "SEED",
+          1,
+          "NONE",
+          1
+        ],
+        [
+          "PRODUCTS",
+          "CATEGORY",
+          5,
+          "NONE",
+          1
+        ],
+        [
+          "PRODUCTS",
+          "IS_ACTIVE",
+          2,
+          "NONE",
+          1
+        ],
+        [
+          "PRODUCTS",
+          "PRODUCT_ID",
+          500,
+          "NONE",
+          1
+        ],
+        [
+          "PRODUCTS",
+          "PRODUCT_NAME",
+          500,
+          "NONE",
+          1
+        ],
+        [
+          "PRODUCTS",
+          "UNIT_PRICE",
+          500,
+          "NONE",
+          1
+        ]
+      ],
+      "indexes": [
+        [
+          "CUSTOMERS_PK",
+          "CUSTOMERS",
+          "UNIQUE"
+        ],
+        [
+          "ORDERS_PK",
+          "ORDERS",
+          "UNIQUE"
+        ],
+        [
+          "ORDER_ITEMS_PK",
+          "ORDER_ITEMS",
+          "UNIQUE"
+        ],
+        [
+          "OSPA_DATASET_PK",
+          "OSPA_DATASET",
+          "UNIQUE"
+        ],
+        [
+          "PRODUCTS_PK",
+          "PRODUCTS",
+          "UNIQUE"
+        ]
+      ],
+      "bind_observations": {
+        "customer_order_count": 58,
+        "day_order_count": 113,
+        "status_counts": {
+          "PAID": 5876,
+          "SHIPPED": 2523,
+          "NEW": 1060,
+          "CANCELLED": 541
+        },
+        "status_proportions": {
+          "PAID": 0.5876,
+          "SHIPPED": 0.2523,
+          "NEW": 0.106,
+          "CANCELLED": 0.0541
+        },
+        "selection": "First synthetic email, most frequent customer, last 90 days before fixed reference, busiest day, most/least frequent observed status; ties deterministic."
+      },
+      "selected": {
+        "email": "customer00000001@example.invalid",
+        "customer_id": 155,
+        "start_date": "2026-07-18T00:00:00",
+        "end_date": "2026-10-16T00:00:00",
+        "status": "PAID",
+        "rare_status": "CANCELLED",
+        "day": "2026-09-05T00:00:00",
+        "next_day": "2026-09-06T00:00:00"
+      },
+      "oracle_version": "23.26.3.0.0",
+      "identity": [
+        "ORACLE_SPA",
+        "FREEPDB1",
+        "ORACLE_SPA"
+      ],
+      "baseline": "without experimental indexes",
+      "authorized_indexes": []
+    },
+    "metadata": [
+      [
+        1,
+        "small",
+        20261016,
+        "{\"checksums\": {\"CUSTOMERS\": \"395df2f0f86379a9a90b179ed1e02975f831e6afe67e66357a7b7dcd05f3151e\", \"ORDERS\": \"ab73c989724b22af845c93be53e0a960c0ef5b2a64c76ea4044d98d2c4714dbc\", \"ORDER_ITEMS\": \"9703d865ffe3860ac0421bafdf29d162b0b30172687b0a8973a6c5cda1f4c78d\", \"PRODUCTS\": \"d65521ee5958c21a630e5f41131d77cc32e2a776dd1478dce707959cfa0f8bf0\"}, \"config_sha256\": \"f3a65446503a62349f9c3c15f9145bc05f48d9e1cb9c0b7adf439596ad21f7eb\", \"counts\": {\"customers\": 2000, \"order_items\": 30000, \"orders\": 10000, \"products\": 500}, \"profile\": \"small\", \"reference_date\": \"2026-10-16\", \"seed\": 20261016, \"version\": 1}",
+        "2026-10-18 18:16:47"
+      ]
+    ],
+    "index_statistics": [
+      [
+        "CUSTOMERS_PK",
+        2000,
+        4,
+        2000,
+        24,
+        1,
+        2000,
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS_PK",
+        10000,
+        18,
+        10000,
+        44,
+        1,
+        10000,
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS_PK",
+        30000,
+        56,
+        30000,
+        106,
+        1,
+        30000,
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "OSPA_DATASET_PK",
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "PRODUCTS_PK",
+        500,
+        1,
+        500,
+        4,
+        0,
+        500,
+        "2026-10-18 18:17:24"
+      ]
+    ],
+    "column_statistics": [
+      [
+        "CUSTOMERS",
+        "CREATED_AT",
+        362,
+        0.00276243093922652,
+        0,
+        1,
+        "NONE",
+        "787B0A12010101",
+        "787C0A10010101",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "CUSTOMERS",
+        "CUSTOMER_ID",
+        2000,
+        0.0005,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C215",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "CUSTOMERS",
+        "EMAIL",
+        2000,
+        0.0005,
+        0,
+        1,
+        "NONE",
+        "637573746F6D65723030303030303031406578616D706C652E696E76616C6964",
+        "637573746F6D65723030303032303030406578616D706C652E696E76616C6964",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "CUSTOMERS",
+        "FULL_NAME",
+        2000,
+        0.0005,
+        0,
+        1,
+        "NONE",
+        "53796E74686574696320437573746F6D6572203030303030303031",
+        "53796E74686574696320437573746F6D6572203030303032303030",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "CUSTOMERS",
+        "REGION",
+        5,
+        0.2,
+        0,
+        1,
+        "NONE",
+        "43454E5452414C",
+        "57455354",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS",
+        "CUSTOMER_ID",
+        1299,
+        0.000769822940723634,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C21460",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS",
+        "ORDER_DATE",
+        9997,
+        0.000100030009002701,
+        0,
+        1,
+        "NONE",
+        "787D0A10040A16",
+        "787E0A0F182B3C",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS",
+        "ORDER_ID",
+        10000,
+        0.0001,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C302",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS",
+        "STATUS",
+        4,
+        0.25,
+        0,
+        1,
+        "NONE",
+        "43414E43454C4C4544",
+        "53484950504544",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDERS",
+        "TOTAL_AMOUNT",
+        9654,
+        0.000103584006629376,
+        0,
+        1,
+        "NONE",
+        "C13564",
+        "C3022A5E10",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS",
+        "ORDER_ID",
+        10000,
+        0.0001,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C302",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS",
+        "ORDER_ITEM_ID",
+        30000,
+        3.33333333333333e-05,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C304",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS",
+        "PRODUCT_ID",
+        500,
+        0.002,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C206",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS",
+        "QUANTITY",
+        5,
+        0.2,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C106",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ITEMS",
+        "UNIT_PRICE",
+        500,
+        0.002,
+        0,
+        1,
+        "NONE",
+        "C10303",
+        "C20A6002",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "OSPA_DATASET",
+        "DATASET_ID",
+        1,
+        1,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C102",
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "OSPA_DATASET",
+        "LOADED_AT",
+        1,
+        1,
+        0,
+        1,
+        "NONE",
+        "787E0A12042427",
+        "787E0A12042427",
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "OSPA_DATASET",
+        "MANIFEST",
+        1,
+        1,
+        0,
+        1,
+        "NONE",
+        "7B22636865636B73756D73223A207B22435553544F4D455253223A20223339356466326630663836333739613961393062313739656431653032393735663833",
+        "7B22636865636B73756D73223A207B22435553544F4D455253223A20223339356466326630663836333739613961393062313739656431653032393735663833",
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "OSPA_DATASET",
+        "PROFILE",
+        1,
+        1,
+        0,
+        1,
+        "NONE",
+        "736D616C6C",
+        "736D616C6C",
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "OSPA_DATASET",
+        "SEED",
+        1,
+        1,
+        0,
+        1,
+        "NONE",
+        "C4151B0B11",
+        "C4151B0B11",
+        "2026-10-18 17:47:08"
+      ],
+      [
+        "PRODUCTS",
+        "CATEGORY",
+        5,
+        0.2,
+        0,
+        1,
+        "NONE",
+        "424F4F4B53",
+        "544F5953",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "PRODUCTS",
+        "IS_ACTIVE",
+        2,
+        0.5,
+        0,
+        1,
+        "NONE",
+        "80",
+        "C102",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "PRODUCTS",
+        "PRODUCT_ID",
+        500,
+        0.002,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C206",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "PRODUCTS",
+        "PRODUCT_NAME",
+        500,
+        0.002,
+        0,
+        1,
+        "NONE",
+        "53796E7468657469632050726F64756374203030303030303031",
+        "53796E7468657469632050726F64756374203030303030353030",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "PRODUCTS",
+        "UNIT_PRICE",
+        500,
+        0.002,
+        0,
+        1,
+        "NONE",
+        "C10303",
+        "C20A6002",
+        "2026-10-18 18:17:24"
+      ]
+    ],
+    "quota": [
+      [
+        "USERS",
+        2949120,
+        1073741824
+      ]
+    ]
+  },
+  "restoration": "PASS: complete original context, metadata, PK statistics, column statistics and quota usage identical.",
+  "finished_at_utc": "2026-10-19T04:04:18.914627+00:00"
+}

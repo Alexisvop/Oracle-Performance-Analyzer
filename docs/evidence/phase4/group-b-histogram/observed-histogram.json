@@ -1,0 +1,246 @@
+{
+  "after_gather_effective_sha256": "7d8405dbc82402323d10bca22b34ac41482b3a41d92c946a5df8378eb7e31564",
+  "after_gather_statistics_sha256": "c2cbd727d922db1937eb648716337bd1fb58a219d72fa9b2b79609cc797fc490",
+  "estimated_plans_with_histogram": {
+    "baseline_PAID": {
+      "binds": {
+        "status": "PAID"
+      },
+      "orders_access_predicates": null,
+      "orders_bytes": null,
+      "orders_cardinality": null,
+      "orders_cost": null,
+      "orders_cpu_cost": null,
+      "orders_filter_predicates": null,
+      "orders_io_cost": null,
+      "orders_object_name": null,
+      "orders_operation": null,
+      "orders_options": null,
+      "plan_hash": 36248429,
+      "plan_id": null,
+      "root_cardinality": null,
+      "root_cost": null,
+      "root_operation": null,
+      "sql_sha256": "6a9933f5e0c818d99d4bc03b01b9d19bd34e2d79637b49c0f73bd8fd784d04a6",
+      "steps": [],
+      "type": "ESTIMATED_PLAN"
+    },
+    "rare_CANCELLED": {
+      "binds": {
+        "status": "CANCELLED"
+      },
+      "orders_access_predicates": null,
+      "orders_bytes": null,
+      "orders_cardinality": null,
+      "orders_cost": null,
+      "orders_cpu_cost": null,
+      "orders_filter_predicates": null,
+      "orders_io_cost": null,
+      "orders_object_name": null,
+      "orders_operation": null,
+      "orders_options": null,
+      "plan_hash": 36248429,
+      "plan_id": null,
+      "root_cardinality": null,
+      "root_cost": null,
+      "root_operation": null,
+      "sql_sha256": "6a9933f5e0c818d99d4bc03b01b9d19bd34e2d79637b49c0f73bd8fd784d04a6",
+      "steps": [],
+      "type": "ESTIMATED_PLAN"
+    }
+  },
+  "evaluation": {
+    "column_name": "STATUS",
+    "density_observed": 5e-05,
+    "endpoints_count_observed": 4,
+    "endpoints_observed": [
+      [
+        "STATUS",
+        541,
+        349208446762019000000000000000000000
+      ],
+      [
+        "STATUS",
+        1601,
+        406405534078507000000000000000000000
+      ],
+      [
+        "STATUS",
+        7477,
+        416707910007868000000000000000000000
+      ],
+      [
+        "STATUS",
+        10000,
+        432426781261559000000000000000000000
+      ]
+    ],
+    "histogram_type_observed": "FREQUENCY",
+    "is_expected_frequency": true,
+    "note": "Expected FREQUENCY with 4 buckets; if UNEXPECTED, stop before measuring Scenario B.",
+    "num_buckets_observed": 4,
+    "num_distinct_observed": 4,
+    "status": "PASS"
+  },
+  "non_target_invariants_differences": {
+    "dataset": [],
+    "explicit_preferences": [],
+    "indexes": [
+      "/rows/0/22"
+    ],
+    "preferences": []
+  },
+  "snapshot_after_gather": {
+    "columns": [
+      [
+        "CUSTOMER_ID",
+        1299,
+        0.000769822940723634,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C21460",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_DATE",
+        9997,
+        0.000100030009002701,
+        0,
+        1,
+        "NONE",
+        "787D0A10040A16",
+        "787E0A0F182B3C",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "ORDER_ID",
+        10000,
+        0.0001,
+        0,
+        1,
+        "NONE",
+        "C102",
+        "C302",
+        "2026-10-18 18:17:24"
+      ],
+      [
+        "STATUS",
+        4,
+        5e-05,
+        0,
+        4,
+        "FREQUENCY",
+        "43414E43454C4C4544",
+        "53484950504544",
+        "2026-10-20 02:16:12"
+      ],
+      [
+        "TOTAL_AMOUNT",
+        9654,
+        0.000103584006629376,
+        0,
+        1,
+        "NONE",
+        "C13564",
+        "C3022A5E10",
+        "2026-10-18 18:17:24"
+      ]
+    ],
+    "histogram": [
+      [
+        "CUSTOMER_ID",
+        0,
+        1
+      ],
+      [
+        "CUSTOMER_ID",
+        1,
+        1995
+      ],
+      [
+        "ORDER_DATE",
+        0,
+        2460965.13149306
+      ],
+      [
+        "ORDER_DATE",
+        1,
+        2461329.98818287
+      ],
+      [
+        "ORDER_ID",
+        0,
+        1
+      ],
+      [
+        "ORDER_ID",
+        1,
+        10000
+      ],
+      [
+        "STATUS",
+        541,
+        349208446762019000000000000000000000
+      ],
+      [
+        "STATUS",
+        1601,
+        406405534078507000000000000000000000
+      ],
+      [
+        "STATUS",
+        7477,
+        416707910007868000000000000000000000
+      ],
+      [
+        "STATUS",
+        10000,
+        432426781261559000000000000000000000
+      ],
+      [
+        "TOTAL_AMOUNT",
+        0,
+        52.99
+      ],
+      [
+        "TOTAL_AMOUNT",
+        1,
+        14193.15
+      ]
+    ],
+    "indexes": [
+      [
+        "ORDERS_PK",
+        10000,
+        18,
+        10000,
+        44,
+        1,
+        10000,
+        "2026-10-18 18:17:24"
+      ]
+    ],
+    "table": [
+      [
+        "ORDERS",
+        10000,
+        50,
+        27,
+        10000,
+        "2026-10-20 02:16:12"
+      ]
+    ]
+  },
+  "statistics_field_differences_from_original": [
+    "/columns/rows/3/5/oracle_number",
+    "/columns/rows/3/7/oracle_number",
+    "/columns/rows/3/8/datetime",
+    "/columns/rows/3/14",
+    "/histograms/rows",
+    "/indexes/rows/0/22",
+    "/table/rows/0/21/datetime"
+  ],
+  "timestamp_utc": "2026-10-20T02:16:16.213498+00:00"
+}

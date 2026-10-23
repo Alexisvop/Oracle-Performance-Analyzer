@@ -1,0 +1,9 @@
+{
+  "operation": "create",
+  "sql": "BEGIN DBMS_STATS.CREATE_STAT_TABLE(\n ownname=>'ORACLE_SPA', stattab=>'OSPA_ORDERS_STATS_BAK',\n tblspace=>'USERS', global_temporary=>FALSE); END;",
+  "original_sha256": "6a905d2249e93f0afea00cd0deeb65f9906a1af8953184e60706446f7d822eb7",
+  "observed_sha256": "6a905d2249e93f0afea00cd0deeb65f9906a1af8953184e60706446f7d822eb7",
+  "structure_sha256": null,
+  "contents_sha256": null,
+  "confirmation": "ORACLE_SPA/FREEPDB1/create/ad9a0344ef505209490aa0bd0f7bcab04133095f7dd2889200cf9a3fc66eb663"
+}

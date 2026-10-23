@@ -1,0 +1,1 @@
+SELECT o.order_id, i.order_item_id, i.product_id, i.quantity, i.unit_price FROM orders o JOIN order_items i ON i.order_id=o.order_id WHERE o.customer_id=:customer_id ORDER BY o.order_id, i.order_item_id;

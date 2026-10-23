@@ -1,0 +1,58 @@
+{
+  "phase": "Phase 5",
+  "stage": "Stage A — Security, Quality and Reproducibility Audit",
+  "status": "PASS",
+  "assessment_date": "2026-10-19",
+  "tests": {
+    "unit": {
+      "status": "PASS",
+      "passed": 173,
+      "subtests_passed": 55,
+      "failed": 0,
+      "duration_seconds": 2.15,
+      "exit_code": 0
+    },
+    "live_oracle_integration": {
+      "status": "PASS",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "duration_seconds": 41.4,
+      "exit_code": 0
+    },
+    "cli_doctor": {
+      "status": "PASS",
+      "exit_code": 0
+    }
+  },
+  "oracle_readonly_verification": {
+    "status": "PASS",
+    "checks_passed": 18,
+    "checks_total": 18,
+    "user": "ORACLE_SPA",
+    "pdb": "FREEPDB1",
+    "server_version": "23.26.3.0.0",
+    "driver_mode": "Thin",
+    "schema_state": "ready",
+    "pk_indexes": 5,
+    "experimental_indexes": 0,
+    "backup_objects": [
+      73214,
+      73215,
+      73216,
+      73217,
+      73218,
+      73219
+    ],
+    "backup_structure_sha256": "49141e035f5dd7debbf47ef7db7b3ed5835790897e3259b3113f955380f6a97b",
+    "backup_rows": 7,
+    "backup_statid": "B_ORIGINAL_V1",
+    "backup_content_sha256": "50c589979881092e7b9adebf11dde2c9394324146f24e48899864764c0ad67ae",
+    "orders_active_stats_sha256": "6f27e295160307428e1deff18e1dfacdb9cd86c244a9c92f1b3a7e4551d1280d",
+    "status_histogram": "NONE",
+    "status_density": "0.25",
+    "status_num_buckets": "1",
+    "orders_pk_stale_stats": "NO",
+    "diff_maxdiffpct": "0"
+  }
+}
