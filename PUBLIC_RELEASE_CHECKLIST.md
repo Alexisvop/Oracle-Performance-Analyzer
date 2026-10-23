@@ -1,4 +1,6 @@
-# Hardened public-edition checklist
+# Historical Hardened public-edition checklist
+
+**Historical pre-publication snapshot.** The body below records local preparation before the initial public release; its pending-publication and unexecuted-hosted-CI statements apply to that stage. The [public repository](https://github.com/Alexisvop/Oracle-Performance-Analyzer) has since been published at commit fa7237f071fcc0a6996b986835b2681e0ecc0b2e and its [initial hosted CI run](https://github.com/Alexisvop/Oracle-Performance-Analyzer/actions/runs/39892553663) passed. Deployment remains pending and is not authorized. The original observations and decisions below are retained for traceability.
 
 GO for local completion and independent private review. NO-GO for repository creation, publication or deployment until independent review and separate owner authorization. A verdict is not permission.
 

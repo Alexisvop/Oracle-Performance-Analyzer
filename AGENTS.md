@@ -7,5 +7,5 @@ Read README.md and PROJECT_SPEC.md before changes. This public edition contains 
 - Require explicit owner approval for every database mutation, provisioning, container operation, Git publication and deployment. Historical approvals are consumed and non-reusable.
 - Never expose credentials, private keys, environment files or workstation identities.
 - Distinguish client latency, estimated plans and actual cursor metrics. Group C and Engineering Challenges remain deferred.
-- Keep public-source navigation local until an actual public repository URL is approved.
+- Keep reviewed source/evidence navigation available locally. PUBLIC_REPOSITORY.json records the published source URL; website deployment remains separately gated.
 - The _private_audit, .venv, node_modules, caches, results and release directories are local-only and must never be published.

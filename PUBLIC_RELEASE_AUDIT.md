@@ -1,4 +1,6 @@
-# Hardened public-edition release audit
+# Historical Hardened public-edition release audit
+
+**Historical pre-publication snapshot.** The body below records local preparation before the initial public release; its pending-publication and unexecuted-hosted-CI statements apply to that stage. The [public repository](https://github.com/Alexisvop/Oracle-Performance-Analyzer) has since been published at commit fa7237f071fcc0a6996b986835b2681e0ecc0b2e and its [initial hosted CI run](https://github.com/Alexisvop/Oracle-Performance-Analyzer/actions/runs/39892553663) passed. Deployment remains pending and is not authorized. The original observations and decisions below are retained for traceability.
 
 This is local agent verification, not independent ChatGPT approval or permission to publish. No Git initialization, commit, remote repository creation, push, visibility change, deployment, Oracle connection/mutation or container operation was performed.
 
