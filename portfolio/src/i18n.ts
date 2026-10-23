@@ -138,7 +138,7 @@ const en = {
   historical: 'Historical verification; not a new live Oracle test.',
   docsTitle: 'Read the evidence. Reproduce the analysis.',
   repositoryAccess:
-    'Reviewed documentation, source files and benchmark evidence are available locally and in the public GitHub repository. The portfolio runs locally; web deployment is pending.',
+    'Reviewed documentation, source files and benchmark evidence are available here and in the public GitHub repository.',
   offline: '01 / Offline demonstration',
   offlineText:
     'Run unit tests and regenerate historical reports from the repository. No Oracle, container, or credentials required.',
@@ -308,7 +308,7 @@ const es: Copy = {
   historical: 'Verificación histórica; no es una nueva prueba Oracle en vivo.',
   docsTitle: 'Lee la evidencia. Reproduce el análisis.',
   repositoryAccess:
-    'La documentación, los archivos fuente y la evidencia revisados están disponibles localmente y en el repositorio público de GitHub. El portafolio se ejecuta localmente; el despliegue web está pendiente.',
+    'La documentación, los archivos fuente y la evidencia revisados están disponibles aquí y en el repositorio público de GitHub.',
   offline: '01 / Demostración sin Oracle',
   offlineText:
     'Ejecuta pruebas unitarias y regenera reportes históricos desde el repositorio. Sin Oracle, contenedores ni credenciales.',

@@ -110,7 +110,9 @@ def main():
     root = args.root.resolve()
     manifest = json.loads((root / "EXPORT_MANIFEST.json").read_text())
     approved = {row["destination_path"] for row in manifest["files"]}
-    approved.update({"EXPORT_MANIFEST.json", "EXPORT_MANIFEST.sha256"})
+    # Reviewed guide added after the immutable initial export.
+    approved.update({"EXPORT_MANIFEST.json", "EXPORT_MANIFEST.sha256",
+                     "docs/cloudflare-pages-deployment.md", "docs/final-production-readiness.md"})
     print(json.dumps(audit(root, approved), indent=2))
 
 

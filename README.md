@@ -2,7 +2,7 @@
 
 A reproducible database performance engineering laboratory with a bilingual React portfolio.
 
-**Published public source edition:** [Oracle-Performance-Analyzer](https://github.com/Alexisvop/Oracle-Performance-Analyzer) is an independent, sanitized codebase licensed under MIT. It includes reviewed historical evidence and explicitly labeled public derivatives with verifiable SHA-256 provenance. Private development history, personal context, credentials and host diagnostics are excluded. **The portfolio runs locally; no website has been deployed.** See [provenance](docs/provenance.md), [MIT license](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md).
+**Published public source edition:** [Oracle-Performance-Analyzer](https://github.com/Alexisvop/Oracle-Performance-Analyzer) is an independent, sanitized codebase licensed under MIT. It includes reviewed historical evidence and explicitly labeled public derivatives with verifiable SHA-256 provenance. Private development history, personal context, credentials and host diagnostics are excluded. **Public portfolio:** [oracle-performance-analyzer.pages.dev](https://oracle-performance-analyzer.pages.dev/), reported published by the owner. Automated hosted verification currently receives HTTP 403; this branch has not been verified as the deployed revision. Local reproduction remains available. See [provenance](docs/provenance.md), [MIT license](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md).
 
 > OSPA is an independent educational and engineering project. It is not an official Oracle product and is not affiliated with or certified by Oracle Corporation. It does not replace Oracle Real Application Testing, SQL Performance Analyzer or SQL Tuning Advisor.
 
@@ -43,7 +43,7 @@ npm --prefix portfolio run build
 npm --prefix portfolio run dev
 ~~~
 
-Open the loopback URL printed by Vite. English is the default; EN/ES switches the same document. Vite base is / for future root-hosted Cloudflare Pages. The site serves reviewed local evidence/documentation/source references; it does not link to the private repository. The [public repository](https://github.com/Alexisvop/Oracle-Performance-Analyzer) is available; Cloudflare Pages and GitHub Pages have not been deployed. [Frontend guide](portfolio/README.md).
+Open the loopback URL printed by Vite. English is the default; EN/ES switches the same document. Vite base is / for future root-hosted Cloudflare Pages. The site serves reviewed local evidence/documentation/source references; it does not link to the private repository. The [public repository](https://github.com/Alexisvop/Oracle-Performance-Analyzer) is available; the owner has supplied the Cloudflare Pages URL above. GitHub Pages is not used. [Frontend guide](portfolio/README.md).
 
 ## Results and interpretation
 

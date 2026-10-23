@@ -13,6 +13,12 @@ test('public source pages and exact third-party notices are local, readable and 
     await page.goto('/' + path);
     await expect(page.getByRole('main')).toBeVisible();
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(title);
+    if (path === 'source/index.html') {
+      const github = page.getByRole('link', { name: 'Oracle-Performance-Analyzer', exact: true });
+      await expect(github).toHaveCount(2);
+      for (const link of await github.all())
+        await expect(link).toHaveAttribute('href', 'https://github.com/Alexisvop/Oracle-Performance-Analyzer');
+    }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     expect((await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations).toEqual([]);
   }

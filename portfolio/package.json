@@ -14,8 +14,9 @@
     "lint": "eslint . --max-warnings 0",
     "test": "vitest run",
     "test:browser": "playwright test",
-    "build": "npm run data:check && npm run typecheck && vite build",
-    "preview": "vite preview --host 127.0.0.1"
+    "build": "npm run data:check && npm run typecheck && vite build && npm run audit:dist",
+    "preview": "vite preview --host 127.0.0.1",
+    "audit:dist": "node scripts/audit-dist.ts"
   },
   "dependencies": {
     "lucide-react": "1.61.0",

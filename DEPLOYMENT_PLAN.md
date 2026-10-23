@@ -1,16 +1,16 @@
-# Future Cloudflare Pages deployment — not authorized
+# Cloudflare Pages integration and maintenance plan
 
-The independent [public source repository](https://github.com/Alexisvop/Oracle-Performance-Analyzer) has been published. No Cloudflare project, domain, deployment credential or website deployment has been created. Website deployment requires separate review and explicit owner approval; this plan does not authorize it. PUBLIC_REPOSITORY.json records the completed source publication. The original private development repository must remain private.
+The independent [public source repository](https://github.com/Alexisvop/Oracle-Performance-Analyzer) has been published. The owner reports an existing [Cloudflare Pages portfolio](https://oracle-performance-analyzer.pages.dev/). Automated requests returned HTTP 403; the deployed revision and account settings are NOT VERIFIED. No Cloudflare settings, credentials or deployments are changed by this integration review. PUBLIC_REPOSITORY.json records the completed source publication. The original private development repository must remain private.
 
 ## Prepared static configuration
 
 | Setting | Proposed value |
 | --- | --- |
-| Root directory | Repository root / blank |
-| Build command | npm --prefix portfolio ci && npm --prefix portfolio run build |
-| Output directory | portfolio/dist |
+| Root directory | portfolio |
+| Build command | npm run build |
+| Output directory | dist (relative to portfolio) |
 | NODE_VERSION | 26.12.0, matching local validation |
-| SKIP_DEPENDENCY_INSTALL | 1, for the explicit locked frontend installation |
+| Dependency installation | Automatic npm installation using portfolio/package-lock.json; scripts disabled by portfolio/.npmrc |
 | Vite base | / |
 | Routing | Existing hash anchors; one EN/ES document; no history-router rewrite |
 | Credentials/backend | None; no Oracle connection, Functions, server or private repository input |
@@ -19,9 +19,9 @@ The whole public checkout is a build input because curated evidence and reviewed
 
 ## Manual publication gate
 
-Prefer an independently approved static-artifact upload for a future first release; it does not require automatic Git integration. No upload command is authorized by this document. If Git integration is later chosen, restrict app access to the approved public repository and explicitly review production/preview branch controls before connecting or saving a configuration. Cloudflare defaults can trigger builds/deployments on commits; automatic production and preview publication must remain disabled unless separately approved.
+The current preparation targets GitHub integration for the independent public repository. The earlier direct-upload preference is superseded by this reviewed proposal; the earlier preparation performed no integration or upload. The existing hosting state is owner-reported; it is not evidence that this candidate branch has been deployed. See the [GitHub deployment runbook](docs/cloudflare-pages-deployment.md) for exact settings, authorization boundaries, validation and rollback. Restrict app access to the approved public repository. Cloudflare defaults can trigger production and preview publication; connecting the account, creating a project and choosing Save and Deploy require separate owner authorization.
 
-The public GitHub Actions workflow performs offline checks only and its [initial hosted run](https://github.com/Alexisvop/Oracle-Performance-Analyzer/actions/runs/39892553663) passed. It has no deployment job or cloud credential. The export did not include the original private Pages workflow. No Cloudflare login, hosting integration, domain configuration, Cloudflare build or website deployment has been performed.
+The public GitHub Actions workflow performs offline checks only and its [initial hosted run](https://github.com/Alexisvop/Oracle-Performance-Analyzer/actions/runs/39892553663) passed. It has no deployment job or cloud credential. The export did not include the original private Pages workflow. The prior local preparation performed no Cloudflare operation. This final review reads public URLs only and does not change hosting settings or deploy.
 
 ## Local verification and preview
 
@@ -37,6 +37,6 @@ npm --prefix portfolio run preview
 
 The production preview binds to loopback. Browser tests use npm run test:browser from portfolio/. A compatible local Chrome may be selected with PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH; otherwise install Playwright Chromium. Source/evidence navigation continues to use reviewed same-origin assets, and the [public repository](https://github.com/Alexisvop/Oracle-Performance-Analyzer) is available independently.
 
-Before any future approved deployment, verify the exact reviewed hashes, data, notices, EN/ES, keyboard navigation, mobile charts, source references, console and static output. Recheck the actual HTTPS origin after deployment; no hosted URL is verified now.
+Before any future approved deployment, verify the exact reviewed hashes, data, notices, EN/ES, keyboard navigation, mobile charts, source references, console and static output. Recheck the actual HTTPS origin after deployment; the owner-supplied HTTPS URLs currently return HTTP 403 to automated requests, so hosted acceptance is NOT VERIFIED.
 
 Official configuration references: [Cloudflare build settings](https://developers.cloudflare.com/pages/configuration/build-configuration/), [Node and install controls](https://developers.cloudflare.com/pages/configuration/build-image/), [branch deployment controls](https://developers.cloudflare.com/pages/configuration/branch-build-controls/).
