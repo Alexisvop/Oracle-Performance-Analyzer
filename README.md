@@ -6,6 +6,12 @@ A reproducible database performance engineering laboratory with a bilingual Reac
 
 > OSPA is an independent educational and engineering project. It is not an official Oracle product and is not affiliated with or certified by Oracle Corporation. It does not replace Oracle Real Application Testing, SQL Performance Analyzer or SQL Tuning Advisor.
 
+## Recruiter quick tour
+
+The [bilingual public portfolio](https://oracle-performance-analyzer.pages.dev/) now opens with a three-case technical readout using the **recorded Phase 4** measurements: **E01** email lookup (observed median **53.17% lower** with an index), **E03** date-range query (observed median **25.24% higher** despite a chosen index), and **E04** status histogram (captured estimated rows **2,500 → 2,500**, without runtime cursor verification). These are descriptive, small-dataset observations, not general tuning guarantees. Each card links to the underlying inspected result and original public evidence. See [methodology](docs/benchmark-methodology.md) and the [recruiter summary](docs/portfolio-summary.md).
+
+**Deployment boundary:** the owner has reported the Cloudflare Pages site as published. Automated retrieval still returned HTTP 403, so its **deployed revision, current headers and hosted execution are not independently verified**. The latest GitHub CI results validate the source branch, not the public hostname. Updating GitHub files in this PR does **not** itself authorize or confirm a Cloudflare deployment.
+
 ## Engineering scope
 
 OSPA investigates SQL plans, selectivity, B-tree indexes, optimizer statistics and descriptive benchmarking. The Python CLI uses python-oracledb Thin mode with an approved query catalog and explicit safety guards. Offline reports and the website need no Oracle connection.
