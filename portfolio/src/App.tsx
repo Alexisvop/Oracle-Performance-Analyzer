@@ -350,7 +350,7 @@ function Baselines({ t }: { t: Copy }) {
 }
 function Histogram({ t }: { t: Copy }) {
   return (
-    <article className="histogram" aria-labelledby="histogram-heading">
+    <article id="histogram" className="histogram" aria-labelledby="histogram-heading">
       <div className="histogram-heading">
         <span className="eyebrow">GROUP B · E04</span>
         <h3 id="histogram-heading">{t.histogramTitle}</h3>
@@ -432,6 +432,7 @@ export default function App() {
     document.title = `OSPA — ${language === 'en' ? 'Oracle SQL Performance Analyzer' : 'Laboratorio de rendimiento SQL'}`;
   }, [language]);
   const e01 = evidence.indexes[0];
+  const e03Range = evidence.indexes[4];
   return (
     <>
       <a href="#main" className="skip-link">
@@ -570,11 +571,69 @@ export default function App() {
           </div>
           <p className="hero-footnote">
             {t.heroNote}
-            <a href="#overview">
+            <a href="#highlights">
               <ArrowDown size={16} aria-hidden="true" />
-              {t.overview}
+              {language === 'en' ? 'Three key findings' : 'Tres hallazgos clave'}
             </a>
           </p>
+        </section>
+        <section id="highlights" className="recruiter-brief" aria-labelledby="brief-title">
+          <div className="brief-heading">
+            <div>
+              <span className="eyebrow">{t.briefEyebrow}</span>
+              <h2 id="brief-title">{t.briefTitle}</h2>
+            </div>
+            <p>{t.briefText}</p>
+          </div>
+          <div className="brief-grid">
+            <article className="brief-card improvement">
+              <div className="brief-card-top">
+                <span>{t.briefImproveTag}</span>
+                <span className="brief-card-symbol" aria-hidden="true">↘</span>
+              </div>
+              <p className="brief-value">{percent(e01.changePercent)}</p>
+              <span className="brief-unit">{t.client}</span>
+              <h3>{t.briefImproveTitle}</h3>
+              <p className="brief-explanation">{t.briefImproveText}</p>
+              <div className="brief-card-actions">
+                <a href="#results">{t.briefInspect}<ArrowRight size={15} aria-hidden="true" /></a>
+                <Source path={e01.after.evidence}>{t.evidence}</Source>
+              </div>
+            </article>
+            <article className="brief-card regression">
+              <div className="brief-card-top">
+                <span>{t.briefRegressionTag}</span>
+                <span className="brief-card-symbol" aria-hidden="true">↗</span>
+              </div>
+              <p className="brief-value">{percent(e03Range.changePercent)}</p>
+              <span className="brief-unit">{t.client}</span>
+              <h3>{t.briefRegressionTitle}</h3>
+              <p className="brief-explanation">{t.briefRegressionText}</p>
+              <div className="brief-card-actions">
+                <a href="#results">{t.briefInspect}<ArrowRight size={15} aria-hidden="true" /></a>
+                <Source path={e03Range.after.evidence}>{t.evidence}</Source>
+              </div>
+            </article>
+            <article className="brief-card estimate">
+              <div className="brief-card-top">
+                <span>{t.briefHistogramTag}</span>
+                <span className="brief-card-symbol" aria-hidden="true">≡</span>
+              </div>
+              <p className="brief-value brief-value-estimate">
+                {number(evidence.histogram.estimatedRows, 0)}
+                <span aria-hidden="true"> → </span>
+                {number(evidence.histogram.estimatedRows, 0)}
+              </p>
+              <span className="brief-unit">E-Rows · {t.estimated}</span>
+              <h3>{t.briefHistogramTitle}</h3>
+              <p className="brief-explanation">{t.briefHistogramText}</p>
+              <div className="brief-card-actions">
+                <a href="#histogram">{t.briefInspect}<ArrowRight size={15} aria-hidden="true" /></a>
+                <Source path={evidence.histogram.evidence}>{t.evidence}</Source>
+              </div>
+            </article>
+          </div>
+          <p className="brief-caveat"><ShieldCheck size={16} aria-hidden="true" />{t.briefCaveat}</p>
         </section>
         <section id="overview" className="section">
           <SectionHeading
