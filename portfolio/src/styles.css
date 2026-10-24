@@ -1809,5 +1809,5 @@ footer > a:last-child {
   .brief-card.estimate { grid-column: auto; }
   .brief-card { padding: 22px; }
   .brief-value { font-size: 3.1rem; }
-  .brief-value-estimate { font-size: 2.05rem; }
+  .brief-value-estimate { font-size: clamp(1.35rem, 5.2vw, 2.05rem); }
 }
