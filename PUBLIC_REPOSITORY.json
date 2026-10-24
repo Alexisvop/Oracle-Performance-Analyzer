@@ -1,12 +1,12 @@
 {
   "url": "https://github.com/Alexisvop/Oracle-Performance-Analyzer",
   "proposed_name": "Oracle-Performance-Analyzer",
-  "status": "Public source published; website reported published by owner; final branch integration pending",
+  "status": "Public repository and PR #2 merged on main; Cloudflare website owner-reported, live revision not independently verified",
   "publication_authorized": true,
   "portfolio_source_mode": "reviewed same-origin static assets",
   "name_check": "Public repository existence and PUBLIC visibility verified; the earlier 404 was a historical pre-publication availability check.",
   "website_deployed": true,
   "deployment_authorized": false,
   "website_url": "https://oracle-performance-analyzer.pages.dev/",
-  "website_verification": "Owner-reported publication; automated HTTPS requests returned HTTP 403; deployed revision and Cloudflare settings NOT VERIFIED"
+  "website_verification": "Owner-reported publication at the recorded URL; automated HTTPS retrieval returned HTTP 403. Main and frontend CI pass, but hosted revision, response headers and Cloudflare project settings are NOT independently verified."
 }
