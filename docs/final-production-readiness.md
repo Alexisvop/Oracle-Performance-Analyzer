@@ -1,5 +1,13 @@
 # Final production readiness — pre-merge integration report
 
+> **Post-merge status, 2026-10-23:** This is intentionally preserved as the
+> **pre-merge report** for PR #2, which was subsequently merged into `main`
+> as `8b78d2d2910ec49f0a4a3135584714e87cbcacd2`. GitHub Actions passed
+> for that merge commit. The owner reports a Pages deployment, but external
+> checks returned HTTP 403; its serving revision, security headers and
+> Cloudflare configuration remain **NOT VERIFIED**. The original pending
+> statements below describe their dated pre-merge stage, not a current open PR.
+
 ## Executive status
 
 OSPA Public Edition is a reproducible synthetic SQL performance laboratory with an offline Python report path and a bilingual static portfolio. The final local integration candidate passes its verification gates. The project is **not closed**: the owner must review and merge the PR, then verify the corresponding stable Cloudflare deployment. This report is a pre-push snapshot; later remote CI observations belong to the PR checks and final review record.
