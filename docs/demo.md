@@ -12,6 +12,18 @@ Install from the root [README](../README.md), run the offline unit tests, list t
 
 Inspect the generated results/phase5/report.md using the [offline reproducibility instructions](development.md#workflow-a--offline-verification) after generation and compare medians/IQR/p95 against [raw public evidence](evidence/README.md). Build the EN/ES [portfolio](../portfolio/README.md), explore baseline/index/storage views and inspect estimated-plan disclosures. Source links open approved local public assets.
 
+## Recruiter walkthrough — static portfolio (no database access)
+
+Open the [public portfolio](https://oracle-performance-analyzer.pages.dev/)
+(owner-reported deployment; live revision not independently verified) and select
+EN or ES. Begin with the three-case readout: E01 email lookup (**−53.17%**
+median client latency), E03 date range (**+25.24%** with an index range scan)
+and E04 histogram (**2,500 → 2,500 E-Rows**, an unchanged estimate—not actual
+operator row counts). Follow each case's **Inspect result** and evidence link.
+Then explore the fuller Group A, baseline and storage views and the recorded
+statistics restoration. These are historical small-profile observations; the
+website executes no Oracle SQL, and this walkthrough requires no credentials.
+
 ## Flow B — Live Oracle laboratory demonstration (rootless Podman on Arch Linux)
 
 This is a separately authorized lab flow, not a command to start or modify an existing container. Inspect the lab identity and data first; never reuse historical authorization or execute arbitrary SQL. A guarded, read-only catalog/estimated-plan demonstration is described by the CLI help and [query catalog](query-catalog.md). Mutating index/statistics experiments require new scoped approval and exact restoration checks.

@@ -91,6 +91,26 @@ describe('Portfolio interactions', () => {
     expect(within(screen.getByRole('table')).getAllByRole('row')).toHaveLength(8);
     expect(screen.getByText(translations.en.baselineNote)).toBeInTheDocument();
   });
+  it('shows a bilingual, source-backed recruiter readout with favorable and unfavorable cases', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    expect(screen.getByRole('heading', { name: translations.en.briefTitle })).toBeInTheDocument();
+    const cards = Array.from(document.querySelectorAll<HTMLElement>('.brief-card'));
+    expect(cards).toHaveLength(3);
+    expect(cards[0]).toHaveTextContent(percent(evidence.indexes[0].changePercent));
+    expect(cards[1]).toHaveTextContent(percent(evidence.indexes[4].changePercent));
+    expect(cards[2]).toHaveTextContent(
+      number(evidence.histogram.estimatedRows, 0),
+    );
+    expect(within(cards[2]).getByRole('link', { name: translations.en.briefInspect }))
+      .toHaveAttribute('href', '#histogram');
+    expect(document.querySelector('#histogram')).not.toBeNull();
+    for (const card of cards)
+      expect(within(card).getByRole('link', { name: /Evidence/i })).toHaveAttribute('href', expect.stringContaining('/source/'));
+    await user.click(screen.getByRole('button', { name: 'ES' }));
+    expect(screen.getByRole('heading', { name: translations.es.briefTitle })).toBeInTheDocument();
+    expect(screen.getByText(translations.es.briefCaveat)).toBeInTheDocument();
+  });
   it('opens and closes mobile navigation through accessible controls', async () => {
     const user = userEvent.setup();
     render(<App />);
