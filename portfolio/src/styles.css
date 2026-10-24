@@ -1641,3 +1641,173 @@ footer > a:last-child {
     transition: none !important;
   }
 }
+
+/* Executive readout: surfaced from existing, provenance-checked evidence. */
+.recruiter-brief {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 85px 32px 16px;
+  scroll-margin-top: 100px;
+}
+.brief-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 35px;
+  margin-bottom: 29px;
+}
+.brief-heading h2 {
+  max-width: 680px;
+  font-size: clamp(1.85rem, 3.35vw, 2.9rem);
+  line-height: 1.18;
+  margin-top: 12px;
+}
+.brief-heading > p {
+  max-width: 315px;
+  font-size: 0.85rem;
+  margin: 0 0 4px;
+}
+.brief-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+}
+.brief-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #385066;
+  background:
+    radial-gradient(circle at 90% 10%, #38bdf811, transparent 45%),
+    linear-gradient(155deg, #142337, #111b2a);
+  box-shadow: 0 14px 36px #02071329;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.brief-card:hover, .brief-card:focus-within {
+  border-color: #63b5d5;
+  box-shadow: 0 18px 45px #02071355;
+  transform: translateY(-2px);
+}
+.brief-card.regression {
+  background:
+    radial-gradient(circle at 90% 10%, #f2ae6520, transparent 48%),
+    linear-gradient(155deg, #1d2534, #111b2a);
+  border-color: #63533e;
+}
+.brief-card.estimate {
+  background:
+    radial-gradient(circle at 90% 10%, #b7a4ff20, transparent 48%),
+    linear-gradient(155deg, #1b2238, #111b2a);
+}
+.brief-card-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 35px;
+}
+.brief-card-top > span:first-child {
+  color: #b4cbe0;
+  font: 700 0.63rem/1.6 'SFMono-Regular', Consolas, monospace;
+  letter-spacing: 0.055em;
+}
+.brief-card-symbol {
+  display: grid;
+  place-items: center;
+  height: 28px;
+  width: 28px;
+  flex: 0 0 auto;
+  border: 1px solid #3f6073;
+  border-radius: 50%;
+  color: #80d6f5;
+  font-size: 1.1rem;
+}
+.regression .brief-card-symbol { border-color: #7c6650; color: #ffd19b; }
+.estimate .brief-card-symbol { border-color: #6b648c; color: #c8b7ff; }
+.brief-value {
+  margin: 23px 0 3px;
+  color: #88e6db;
+  font-size: clamp(2.65rem, 4vw, 3.9rem);
+  font-weight: 720;
+  letter-spacing: -0.075em;
+  line-height: 1.07;
+  font-variant-numeric: tabular-nums;
+}
+.regression .brief-value { color: #ffcf9c; }
+.estimate .brief-value { color: #c3baff; }
+.brief-value-estimate {
+  font-size: clamp(1.4rem, 2.05vw, 2.35rem);
+  letter-spacing: -0.065em;
+  white-space: nowrap;
+  margin-top: 35px;
+  margin-bottom: 10px;
+}
+.brief-value-estimate span { font-size: 0.72em; color: #a4b9d1; }
+.brief-unit {
+  display: block;
+  color: #b3c3d2;
+  font-size: 0.71rem;
+  line-height: 1.55;
+  min-height: 29px;
+}
+.brief-card h3 {
+  margin-top: 22px;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: #f3f8fc;
+}
+.brief-explanation {
+  margin: 10px 0 24px;
+  font-size: 0.78rem;
+  line-height: 1.8;
+  flex: 1;
+}
+.brief-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 17px;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid #344357;
+}
+.brief-card-actions > a:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #9fe9fb;
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+.brief-card-actions > a:first-child:hover { color: #fff; }
+.brief-card-actions .source-link {
+  font-size: 0.72rem;
+}
+.brief-caveat {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 19px 0 0;
+  padding: 12px 0 0;
+  color: #9caec3;
+  font-size: 0.72rem;
+  line-height: 1.75;
+}
+.brief-caveat svg { color: #93c4df; margin-top: 2px; }
+#histogram { scroll-margin-top: 100px; }
+@media (max-width: 940px) {
+  .brief-heading { align-items: start; flex-direction: column; gap: 14px; }
+  .brief-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .brief-card.estimate { grid-column: 1 / -1; }
+}
+@media (max-width: 620px) {
+  .recruiter-brief { padding: 62px 20px 0; }
+  .brief-heading h2 { font-size: 2rem; }
+  .brief-grid { grid-template-columns: 1fr; }
+  .brief-card.estimate { grid-column: auto; }
+  .brief-card { padding: 22px; }
+  .brief-value { font-size: 3.1rem; }
+  .brief-value-estimate { font-size: 2.05rem; }
+}
