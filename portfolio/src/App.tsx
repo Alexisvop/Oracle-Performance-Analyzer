@@ -1,21 +1,9 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import {
-  ArrowDown,
-  ArrowRight,
   ArrowUpRight,
-  Braces,
-  ChartNoAxesCombined,
-  Check,
   ChevronDown,
   CodeXml as Github,
-  Database,
-  FileCheck2,
-  Fingerprint,
-  GitBranch,
-  Layers3,
   Menu,
-  ShieldCheck,
-  Terminal,
   X,
 } from 'lucide-react';
 import { translations, type Copy, type Language } from './i18n';
@@ -47,10 +35,9 @@ function Source({ path, children }: { path: string; children: ReactNode }) {
     </a>
   );
 }
-function SectionHeading({ index, title, text }: { index: string; title: string; text?: string }) {
+function SectionHeading({ title, text }: { title: string; text?: string }) {
   return (
     <div className="section-heading">
-      <span className="eyebrow">{index}</span>
       <h2>{title}</h2>
       {text && <p>{text}</p>}
     </div>
@@ -104,6 +91,63 @@ function Plan({ measurement, t }: { measurement: Measurement; t: Copy }) {
     </div>
   );
 }
+function planDepth(ops: { id: number; parent_id: number | null }[], id: number): number {
+  const op = ops.find((o) => o.id === id);
+  return op && op.parent_id !== null ? 1 + planDepth(ops, op.parent_id) : 0;
+}
+function HeroPlan({ item, t }: { item: IndexExperiment; t: Copy }) {
+  const columns = t.planColumns.split('|');
+  const states = [
+    [t.planBefore, item.before],
+    [t.planAfter, item.after],
+  ] as const;
+  return (
+    <div className="xplan">
+      {states.map(([label, measurement]) => {
+        const ops = measurement.estimatedPlan.operators;
+        return (
+          <div className="xplan-block" key={label} role="group" aria-label={label}>
+            <p className="xplan-head">
+              <span>{label}</span>
+              <span className="xplan-median">
+                {t.planMedian} <b>{number(measurement.median)} ms</b>
+              </span>
+            </p>
+            <div className="xplan-row xplan-cols" aria-hidden="true">
+              {columns.map((c) => (
+                <span key={c}>{c}</span>
+              ))}
+            </div>
+            <ol className="xplan-ops">
+              {ops.map((op) => (
+                <li
+                  key={op.id}
+                  className={
+                    'xplan-row' + (op.object === item.index || op.options === 'FULL' ? ' xplan-key' : '')
+                  }
+                >
+                  <span>{op.id}</span>
+                  <span style={{ paddingLeft: `${planDepth(ops, op.id)}ch` }}>
+                    {[op.operation, op.options].filter(Boolean).join(' ')}
+                  </span>
+                  <span>{op.object ?? ''}</span>
+                  <span>
+                    <span className="sr-only">{columns[3]} </span>
+                    {op.estimated_rows ?? '—'}
+                  </span>
+                  <span>
+                    <span className="sr-only">{columns[4]} </span>
+                    {op.optimizer_cost ?? '—'}
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 function ExperimentCard({ item, t }: { item: IndexExperiment; t: Copy }) {
   return (
     <article className="experiment-card">
@@ -141,6 +185,7 @@ function ExperimentCard({ item, t }: { item: IndexExperiment; t: Copy }) {
           {item.storageKiB} KiB · {item.before.rows.toLocaleString('en-US')} {t.rows} · n = 10 /{' '}
           {t.baseline}, n = 10 / {t.indexed}
         </p>
+        <div className="table-scroll" role="region" tabIndex={0} aria-label={`${item.id} · ${t.client} (ms)`}>
         <table>
           <caption>{t.client} (ms)</caption>
           <thead>
@@ -162,6 +207,7 @@ function ExperimentCard({ item, t }: { item: IndexExperiment; t: Copy }) {
             ))}
           </tbody>
         </table>
+        </div>
         <code className="sql">{item.before.sql}</code>
         <Plan measurement={item.before} t={t} />
         <Plan measurement={item.after} t={t} />
@@ -352,7 +398,7 @@ function Histogram({ t }: { t: Copy }) {
   return (
     <article id="histogram" className="histogram" aria-labelledby="histogram-heading">
       <div className="histogram-heading">
-        <span className="eyebrow">GROUP B · E04</span>
+        <p className="eyebrow">Group B, E04</p>
         <h3 id="histogram-heading">{t.histogramTitle}</h3>
         <p>{t.histogramText}</p>
       </div>
@@ -413,7 +459,6 @@ function Histogram({ t }: { t: Copy }) {
       </div>
       <p className="small muted">{t.cursorUnavailable}</p>
       <p className="restoration">
-        <ShieldCheck size={19} aria-hidden="true" />
         {t.restoration}
       </p>
       <Source path="docs/evidence/phase4/group-b-histogram-final/field-comparison-after-recovery.json">
@@ -441,12 +486,8 @@ export default function App() {
       <header className="site-header">
         <div className="nav-shell">
           <a href="#top" className="brand" aria-label="OSPA">
-            <span className="brand-icon">
-              <Database size={21} aria-hidden="true" />
-            </span>
             OSPA
-            <span className="brand-divider" />
-            <span className="brand-description">SQL PERFORMANCE LAB</span>
+            <span className="brand-description">SQL performance lab</span>
           </a>
           <nav
             aria-label={language === 'en' ? 'Main navigation' : 'Navegación principal'}
@@ -492,69 +533,44 @@ export default function App() {
         <section className="hero" id="top">
           <div className="hero-grid">
             <div className="hero-copy">
-              <span className="eyebrow">
-                <span className="status-dot cyan" />
-                {t.eyebrow}
-              </span>
-              <h1>
-                Oracle SQL
-                <br />
-                <span>Performance</span>
-                <br />
-                Analyzer<span className="title-dot">.</span>
-              </h1>
+              <p className="eyebrow">{t.eyebrow}</p>
+              <h1>Oracle SQL Performance Analyzer</h1>
               <p className="hero-subtitle">{t.subtitle}</p>
               <p className="hero-description">{t.heroText}</p>
               <div className="hero-actions">
                 <a className="button primary" href="#results">
                   {t.explore}
-                  <ArrowDown size={17} aria-hidden="true" />
                 </a>
                 <a className="button secondary" href={repository}>
-                  <Github size={17} aria-hidden="true" />
                   {t.source}
                 </a>
               </div>
               <a className="hero-docs" href="#docs">
                 {t.technical}
-                <ArrowRight size={16} aria-hidden="true" />
               </a>
             </div>
-            <div className="hero-visual">
-              <div className="visual-label">
-                <span className="status-dot cyan" />
-                {t.observation}
+            <figure className="hero-visual">
+              <figcaption className="visual-label">
+                <span>{t.observation}</span>
                 <span className="mono">n = 10</span>
-              </div>
-              <div className="hero-result">
-                <span>
-                  {number(-e01.changePercent, 2)}
-                  <small>%</small>
+              </figcaption>
+              <pre className="hero-sql" tabIndex={0} role="region" aria-label="Q01 / SQL">
+                <code>
+                  <span className="sql-keyword">SELECT</span> customer_id, full_name, email{'\n'}
+                  <span className="sql-keyword">FROM</span> customers{'\n'}
+                  <span className="sql-keyword">WHERE</span> email = :email
+                </code>
+              </pre>
+              <HeroPlan item={e01} t={t} />
+              <p className="hero-result">
+                <span className="hero-result-value">
+                  <span>{number(-e01.changePercent, 2)}</span>%
                 </span>
-                <p>{t.lower}</p>
-              </div>
-              <PairBars before={e01.before.median} after={e01.after.median} t={t} />
-              <div className="terminal">
-                <div className="terminal-title">
-                  <Terminal size={15} aria-hidden="true" />
-                  Q01 / EMAIL<span>EXPLAIN PLAN</span>
-                </div>
-                <pre tabIndex={0} role="region" aria-label="Q01 / SQL">
-                  <code>
-                    <span className="sql-keyword">SELECT</span> customer_id, full_name, email{'\n'}
-                    <span className="sql-keyword">FROM</span> customers{'\n'}
-                    <span className="sql-keyword">WHERE</span> email = :email
-                  </code>
-                </pre>
-                <div className="plan-transition">
-                  <span>TABLE ACCESS FULL</span>
-                  <ArrowRight size={16} aria-hidden="true" />
-                  <strong>INDEX RANGE SCAN</strong>
-                </div>
-              </div>
+                <span>{t.lower}</span>
+              </p>
               <p className="small muted">{t.heroCaveat}</p>
               <Source path={e01.after.evidence}>{t.evidence} · Phase 4 / Group A</Source>
-            </div>
+            </figure>
           </div>
           <div className="metrics-strip">
             {[
@@ -572,7 +588,6 @@ export default function App() {
           <p className="hero-footnote">
             {t.heroNote}
             <a href="#highlights">
-              <ArrowDown size={16} aria-hidden="true" />
               {language === 'en' ? 'Three key findings' : 'Tres hallazgos clave'}
             </a>
           </p>
@@ -580,7 +595,7 @@ export default function App() {
         <section id="highlights" className="recruiter-brief" aria-labelledby="brief-title">
           <div className="brief-heading">
             <div>
-              <span className="eyebrow">{t.briefEyebrow}</span>
+              <p className="eyebrow">{t.briefEyebrow}</p>
               <h2 id="brief-title">{t.briefTitle}</h2>
             </div>
             <p>{t.briefText}</p>
@@ -589,35 +604,32 @@ export default function App() {
             <article className="brief-card improvement">
               <div className="brief-card-top">
                 <span>{t.briefImproveTag}</span>
-                <span className="brief-card-symbol" aria-hidden="true">↘</span>
               </div>
               <p className="brief-value">{percent(e01.changePercent)}</p>
               <span className="brief-unit">{t.client}</span>
               <h3>{t.briefImproveTitle}</h3>
               <p className="brief-explanation">{t.briefImproveText}</p>
               <div className="brief-card-actions">
-                <a href="#results">{t.briefInspect}<ArrowRight size={15} aria-hidden="true" /></a>
+                <a href="#results">{t.briefInspect}</a>
                 <Source path={e01.after.evidence}>{t.evidence}</Source>
               </div>
             </article>
             <article className="brief-card regression">
               <div className="brief-card-top">
                 <span>{t.briefRegressionTag}</span>
-                <span className="brief-card-symbol" aria-hidden="true">↗</span>
               </div>
               <p className="brief-value">{percent(e03Range.changePercent)}</p>
               <span className="brief-unit">{t.client}</span>
               <h3>{t.briefRegressionTitle}</h3>
               <p className="brief-explanation">{t.briefRegressionText}</p>
               <div className="brief-card-actions">
-                <a href="#results">{t.briefInspect}<ArrowRight size={15} aria-hidden="true" /></a>
+                <a href="#results">{t.briefInspect}</a>
                 <Source path={e03Range.after.evidence}>{t.evidence}</Source>
               </div>
             </article>
             <article className="brief-card estimate">
               <div className="brief-card-top">
                 <span>{t.briefHistogramTag}</span>
-                <span className="brief-card-symbol" aria-hidden="true">≡</span>
               </div>
               <p className="brief-value brief-value-estimate">
                 {number(evidence.histogram.estimatedRows, 0)}
@@ -628,16 +640,15 @@ export default function App() {
               <h3>{t.briefHistogramTitle}</h3>
               <p className="brief-explanation">{t.briefHistogramText}</p>
               <div className="brief-card-actions">
-                <a href="#histogram">{t.briefInspect}<ArrowRight size={15} aria-hidden="true" /></a>
+                <a href="#histogram">{t.briefInspect}</a>
                 <Source path={evidence.histogram.evidence}>{t.evidence}</Source>
               </div>
             </article>
           </div>
-          <p className="brief-caveat"><ShieldCheck size={16} aria-hidden="true" />{t.briefCaveat}</p>
+          <p className="brief-caveat">{t.briefCaveat}</p>
         </section>
         <section id="overview" className="section">
           <SectionHeading
-            index={`01 / ${t.overview}`}
             title={t.overviewTitle}
             text={t.overviewText}
           />
@@ -646,9 +657,8 @@ export default function App() {
               [t.problemTitle, t.problemText],
               [t.approachTitle, t.approachText],
               [t.proofTitle, t.proofText],
-            ].map(([title, text], i) => (
+            ].map(([title, text]) => (
               <article key={title}>
-                <span className="step-number">0{i + 1}</span>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </article>
@@ -658,14 +668,12 @@ export default function App() {
         </section>
         <section id="architecture" className="section">
           <SectionHeading
-            index={`02 / ${t.architecture}`}
             title={t.architectureTitle}
             text={t.architectureText}
           />
           <figure className="architecture">
             <div className="architecture-live">
               <div className="arch-node cli-node">
-                <Terminal aria-hidden="true" />
                 <strong>{t.cli}</strong>
                 <code>cli.py</code>
               </div>
@@ -683,7 +691,6 @@ export default function App() {
                 ))}
               </div>
               <div className="arch-node oracle-node">
-                <Database size={31} aria-hidden="true" />
                 <strong>{t.database}</strong>
                 <code>python-oracledb · Thin</code>
               </div>
@@ -695,14 +702,12 @@ export default function App() {
                 [t.ci, '.github/workflows/ci.yml'],
               ].map(([label, file]) => (
                 <div className="arch-node" key={file}>
-                  <FileCheck2 aria-hidden="true" />
                   <strong>{label}</strong>
                   <code>{file}</code>
                 </div>
               ))}
             </div>
             <div className="portfolio-branch">
-              <FileCheck2 aria-hidden="true" />
               <span>
                 {t.artifact} → <code>evidence.mjs</code> → {t.website}
               </span>
@@ -713,31 +718,27 @@ export default function App() {
           <Source path="docs/architecture.md">{t.architectureDoc}</Source>
         </section>
         <section id="features" className="section">
-          <SectionHeading index={`03 / ${t.features}`} title={t.featuresTitle} />
+          <SectionHeading title={t.featuresTitle} />
           <div className="feature-grid">
             {[
-              [Fingerprint, t.f1Title, t.f1Text],
-              [Check, t.f2Title, t.f2Text],
-              [GitBranch, t.f3Title, t.f3Text],
-              [ShieldCheck, t.f4Title, t.f4Text],
-              [ChartNoAxesCombined, t.f5Title, t.f5Text],
-              [Layers3, t.f6Title, t.f6Text],
-            ].map(([Icon, title, text]) => {
-              const Component = Icon as typeof Fingerprint;
-              return (
-                <article className="feature" key={String(title)}>
-                  <Component size={23} aria-hidden="true" />
-                  <h3>{String(title)}</h3>
-                  <p>{String(text)}</p>
-                </article>
-              );
-            })}
+              [t.f1Title, t.f1Text],
+              [t.f2Title, t.f2Text],
+              [t.f3Title, t.f3Text],
+              [t.f4Title, t.f4Text],
+              [t.f5Title, t.f5Text],
+              [t.f6Title, t.f6Text],
+            ].map(([title, text]) => (
+              <article className="feature" key={title}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
           </div>
         </section>
         <section id="results" className="section results-section">
-          <SectionHeading index={`04 / ${t.results}`} title={t.resultsTitle} text={t.resultsText} />
+          <SectionHeading title={t.resultsTitle} text={t.resultsText} />
           <aside className="methodology">
-            <span className="eyebrow">{t.methodology}</span>
+            <p className="eyebrow">{t.methodology}</p>
             <p>{t.caveatText}</p>
           </aside>
           <div className="view-controls" role="group" aria-label={t.results}>
@@ -781,7 +782,7 @@ export default function App() {
           <Histogram t={t} />
         </section>
         <section id="quality" className="section">
-          <SectionHeading index={`05 / ${t.quality}`} title={t.qualityTitle} text={t.qualityText} />
+          <SectionHeading title={t.qualityTitle} text={t.qualityText} />
           <div className="quality-banner">
             <div>
               <strong>
@@ -812,7 +813,6 @@ export default function App() {
               [t.q3Title, t.q3Text],
             ].map(([title, text]) => (
               <article key={title}>
-                <ShieldCheck aria-hidden="true" />
                 <h3>{title}</h3>
                 <p>{text}</p>
               </article>
@@ -829,7 +829,7 @@ export default function App() {
           <p className="small muted">{t.historical}</p>
         </section>
         <section id="docs" className="section">
-          <SectionHeading index={`06 / ${t.docs}`} title={t.docsTitle} />
+          <SectionHeading title={t.docsTitle} />
           <p className="callout">
             {t.repositoryAccess}
             <br />
@@ -840,7 +840,6 @@ export default function App() {
           </p>
           <div className="demo-grid">
             <article className="demo-card">
-              <Terminal aria-hidden="true" />
               <h3>{t.offline}</h3>
               <p>{t.offlineText}</p>
               <pre tabIndex={0} role="region" aria-label={t.offline}>
@@ -854,11 +853,9 @@ export default function App() {
               </Source>
             </article>
             <article className="demo-card">
-              <Database aria-hidden="true" />
               <h3>{t.live}</h3>
               <p>{t.liveText}</p>
               <div className="lab-tag">
-                <ShieldCheck size={18} aria-hidden="true" />
                 {t.lab}
               </div>
               <Source path="docs/demo.md#flow-b--live-oracle-laboratory-demonstration-rootless-podman-on-arch-linux">
@@ -884,7 +881,7 @@ export default function App() {
           </div>
         </section>
         <section id="future" className="section future-section">
-          <SectionHeading index={`07 / ${t.future}`} title={t.futureTitle} />
+          <SectionHeading title={t.futureTitle} />
           <div className="future-grid">
             {[
               [t.future1, t.future1Text],
@@ -903,14 +900,12 @@ export default function App() {
       </main>
       <footer>
         <a href="#top" className="brand">
-          <Braces size={23} aria-hidden="true" />
           OSPA
         </a>
         <p>{t.footer}</p>
         <Source path="THIRD_PARTY_NOTICES.md">{language === 'en' ? 'Third-party notices' : 'Avisos de terceros'}</Source>
         <a href="#top">
           {t.back}
-          <ArrowRight size={15} aria-hidden="true" />
         </a>
       </footer>
     </>

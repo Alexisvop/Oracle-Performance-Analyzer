@@ -9,6 +9,8 @@ import sourceFiles from './public-source-files.json' with { type: 'json' };
 const root = fileURLToPath(new URL('../', import.meta.url));
 export default defineConfig({
   base: '/',
+  // Inline the single reviewed web font into the CSS so the audited dist inventory stays unchanged.
+  build: { assetsInlineLimit: (file) => (file.endsWith('.woff2') ? true : undefined) },
   plugins: [
     react(),
     tailwindcss(),
