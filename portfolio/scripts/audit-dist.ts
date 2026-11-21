@@ -31,6 +31,8 @@ export function auditDist(directory = join(portfolio, 'dist')): Record<string, s
   const expected = publicAssets(root, sources);
   expected.set('data/evidence.json', readFileSync(join(portfolio, 'src/data/evidence.json'), 'utf8'));
   expected.set('favicon.svg', readFileSync(join(portfolio, 'public/favicon.svg'), 'utf8'));
+  expected.set('og.png', readFileSync(join(portfolio, 'public/og.png'), 'utf8'));
+  expected.set('_headers', readFileSync(join(portfolio, 'public/_headers'), 'utf8'));
   expected.set('data/bundle-packages.json', JSON.stringify({
     bundledPackages: ['lucide-react', 'react', 'react-dom', 'scheduler'],
     helperNotices: ['vite', 'tailwindcss'],

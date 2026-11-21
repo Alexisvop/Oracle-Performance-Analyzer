@@ -6,12 +6,15 @@ The MIT license in LICENSE applies to owner-confirmed original code/documentatio
 
 The following notices were read from the exact installed locked packages. Full upstream license files are preserved byte-for-byte, including Lucide ISC and Feather-derived MIT attribution. Vite aggregate notices are retained conservatively for the included build helper/polyfill; compiler/development packages are not otherwise redistributed as installations.
 
+The Source Serif 4 font file (`portfolio/src/fonts/source-serif-4-latin-wght-normal.woff2`) is copied unmodified from the published package listed below and inlined into the site stylesheet at build time; it is not a bundled JavaScript dependency.
+
 | Package | Installed version | Declared license | Exact preserved license | SHA-256 |
 | --- | --- | --- | --- | --- |
 | react | 19.3.1 | MIT | [react](third_party_licenses/react.txt) | da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93 |
 | react-dom | 19.3.1 | MIT | [react-dom](third_party_licenses/react-dom.txt) | da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93 |
 | scheduler | 0.28.0 | MIT | [scheduler](third_party_licenses/scheduler.txt) | da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93 |
 | lucide-react | 1.61.0 | ISC | [lucide-react](third_party_licenses/lucide-react.txt) | b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57 |
+| Source Serif 4 font (@fontsource-variable/source-serif-4, latin wght subset) | 5.3.1 | OFL-1.1 | [source-serif-4](third_party_licenses/source-serif-4.txt) | 18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3 |
 | tailwindcss | 4.3.3 | MIT | [tailwindcss](third_party_licenses/tailwindcss.txt) | 60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985 |
 | vite | 8.3.5 | MIT | [vite](third_party_licenses/vite.txt) | a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13 |
 

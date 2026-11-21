@@ -112,7 +112,9 @@ def main():
     approved = {row["destination_path"] for row in manifest["files"]}
     # Reviewed guide added after the immutable initial export.
     approved.update({"EXPORT_MANIFEST.json", "EXPORT_MANIFEST.sha256",
-                     "docs/cloudflare-pages-deployment.md", "docs/final-production-readiness.md"})
+                     "docs/cloudflare-pages-deployment.md", "docs/final-production-readiness.md",
+                     # Reviewed font license added with the portfolio redesign.
+                     "third_party_licenses/source-serif-4.txt"})
     print(json.dumps(audit(root, approved), indent=2))
 
 
