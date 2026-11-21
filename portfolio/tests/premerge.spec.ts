@@ -87,6 +87,7 @@ test('histogram bars remain visible and narrow disclosures support keyboard acce
     .evaluateAll((elements) => elements.map((el) => el.getBoundingClientRect().width));
   expect(widths).toHaveLength(4);
   expect(widths.every((width) => width >= 20)).toBe(true);
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await page.keyboard.press('Tab');
   await page.keyboard.press('Enter');
   await page.keyboard.press('Tab');

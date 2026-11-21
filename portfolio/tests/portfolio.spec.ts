@@ -68,6 +68,8 @@ for (const language of ['en', 'es']) {
 }
 test('keyboard skip link, responsive menu, and results destination', async ({ page }) => {
   await page.goto('./');
+  // React renders after the load event; wait for the app before sending keyboard input.
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await page.keyboard.press('Tab');
   await expect(page.locator('.skip-link')).toBeFocused();
   await page.keyboard.press('Enter');
