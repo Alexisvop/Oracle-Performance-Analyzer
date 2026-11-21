@@ -130,7 +130,10 @@ function HeroPlan({ item, t }: { item: IndexExperiment; t: Copy }) {
                   <span style={{ paddingLeft: `${planDepth(ops, op.id)}ch` }}>
                     {[op.operation, op.options].filter(Boolean).join(' ')}
                   </span>
-                  <span>{op.object ?? ''}</span>
+                  <span>
+                    {op.object && <span className="sr-only">{columns[2]} </span>}
+                    {op.object ?? ''}
+                  </span>
                   <span>
                     <span className="sr-only">{columns[3]} </span>
                     {op.estimated_rows ?? '—'}
@@ -148,70 +151,104 @@ function HeroPlan({ item, t }: { item: IndexExperiment; t: Copy }) {
     </div>
   );
 }
+const experimentNames: Record<string, keyof Copy> = {
+  'E01-email-baseline': 'expE01',
+  'E02-simple-baseline': 'expE02s',
+  'E02-composite-baseline': 'expE02c',
+  'E03-date-index-baseline': 'expE03t',
+  'E03-date-index-range': 'expE03r',
+  'E05-status-date-baseline': 'expE05',
+};
+const baselineNames: Record<string, keyof Copy> = {
+  'Q01-baseline': 'expE01',
+  'Q02-baseline': 'expE02s',
+  'Q07-baseline': 'expE03t',
+  'Q07-range': 'expE03r',
+  'Q06-baseline': 'expQ06p',
+  'Q06-rare': 'expQ06c',
+  'Q08-baseline': 'expE05',
+};
+/** Plain-language query name; Q02 baselines drop the index suffix because no index existed yet. */
+function baselineName(m: { queryId: string; variant: string }, t: Copy) {
+  const key = baselineNames[`${m.queryId}-${m.variant}`];
+  const name = key ? t[key] : `${m.queryId} · ${m.variant}`;
+  return m.queryId === 'Q02' ? name.split(' · ')[0] : name;
+}
+/** Deepest operator that touches a table or index: the access path a reader compares. */
+function accessPath(m: Measurement) {
+  const ops = m.estimatedPlan.operators.filter((op) => op.object);
+  const leaf = ops[ops.length - 1];
+  return leaf ? [leaf.operation, leaf.options].filter(Boolean).join(' ') : '—';
+}
+const glossaryKeys = ['g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'g7', 'g8'] as const;
 function ExperimentCard({ item, t }: { item: IndexExperiment; t: Copy }) {
+  const before = accessPath(item.before);
+  const after = accessPath(item.after);
+  const key = experimentNames[item.id];
   return (
     <article className="experiment-card">
-      <div className="experiment-top">
-        <div>
-          <span className="mono muted">
-            {item.before.experimentId} / {item.before.queryId}
-          </span>
-          <h4>
-            {item.before.experimentId === 'E03'
-              ? `ORDER_DATE · ${item.before.variant === 'baseline' ? 'TRUNC' : 'range'}`
-              : item.before.experimentId === 'E01'
-                ? 'EMAIL'
-                : item.before.experimentId === 'E02'
-                  ? `CUSTOMER_ID · ${item.after.scenario}`
-                  : 'Top-N'}
-          </h4>
-        </div>
-        <span className={`delta ${item.changePercent < 0 ? 'favorable' : 'unfavorable'}`}>
-          {percent(item.changePercent)}
-        </span>
+      <div className="experiment-main">
+        <h4>{key ? t[key] : item.id}</h4>
+        <p className="experiment-id">
+          {item.before.experimentId} / {item.before.queryId}
+        </p>
       </div>
-      <PairBars before={item.before.median} after={item.after.median} t={t} />
-      <p className="plan-status">
-        <span className={`status-dot ${usesIndex(item) ? 'cyan' : 'amber'}`} />
-        {usesIndex(item) ? t.selected : t.ignored}
+      <p className="experiment-plan">
+        <span className="sr-only">{t.planLabel}: </span>
+        <code>{before}</code>
+        {before === after ? (
+          <span className="experiment-same"> · {t.samePlan}</span>
+        ) : (
+          <>
+            {' → '}
+            <code>{after}</code>
+          </>
+        )}
       </p>
+      <PairBars before={item.before.median} after={item.after.median} t={t} />
+      <span className={`delta ${item.changePercent < 0 ? 'favorable' : 'unfavorable'}`}>
+        {percent(item.changePercent)}
+      </span>
       <details>
         <summary>
           {t.details}
           <ChevronDown size={16} aria-hidden="true" />
         </summary>
+        <p>{usesIndex(item) ? t.selected : t.ignored}.</p>
         <code className="sql">{item.configuration}</code>
         <p>
           {item.storageKiB} KiB · {item.before.rows.toLocaleString('en-US')} {t.rows} · n = 10 /{' '}
           {t.baseline}, n = 10 / {t.indexed}
         </p>
         <div className="table-scroll" role="region" tabIndex={0} aria-label={`${item.id} · ${t.client} (ms)`}>
-        <table>
-          <caption>{t.client} (ms)</caption>
-          <thead>
-            <tr>
-              <th scope="col">{t.experiment}</th>
-              <th scope="col">{t.median}</th>
-              <th scope="col">IQR</th>
-              <th scope="col">p95</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[item.before, item.after].map((m, i) => (
-              <tr key={i}>
-                <th scope="row">{i ? t.indexed : t.baseline}</th>
-                <td>{number(m.median, 6)}</td>
-                <td>{number(m.iqr, 6)}</td>
-                <td>{number(m.p95, 6)}</td>
+          <table>
+            <caption>{t.client} (ms)</caption>
+            <thead>
+              <tr>
+                <th scope="col">{t.experiment}</th>
+                <th scope="col">{t.median}</th>
+                <th scope="col">IQR</th>
+                <th scope="col">p95</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {[item.before, item.after].map((m, i) => (
+                <tr key={i}>
+                  <th scope="row">{i ? t.indexed : t.baseline}</th>
+                  <td>{number(m.median, 6)}</td>
+                  <td>{number(m.iqr, 6)}</td>
+                  <td>{number(m.p95, 6)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
         <code className="sql">{item.before.sql}</code>
         <Plan measurement={item.before} t={t} />
         <Plan measurement={item.after} t={t} />
-        <p className="small muted">{t.cursorUnavailable}</p>
+        <a className="source-link" href="#method">
+          {t.methodology}
+        </a>
         <Source path={item.evidence}>
           {t.evidence} · {item.index}
         </Source>
@@ -326,10 +363,7 @@ function Baselines({ t }: { t: Copy }) {
       >
         {evidence.baselines.map((item, i) => (
           <option value={i} key={`${item.queryId}-${item.variant}`}>
-            {item.experimentId} / {item.queryId} · {item.variant}
-            {item.queryId === 'Q06'
-              ? ` · ${item.variant === 'baseline' ? 'PAID' : 'CANCELLED'}`
-              : ''}
+            {baselineName(item, t)} ({item.experimentId} / {item.queryId})
           </option>
         ))}
       </select>
@@ -377,10 +411,10 @@ function Baselines({ t }: { t: Copy }) {
             {evidence.baselines.map((item) => (
               <tr key={`${item.queryId}-${item.variant}`}>
                 <th scope="row">
-                  {item.experimentId} / {item.queryId} · {item.variant}
-                  {item.queryId === 'Q06'
-                    ? ` (${item.variant === 'baseline' ? 'PAID' : 'CANCELLED'})`
-                    : ''}
+                  {baselineName(item, t)}
+                  <span className="row-id">
+                    {item.experimentId} / {item.queryId}
+                  </span>
                 </th>
                 <td>{item.rows.toLocaleString('en-US')}</td>
                 <td>{number(item.median, 6)}</td>
@@ -398,7 +432,6 @@ function Histogram({ t }: { t: Copy }) {
   return (
     <article id="histogram" className="histogram" aria-labelledby="histogram-heading">
       <div className="histogram-heading">
-        <p className="eyebrow">Group B, E04</p>
         <h3 id="histogram-heading">{t.histogramTitle}</h3>
         <p>{t.histogramText}</p>
       </div>
@@ -457,7 +490,6 @@ function Histogram({ t }: { t: Copy }) {
           36248429
         </span>
       </div>
-      <p className="small muted">{t.cursorUnavailable}</p>
       <p className="restoration">
         {t.restoration}
       </p>
@@ -471,13 +503,30 @@ export default function App() {
   const [language, setLanguage] = useState<Language>('en');
   const [menuOpen, setMenuOpen] = useState(false);
   const [view, setView] = useState<'groupA' | 'stageA' | 'storage'>('groupA');
+  const [activeSection, setActiveSection] = useState<string>('');
   const t = translations[language];
   useEffect(() => {
     document.documentElement.lang = language;
     document.title = `OSPA — ${language === 'en' ? 'Oracle SQL Performance Analyzer' : 'Laboratorio de rendimiento SQL'}`;
   }, [language]);
+  // Mark the section being read in the sticky navigation; skipped where IntersectionObserver is missing.
+  useEffect(() => {
+    if (typeof IntersectionObserver === 'undefined') return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) if (entry.isIntersecting) setActiveSection(entry.target.id);
+      },
+      { rootMargin: '-40% 0px -55% 0px' },
+    );
+    for (const id of sectionIds) {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    }
+    return () => observer.disconnect();
+  }, []);
   const e01 = evidence.indexes[0];
   const e03Range = evidence.indexes[4];
+  const navCurrent = activeSection === 'features' ? 'overview' : activeSection;
   return (
     <>
       <a href="#main" className="skip-link">
@@ -496,7 +545,12 @@ export default function App() {
             {sectionIds
               .filter((id) => !['features', 'future'].includes(id))
               .map((id) => (
-                <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  aria-current={navCurrent === id ? 'location' : undefined}
+                  onClick={() => setMenuOpen(false)}
+                >
                   {t[id]}
                 </a>
               ))}
@@ -533,7 +587,6 @@ export default function App() {
         <section className="hero" id="top">
           <div className="hero-grid">
             <div className="hero-copy">
-              <p className="eyebrow">{t.eyebrow}</p>
               <h1>Oracle SQL Performance Analyzer</h1>
               <p className="hero-subtitle">{t.subtitle}</p>
               <p className="hero-description">{t.heroText}</p>
@@ -552,9 +605,9 @@ export default function App() {
             <figure className="hero-visual">
               <figcaption className="visual-label">
                 <span>{t.observation}</span>
-                <span className="mono">n = 10</span>
+                <span className="mono">E01 / Q01 · n = 10</span>
               </figcaption>
-              <pre className="hero-sql" tabIndex={0} role="region" aria-label="Q01 / SQL">
+              <pre className="hero-sql">
                 <code>
                   <span className="sql-keyword">SELECT</span> customer_id, full_name, email{'\n'}
                   <span className="sql-keyword">FROM</span> customers{'\n'}
@@ -562,42 +615,29 @@ export default function App() {
                 </code>
               </pre>
               <HeroPlan item={e01} t={t} />
+              <p className="plan-key">{t.planKey}</p>
               <p className="hero-result">
                 <span className="hero-result-value">
                   <span>{number(-e01.changePercent, 2)}</span>%
                 </span>
                 <span>{t.lower}</span>
               </p>
-              <p className="small muted">{t.heroCaveat}</p>
-              <Source path={e01.after.evidence}>{t.evidence} · Phase 4 / Group A</Source>
+              <div className="hero-links">
+                <a className="source-link" href="#method">
+                  {t.howMeasured}
+                </a>
+                <Source path={e01.after.evidence}>{t.evidence} · Phase 4 / Group A</Source>
+              </div>
             </figure>
           </div>
-          <div className="metrics-strip">
-            {[
-              [number(evidence.dataset.businessRows, 0), t.synthetic],
-              ['8', t.queries],
-              [String(evidence.quality.unitTests), t.tests],
-              ['5', t.experimental],
-            ].map(([value, label]) => (
-              <div key={label}>
-                <strong>{value}</strong>
-                <span>{label}</span>
-              </div>
-            ))}
-          </div>
-          <p className="hero-footnote">
-            {t.heroNote}
-            <a href="#highlights">
-              {language === 'en' ? 'Three key findings' : 'Tres hallazgos clave'}
-            </a>
+          <p className="hero-facts">
+            <b>{number(evidence.dataset.businessRows, 0)}</b> {t.synthetic}, <b>8</b> {t.queries},{' '}
+            <b>5</b> {t.experimental} {t.and} <b>{evidence.quality.unitTests}</b> {t.tests}.
           </p>
         </section>
         <section id="highlights" className="recruiter-brief" aria-labelledby="brief-title">
           <div className="brief-heading">
-            <div>
-              <p className="eyebrow">{t.briefEyebrow}</p>
-              <h2 id="brief-title">{t.briefTitle}</h2>
-            </div>
+            <h2 id="brief-title">{t.briefTitle}</h2>
             <p>{t.briefText}</p>
           </div>
           <div className="brief-grid">
@@ -645,32 +685,47 @@ export default function App() {
               </div>
             </article>
           </div>
-          <p className="brief-caveat">{t.briefCaveat}</p>
+          <p className="brief-caveat">
+            {t.briefCaveat}{' '}
+            <a href="#method">{t.howMeasured}</a>
+          </p>
         </section>
         <section id="overview" className="section">
-          <SectionHeading
-            title={t.overviewTitle}
-            text={t.overviewText}
-          />
-          <div className="overview-grid">
+          <SectionHeading title={t.overviewTitle} text={t.overviewText} />
+          <ol className="approach">
             {[
               [t.problemTitle, t.problemText],
               [t.approachTitle, t.approachText],
               [t.proofTitle, t.proofText],
             ].map(([title, text]) => (
-              <article key={title}>
+              <li key={title}>
                 <h3>{title}</h3>
                 <p>{text}</p>
-              </article>
+              </li>
             ))}
+          </ol>
+          <div id="features" className="capabilities">
+            <h3>{t.featuresTitle}</h3>
+            <dl className="feature-list">
+              {[
+                [t.f1Title, t.f1Text],
+                [t.f2Title, t.f2Text],
+                [t.f3Title, t.f3Text],
+                [t.f4Title, t.f4Text],
+                [t.f5Title, t.f5Text],
+                [t.f6Title, t.f6Text],
+              ].map(([title, text]) => (
+                <div className="feature" key={title}>
+                  <dt>{title}</dt>
+                  <dd>{text}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
           <Source path="docs/portfolio-summary.md">{t.technical}</Source>
         </section>
         <section id="architecture" className="section">
-          <SectionHeading
-            title={t.architectureTitle}
-            text={t.architectureText}
-          />
+          <SectionHeading title={t.architectureTitle} text={t.architectureText} />
           <figure className="architecture">
             <div className="architecture-live">
               <div className="arch-node cli-node">
@@ -717,30 +772,26 @@ export default function App() {
           </figure>
           <Source path="docs/architecture.md">{t.architectureDoc}</Source>
         </section>
-        <section id="features" className="section">
-          <SectionHeading title={t.featuresTitle} />
-          <div className="feature-grid">
-            {[
-              [t.f1Title, t.f1Text],
-              [t.f2Title, t.f2Text],
-              [t.f3Title, t.f3Text],
-              [t.f4Title, t.f4Text],
-              [t.f5Title, t.f5Text],
-              [t.f6Title, t.f6Text],
-            ].map(([title, text]) => (
-              <article className="feature" key={title}>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
         <section id="results" className="section results-section">
           <SectionHeading title={t.resultsTitle} text={t.resultsText} />
-          <aside className="methodology">
-            <p className="eyebrow">{t.methodology}</p>
+          <div id="method" className="method">
+            <h3>{t.methodology}</h3>
             <p>{t.caveatText}</p>
-          </aside>
+            <dl className="glossary">
+              {glossaryKeys.map((key) => {
+                const [term, definition] = t[key].split('|');
+                return (
+                  <div key={key}>
+                    <dt>{term}</dt>
+                    <dd>{definition}</dd>
+                  </div>
+                );
+              })}
+            </dl>
+            <p className="small muted">
+              {t.cursorUnavailable} {t.inference}
+            </p>
+          </div>
           <div className="view-controls" role="group" aria-label={t.results}>
             {(['groupA', 'stageA', 'storage'] as const).map((key) => (
               <button
@@ -757,9 +808,7 @@ export default function App() {
             {view === 'groupA' ? (
               <>
                 <h3 className="figure-title">{t.indexCaption}</h3>
-                <p className="small muted">
-                  {t.client} · ms · n = 10 · IQR / p95: {t.details}
-                </p>
+                <p className="small muted">{t.client} · ms · n = 10</p>
                 <div className="experiments-grid">
                   {evidence.indexes.map((item) => (
                     <ExperimentCard item={item} t={t} key={item.id} />
@@ -770,7 +819,6 @@ export default function App() {
                   <p>{t.emailInsight}</p>
                   <p>{t.dateInsight}</p>
                   <p>{t.topInsight}</p>
-                  <p className="small muted">{t.inference}</p>
                 </div>
               </>
             ) : view === 'stageA' ? (
@@ -783,29 +831,6 @@ export default function App() {
         </section>
         <section id="quality" className="section">
           <SectionHeading title={t.qualityTitle} text={t.qualityText} />
-          <div className="quality-banner">
-            <div>
-              <strong>
-                {evidence.quality.unitTests}
-                <small> + {evidence.quality.subtests}</small>
-              </strong>
-              <span>
-                {t.tests} / {language === 'en' ? 'subtests' : 'subpruebas'}
-              </span>
-            </div>
-            <div>
-              <strong>SHA-256</strong>
-              <span>{t.q1Title}</span>
-            </div>
-            <div>
-              <strong>0</strong>
-              <span>
-                {language === 'en'
-                  ? 'Oracle connections needed by this site'
-                  : 'conexiones Oracle requeridas por este sitio'}
-              </span>
-            </div>
-          </div>
           <div className="quality-grid">
             {[
               [t.q1Title, t.q1Text],
@@ -828,16 +853,30 @@ export default function App() {
           </div>
           <p className="small muted">{t.historical}</p>
         </section>
-        <section id="docs" className="section">
+        <section id="future" className="section future-section" aria-label={t.future}>
+          <details className="future">
+            <summary>
+              <h2>{t.futureTitle}</h2>
+              <ChevronDown size={20} aria-hidden="true" />
+            </summary>
+            <div className="future-grid">
+              {[
+                [t.future1, t.future1Text],
+                [t.future2, t.future2Text],
+                [t.future3, t.future3Text],
+                [t.future4, t.future4Text],
+              ].map(([title, text]) => (
+                <article key={title}>
+                  <span className="future-badge">{t.futureBadge}</span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
+          </details>
+        </section>
+        <section id="docs" className="section docs-section">
           <SectionHeading title={t.docsTitle} />
-          <p className="callout">
-            {t.repositoryAccess}
-            <br />
-            <a className="source-link" href={`${import.meta.env.BASE_URL}data/evidence.json`}>
-              {t.provenance}
-              <ArrowUpRight size={14} aria-hidden="true" />
-            </a>
-          </p>
           <div className="demo-grid">
             <article className="demo-card">
               <h3>{t.offline}</h3>
@@ -855,14 +894,19 @@ export default function App() {
             <article className="demo-card">
               <h3>{t.live}</h3>
               <p>{t.liveText}</p>
-              <div className="lab-tag">
-                {t.lab}
-              </div>
+              <p className="lab-tag">{t.lab}</p>
               <Source path="docs/demo.md#flow-b--live-oracle-laboratory-demonstration-rootless-podman-on-arch-linux">
                 {t.guide}
               </Source>
             </article>
           </div>
+          <p className="callout">
+            {t.repositoryAccess}{' '}
+            <a className="source-link" href={`${import.meta.env.BASE_URL}data/evidence.json`}>
+              {t.provenance}
+              <ArrowUpRight size={14} aria-hidden="true" />
+            </a>
+          </p>
           <div className="doc-links">
             {[
               ['README.md', t.technical],
@@ -880,23 +924,6 @@ export default function App() {
             </a>
           </div>
         </section>
-        <section id="future" className="section future-section">
-          <SectionHeading title={t.futureTitle} />
-          <div className="future-grid">
-            {[
-              [t.future1, t.future1Text],
-              [t.future2, t.future2Text],
-              [t.future3, t.future3Text],
-              [t.future4, t.future4Text],
-            ].map(([title, text]) => (
-              <article key={title}>
-                <span className="future-badge">{t.futureBadge}</span>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
       </main>
       <footer>
         <a href="#top" className="brand">
@@ -904,9 +931,7 @@ export default function App() {
         </a>
         <p>{t.footer}</p>
         <Source path="THIRD_PARTY_NOTICES.md">{language === 'en' ? 'Third-party notices' : 'Avisos de terceros'}</Source>
-        <a href="#top">
-          {t.back}
-        </a>
+        <a href="#top">{t.back}</a>
       </footer>
     </>
   );
